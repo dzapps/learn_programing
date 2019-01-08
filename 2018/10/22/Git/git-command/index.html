@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>git-command | VanLiuZhi | 有梦想的人不睡觉</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#00e1ff">
+    
+    
+    <meta name="keywords" content="linux,note">
+    <meta name="description" content="Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。">
+<meta name="keywords" content="linux,note">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git-command">
+<meta property="og:url" content="http://www.liuzhidream.com/2018/10/22/Git/git-command/index.html">
+<meta property="og:site_name" content="VanLiuZhi">
+<meta property="og:description" content="Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-21T16:00:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git-command">
+<meta name="twitter:description" content="Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。">
+    
+        <link rel="alternate" type="application/atom+xml" title="VanLiuZhi" href="/learn_programing/atom.xml">
+    
+    <link rel="shortcut icon" href="/learn_programing/favicon.ico">
+    <link rel="stylesheet" href="/learn_programing/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/learn_programing/img/brand.jpg)">
+      <div class="brand">
+        <a href="/learn_programing/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/learn_programing/img/me.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Liu Zhi</h5>
+          <a href="mailto:vanliuzhi@qq.com" title="vanliuzhi@qq.com" class="mail">vanliuzhi@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/tags/note">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/categories/python">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/VanLiuZhi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/custom">
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">git-command</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">git-command</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018-10-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/linux/">linux</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Git"><span class="post-toc-number">1.</span> <span class="post-toc-text">Git</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分支"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">分支</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#git-pull-命令"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">git pull 命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#如何上传GitHub"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">如何上传GitHub</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件的标记解释："><span class="post-toc-number">1.4.</span> <span class="post-toc-text">文件的标记解释：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#git的hook-钩子"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">git的hook(钩子)</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Git/git-command" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">git-command</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-22 00:00:00" datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished">2018-10-22</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/linux/">linux</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。</p>
+<a id="more"></a>
+<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p>使用GitHub，给出的地址我们一般用ssh。使用ssh需要https，如果不支持只能使用http，但是每次都要输口令。</p>
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><p>Git鼓励大量使用分支：</p>
+<ul>
+<li>查看分支：git branch</li>
+<li>创建分支：git branch \<name></name></li>
+<li>切换分支：git checkout \<name></name></li>
+<li>创建+切换分支：git checkout -b \<name></name></li>
+<li>合并某分支到当前分支：git merge \<name></name></li>
+<li>删除分支：git branch -d \<name></name></li>
+</ul>
+<p>主要理解分支，克隆远程仓库，将本地和远程仓库关联，搭建git服务器</p>
+<h2 id="git-pull-命令"><a href="#git-pull-命令" class="headerlink" title="git pull 命令"></a>git pull 命令</h2><p>作用：取回远程主机某个分支的更新，再与本地的指定分支合并</p>
+<p>格式：git pull  &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</p>
+<ol>
+<li>如果与当前分支合并，则可省略本地分支名git pull &lt;远程主机名&gt; &lt;远程分支名&gt; 相当于：git fetch &lt;远程主机名&gt; &lt;远分支名&gt; git merge &lt;远程主机名&gt;/&lt;远程分支名&gt;</li>
+<li>如果当前分支与远程分支存在追踪关系 git pull &lt;远程主机名&gt;</li>
+<li>如果当前分支只有一个追踪关系 git pull</li>
+<li>手动建立追踪关系 git branch –set-upstream master origin/next</li>
+<li>清理远程已删除本地还存在的分支 git fetch –prune origin 或者 git fetch -p 或者 git pull -p</li>
+</ol>
+<h2 id="如何上传GitHub"><a href="#如何上传GitHub" class="headerlink" title="如何上传GitHub"></a>如何上传GitHub</h2><ol>
+<li>在用户目录下 .ssh</li>
+<li>ssh-keygen -t rsa -C “<a href="mailto:1441765847@qq.com" target="_blank" rel="noopener">1441765847@qq.com</a>“ </li>
+<li>把 id_rsa.pub  添加到GitHub的ssh上</li>
+<li>git init  把当前目录变为仓库</li>
+<li>git add  把文件添加进仓库  git commit 把文件提交到仓库  </li>
+<li>git add –all 当我们在一个不是空目录下init需要把所有文件添加到仓库的时候使用</li>
+</ol>
+<h2 id="文件的标记解释："><a href="#文件的标记解释：" class="headerlink" title="文件的标记解释："></a>文件的标记解释：</h2><pre><code>A: 你本地新增的文件（服务器上没有）.
+
+C: 文件的一个新拷贝.
+
+D: 你本地删除的文件（服务器上还在）.
+
+M: 文件的内容或者mode被修改了.
+
+R: 文件名被修改了。
+
+T: 文件的类型被修改了。
+
+U: 文件没有被合并(你需要完成合并才能进行提交)。
+
+X: 未知状态(很可能是遇到git的bug了，你可以向git提交bug report)。
+</code></pre><p>git pull</p>
+<p>git pull origin master</p>
+<p>git pull origin master<br> –allow-unrelated-histories</p>
+<h2 id="git的hook-钩子"><a href="#git的hook-钩子" class="headerlink" title="git的hook(钩子)"></a>git的hook(钩子)</h2><p>为了防止一些不规范的代码 <code>commit</code> 并 <code>push</code> 到远端，我们可以在  <code>git</code> 命令执行前用一些钩子来检测并阻止。<br>在node中，安装需要的模块：<code>husky</code>, <code>pre-commit</code> 配置package.json在提交代码前执行自定义的脚本。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> .git/hooks</span><br><span class="line">ls -l</span><br></pre></td></tr></table></figure>
+<p>该目录提供了git的各个钩子的脚步案例。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-10-21T16:00:00.000Z" itemprop="dateUpdated">2018-10-22 00:00:00</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/learn_programing/2018/10/22/Git/git-command/" target="_blank" rel="external">http://www.liuzhidream.com/2018/10/22/Git/git-command/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.liuzhidream.com">
+            <img src="/learn_programing/img/me.jpg" alt="Liu Zhi">
+            Liu Zhi
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/note/">note</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/Git/git-command/&title=《git-command》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/Git/git-command/&title=《git-command》 — VanLiuZhi&source=Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。是一个开源的分布式版本控制系统，可以有效、..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/Git/git-command/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《git-command》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/Git/git-command/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/Git/git-command/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/learn_programing/2018/10/22/JavaScript/ECMAScript/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">ECMAScript</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: '',
+            repo: '',
+            oauth: {
+                client_id: '',
+                client_secret: '',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/learn_programing/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Liu Zhi &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/Git/git-command/&title=《git-command》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/Git/git-command/&title=《git-command》 — VanLiuZhi&source=Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。是一个开源的分布式版本控制系统，可以有效、..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/Git/git-command/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《git-command》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/Git/git-command/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/Git/git-command/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLUlEQVR42u3ay44CMQxEUf7/p4M0W5R0lW3QxL5ZjXroJgck40deL3mtv3X+7+c6v9K9t2DBgAHjWsY6rk/G7s2WsHSMvjcYMGDMYZyD7G7T52Dq3qu87/Y6DBgwYIQCogJQEkcYMGDAcAOukurpIVhPSWHAgAEjVnbqTbeq4ragFocBA8aFDHcw8Mu/vzjfgAEDxiWMFVq1z9STxe0TYMCA0ZpxLjVrzzZUHcuQNgQDBoxGjMzj8kE5nyBufzdgwIDRiBEbVVYdFHOLZ2O+AQMGjEYM5TCEO8h0D1LoA8vt3mDAgDGAoSeI3xg25DEwYMCYxjDCXKh5p6SYenCXanEYMGC0Y+RhOj42toQBA8ZMRqZBVhVeUwUzDBgwWjP0dnxsJBArVmOlLwwYMCYw3DFkbHqYSSiNIAsDBox2DHeL7oGMfNvO/h5gwIDRiOFuxS1ElSCrl8TbV8KAAaM1oyq9y4RmBaMkkTBgwOjNcDOuTIu/qqwNZr4wYMC4lqG0tKqSRfdeI3GEAQPGAEZBhJafFhsMPFyHAQNGa0bssIXSmDsXtO7HFMxtYcCAcTljmUspZWuvSEknDBgwWjP0FRs9xpLOqnEpDBgwOjHcIBtL+9yAbjfmYMCAMYCRGRi4BW0s6j+UvjBgwIBhZppuQ809Oib1CGHAgDGSUTUwcA9kSPU3DBgwBjBihaX+ceSHAQ9hFwYMGK0Z+cGAflxDP2yhDEqL5xswYMD4j4w3IZtgvhYlWN4AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/learn_programing/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/learn_programing/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/learn_programing/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

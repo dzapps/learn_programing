@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>http-protocol | VanLiuZhi | 有梦想的人不睡觉</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#00e1ff">
+    
+    
+    <meta name="keywords" content="note,http">
+    <meta name="description" content="超文本传输协议（HTTP，HyperText Transfer Protocol)是互联网上应用最为广泛的一种网络协议。所有的WWW文件都必须遵守这个标准。">
+<meta name="keywords" content="note,http">
+<meta property="og:type" content="article">
+<meta property="og:title" content="http-protocol">
+<meta property="og:url" content="http://www.liuzhidream.com/2018/10/22/Web/http-protocol/index.html">
+<meta property="og:site_name" content="VanLiuZhi">
+<meta property="og:description" content="超文本传输协议（HTTP，HyperText Transfer Protocol)是互联网上应用最为广泛的一种网络协议。所有的WWW文件都必须遵守这个标准。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-21T16:00:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="http-protocol">
+<meta name="twitter:description" content="超文本传输协议（HTTP，HyperText Transfer Protocol)是互联网上应用最为广泛的一种网络协议。所有的WWW文件都必须遵守这个标准。">
+    
+        <link rel="alternate" type="application/atom+xml" title="VanLiuZhi" href="/learn_programing/atom.xml">
+    
+    <link rel="shortcut icon" href="/learn_programing/favicon.ico">
+    <link rel="stylesheet" href="/learn_programing/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/learn_programing/img/brand.jpg)">
+      <div class="brand">
+        <a href="/learn_programing/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/learn_programing/img/me.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Liu Zhi</h5>
+          <a href="mailto:vanliuzhi@qq.com" title="vanliuzhi@qq.com" class="mail">vanliuzhi@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/tags/note">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/categories/python">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/VanLiuZhi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/custom">
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">http-protocol</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">http-protocol</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018-10-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/web/">web</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#HTTP-协议"><span class="post-toc-number">1.</span> <span class="post-toc-text">HTTP 协议</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#http-action"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">http action</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三次握手，四次挥手"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">三次握手，四次挥手</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#状态码"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">状态码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#get-和-post"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">get 和 post</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Web/http-protocol" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">http-protocol</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-22 00:00:00" datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished">2018-10-22</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/web/">web</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>超文本传输协议（HTTP，HyperText Transfer Protocol)是互联网上应用最为广泛的一种网络协议。所有的WWW文件都必须遵守这个标准。</p>
+<a id="more"></a>
+<h1 id="HTTP-协议"><a href="#HTTP-协议" class="headerlink" title="HTTP 协议"></a>HTTP 协议</h1><p>超文本传输协议（HTTP，HyperText Transfer Protocol)是互联网上应用最为广泛的一种网络协议。所有的WWW文件都必须遵守这个标准。</p>
+<h2 id="http-action"><a href="#http-action" class="headerlink" title="http action"></a>http action</h2><p>HTTP协议中GET、POST和HEAD的介绍  2008-05-10 14:15 </p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:center">Description                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td style="text-align:center">请求指定的页面信息，并返回实体主体。 </td>
+</tr>
+<tr>
+<td>HEAD</td>
+<td style="text-align:center">只请求页面的首部。 </td>
+</tr>
+<tr>
+<td>POST</td>
+<td style="text-align:center">请求服务器接受所指定的文档作为对所标识的URI的新的从属实体。 </td>
+</tr>
+<tr>
+<td>PUT</td>
+<td style="text-align:center">从客户端向服务器传送的数据取代指定的文档的内容。 </td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td style="text-align:center">请求服务器删除指定的页面。 </td>
+</tr>
+<tr>
+<td>OPTIONS</td>
+<td style="text-align:center">允许客户端查看服务器的性能。 </td>
+</tr>
+<tr>
+<td>TRACE</td>
+<td style="text-align:center">请求服务器在响应中的实体主体部分返回所得到的内容。 </td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td style="text-align:center">实体中包含一个表，表中说明与该URI所表示的原内容的区别。 </td>
+</tr>
+<tr>
+<td>MOVE</td>
+<td style="text-align:center">请求服务器将指定的页面移至另一个网络地址。 </td>
+</tr>
+<tr>
+<td>COPY</td>
+<td style="text-align:center">请求服务器将指定的页面拷贝至另一个网络地址。 </td>
+</tr>
+<tr>
+<td>LINK</td>
+<td style="text-align:center">请求服务器建立链接关系。 </td>
+</tr>
+<tr>
+<td>UNLINK</td>
+<td style="text-align:center">断开链接关系。 </td>
+</tr>
+<tr>
+<td>WRAPPED</td>
+<td style="text-align:center">允许客户端发送经过封装的请求。 </td>
+</tr>
+<tr>
+<td>Extension-mothed</td>
+<td style="text-align:center">在不改动协议的前提下，可增加另外的方法。 </td>
+</tr>
+</tbody>
+</table>
+<h2 id="三次握手，四次挥手"><a href="#三次握手，四次挥手" class="headerlink" title="三次握手，四次挥手"></a>三次握手，四次挥手</h2><p>三次握手：A向B发起连接，B收到，回一个给A，A也收到，连接确定</p>
+<ol>
+<li>第一次握手：建立连接时，客户端发送syn包（syn=j）到服务器，并进入SYN_SENT状态，等待服务器确认；SYN：同步序列编号（Synchronize Sequence Numbers）。</li>
+<li>第二次握手：服务器收到syn包，必须确认客户的SYN（ack=j+1），同时自己也发送一个SYN包（syn=k），即SYN+ACK包，此时服务器进入SYN_RECV状态；</li>
+<li>第三次握手：客户端收到服务器的SYN+ACK包，向服务器发送确认包ACK(ack=k+1），此包发送完毕，客户端和服务器进入ESTABLISHED（TCP连接成功）状态，完成三次握手。</li>
+</ol>
+<p>完成三次握手，客户端与服务器开始传送数据。</p>
+<p>建立连接是三次握手，释放连接是四次挥手（关闭连接）</p>
+<ol>
+<li>第一步，当主机A的应用程序通知TCP数据已经发送完毕时，TCP向主机B发送一个带有FIN附加标记的报文段（FIN表示英文finish）。</li>
+<li>第二步，主机B收到这个FIN报文段之后，并不立即用FIN报文段回复主机A，而是先向主机A发送一个确认序号ACK，同时通知自己相应的应用程序：对方要求关闭连接（先发送ACK的目的是为了防止在这段时间内，对方重传FIN报文段）。</li>
+<li>第三步，主机B的应用程序告诉TCP：我要彻底的关闭连接，TCP向主机A送一个FIN报文段。</li>
+<li>第四步，主机A收到这个FIN报文段后，向主机B发送一个ACK表示连接彻底释放。</li>
+</ol>
+<h2 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h2><table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:center">Description                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2xx</td>
+<td style="text-align:center">成功 </td>
+</tr>
+<tr>
+<td>3xx</td>
+<td style="text-align:center">重定向 </td>
+</tr>
+<tr>
+<td>4xx</td>
+<td style="text-align:center">客户端问题</td>
+</tr>
+<tr>
+<td>5xx</td>
+<td style="text-align:center">服务端问题</td>
+</tr>
+</tbody>
+</table>
+<h2 id="get-和-post"><a href="#get-和-post" class="headerlink" title="get 和 post"></a>get 和 post</h2><ol>
+<li>get是从服务器上获取数据，post是向服务器传送数据。</li>
+<li>get是把参数数据队列加到提交表单的ACTION属性所指的URL中，值和表单内各个字段一一对应，在URL中可以看到。post是通过HTTP post机制，将表单内各个字段与其内容放置在HTML HEADER内一起传送到ACTION属性所指的URL地址。用户看不到这个过程。</li>
+<li>对于get方式，服务器端用Request.QueryString获取变量的值，对于post方式，服务器端用Request.Form获取提交的数据。</li>
+<li>get传送的数据量较小，不能大于2KB。post传送的数据量较大，一般被默认为不受限制。但理论上，IIS4中最大量为80KB，IIS5中为100KB。</li>
+<li>get安全性非常低，post安全性较高。但是执行效率却比Post方法好。 </li>
+</ol>
+<p>建议：<br>1、get方式的安全性较Post方式要差些，包含机密信息的话，建议用Post数据提交方式；<br>2、在做数据查询时，建议用Get方式；而在做数据添加、修改或删除时，建议用Post方式；</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-10-21T16:00:00.000Z" itemprop="dateUpdated">2018-10-22 00:00:00</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/learn_programing/2018/10/22/Web/http-protocol/" target="_blank" rel="external">http://www.liuzhidream.com/2018/10/22/Web/http-protocol/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.liuzhidream.com">
+            <img src="/learn_programing/img/me.jpg" alt="Liu Zhi">
+            Liu Zhi
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/http/">http</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/note/">note</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/Web/http-protocol/&title=《http-protocol》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/Web/http-protocol/&title=《http-protocol》 — VanLiuZhi&source=超文本传输协议（HTTP，HyperText Transfer Protocol)是互联网上应用最为广泛的一种网络协议。所有的WWW文件都必须遵守这个标准。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/Web/http-protocol/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《http-protocol》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/Web/http-protocol/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/Web/http-protocol/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/learn_programing/2018/10/22/Web/RabbitMQ/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">RabbitMQ</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/learn_programing/2018/10/22/Web/other/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">web相关</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: '',
+            repo: '',
+            oauth: {
+                client_id: '',
+                client_secret: '',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/learn_programing/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Liu Zhi &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/Web/http-protocol/&title=《http-protocol》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/Web/http-protocol/&title=《http-protocol》 — VanLiuZhi&source=超文本传输协议（HTTP，HyperText Transfer Protocol)是互联网上应用最为广泛的一种网络协议。所有的WWW文件都必须遵守这个标准。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/Web/http-protocol/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《http-protocol》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/Web/http-protocol/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/Web/http-protocol/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3awXLDIAxFUf//T7vbzLjF90mkM8BllWlcw2GhIInrwuP+GJ9/eX5+Pv/8ls8yeciQIWNZxj0c42f+Yox5ZA18bTJkyDiHMV5EGjRrG8TnlSFDhozx69KwS0I2IcmQIUNGyhjz0jAtQ4YMGYTB01SSiKalNx7cJ+TiMmTIWJBRS03/5/NX+hsyZMhYinGHgxf000bm3RgyZMjYm8EDXCu9bF/dQMdQGTJkbM0gKSi/EvEyDT6AFt8jQ4aM7Rg88JEn+TNpke7lbTJkyDiAkR4B+X+lFyzIXL98K0OGjGMYfLmdE1raKCUbJEOGjBMY/PJEv0xWe/9LKitDhoytGWmxjBzseKDkR0b0AyBDhoytGbXSPGkhkKBMgj4v3smQIeMcRnpYTJfLL4rxwpwMGTL2ZtSCWlp6+/ZVMxkyZJzASENt2oZMW5Xx1Q0ZMmRszSDBrl9o43PxkH3x2CxDhozFGSQI8oJ+utDatsqQIUNGGohnpcHphsqQIUNG+rq55f44ZMuQIeMABn91p21ZOyyiLZMhQ8YBDF4gqxXaguunpaqaDBkydmXc4ai1LdNlxZsiQ4aMrRkTojUOoLUGZ62QJ0OGjP0Ysy5M9C+NtVoOMmTIOICRFsL4NOkSW7m4DBkyZHROl7idWSzPyZAhQwZg8KsYaahFRUAZMmQcwCBJbK09yVNiku5OyMVlyJCxIKN2jCMBmlzRSNuTrUamDBky1mP8AJi2dHLvrgwzAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/learn_programing/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/learn_programing/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/learn_programing/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

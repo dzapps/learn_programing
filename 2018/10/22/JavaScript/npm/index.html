@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>npm | VanLiuZhi | 有梦想的人不睡觉</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#00e1ff">
+    
+    
+    <meta name="keywords" content="Nodejs">
+    <meta name="description" content="npm是node的包管理工具，不建议使用任何第三方的工具，也不建议换源，这些操作解决一时问题也带来其它问题。关于网络问题，是在不行用手机热点，如果你们公司的网络都下不了，那公司不用待了。第三方工具也是，开始npm确实比不上第三方工具，不过现在渐渐好多了，官方也意识到这些问题了。">
+<meta name="keywords" content="Nodejs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="npm">
+<meta property="og:url" content="http://www.liuzhidream.com/2018/10/22/JavaScript/npm/index.html">
+<meta property="og:site_name" content="VanLiuZhi">
+<meta property="og:description" content="npm是node的包管理工具，不建议使用任何第三方的工具，也不建议换源，这些操作解决一时问题也带来其它问题。关于网络问题，是在不行用手机热点，如果你们公司的网络都下不了，那公司不用待了。第三方工具也是，开始npm确实比不上第三方工具，不过现在渐渐好多了，官方也意识到这些问题了。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-21T16:00:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="npm">
+<meta name="twitter:description" content="npm是node的包管理工具，不建议使用任何第三方的工具，也不建议换源，这些操作解决一时问题也带来其它问题。关于网络问题，是在不行用手机热点，如果你们公司的网络都下不了，那公司不用待了。第三方工具也是，开始npm确实比不上第三方工具，不过现在渐渐好多了，官方也意识到这些问题了。">
+    
+        <link rel="alternate" type="application/atom+xml" title="VanLiuZhi" href="/learn_programing/atom.xml">
+    
+    <link rel="shortcut icon" href="/learn_programing/favicon.ico">
+    <link rel="stylesheet" href="/learn_programing/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/learn_programing/img/brand.jpg)">
+      <div class="brand">
+        <a href="/learn_programing/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/learn_programing/img/me.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Liu Zhi</h5>
+          <a href="mailto:vanliuzhi@qq.com" title="vanliuzhi@qq.com" class="mail">vanliuzhi@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/tags/note">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/categories/python">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/VanLiuZhi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/custom">
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">npm</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">npm</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018-10-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/Nodejs/">Nodejs</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#npm"><span class="post-toc-number">1.</span> <span class="post-toc-text">npm</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#全局和局部"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">全局和局部</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#命令"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">命令</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-JavaScript/npm" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">npm</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-22 00:00:00" datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished">2018-10-22</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/Nodejs/">Nodejs</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>npm是node的包管理工具，不建议使用任何第三方的工具，也不建议换源，这些操作解决一时问题也带来其它问题。关于网络问题，是在不行用手机热点，如果你们公司的网络都下不了，那公司不用待了。第三方工具也是，开始npm确实比不上第三方工具，不过现在渐渐好多了，官方也意识到这些问题了。</p>
+<a id="more"></a>
+<h1 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h1><p>npm是node的包管理工具，不建议使用任何第三方的工具，也不建议换源，这些操作解决一时问题也带来其它问题。关于网络问题，实在不行用手机热点，如果你们公司的网络都下不了，那公司不用待了。第三方工具也是，开始npm确实比不上第三方工具，不过现在渐渐好多了，官方也意识到这些问题了。</p>
+<h2 id="全局和局部"><a href="#全局和局部" class="headerlink" title="全局和局部"></a>全局和局部</h2><p>一般在全局安装的是工具，比如webpack，这样这些工具在构建项目或者执行项目的命令的时候由于是全局任何地方都能使用，而局部就是装模块的，这些模块可能因为依赖关系，你最好不要在全局装模块，如果你的项目引用全局模块，多个项目的时候，可能依赖不一样，这样你去更新全局模块的时候就可能由于依赖的问题影响其它项目了。</p>
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><table>
+<thead>
+<tr>
+<th>Command</th>
+<th style="text-align:center">Description                     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>npm list -g –depth 0</td>
+<td style="text-align:center">查看全局安装包 </td>
+</tr>
+<tr>
+<td>npm install packagename -g</td>
+<td style="text-align:center">全局安装</td>
+</tr>
+<tr>
+<td>npm uninstall package -g</td>
+<td style="text-align:center">全局卸载</td>
+</tr>
+<tr>
+<td>npm install pg –save</td>
+<td style="text-align:center">项目依赖安装</td>
+</tr>
+<tr>
+<td>npm install pg –save-dev</td>
+<td style="text-align:center">项目非依赖安装</td>
+</tr>
+<tr>
+<td>npm view jquery versions</td>
+<td style="text-align:center">查看模块版本号，这里举例的是jQuery</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-10-21T16:00:00.000Z" itemprop="dateUpdated">2018-10-22 00:00:00</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/learn_programing/2018/10/22/JavaScript/npm/" target="_blank" rel="external">http://www.liuzhidream.com/2018/10/22/JavaScript/npm/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.liuzhidream.com">
+            <img src="/learn_programing/img/me.jpg" alt="Liu Zhi">
+            Liu Zhi
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/Nodejs/">Nodejs</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/JavaScript/npm/&title=《npm》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/JavaScript/npm/&title=《npm》 — VanLiuZhi&source=npm是node的包管理工具，不建议使用任何第三方的工具，也不建议换源，这些操作解决一时问题也带来其它问题。关于网络问题，是在不行用手机热点，如果你们公司..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/JavaScript/npm/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《npm》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/JavaScript/npm/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/JavaScript/npm/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/learn_programing/2018/10/22/Web/Nginx/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Nginx</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/learn_programing/2018/10/22/Web/RESTFulAPI/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">RESTFulAPI</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: '',
+            repo: '',
+            oauth: {
+                client_id: '',
+                client_secret: '',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/learn_programing/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Liu Zhi &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/JavaScript/npm/&title=《npm》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/JavaScript/npm/&title=《npm》 — VanLiuZhi&source=npm是node的包管理工具，不建议使用任何第三方的工具，也不建议换源，这些操作解决一时问题也带来其它问题。关于网络问题，是在不行用手机热点，如果你们公司..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/JavaScript/npm/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《npm》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/JavaScript/npm/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/JavaScript/npm/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMUlEQVR42u3aQY6EMAwF0b7/pXu2LY2A+nZYJC5WLcQQXhYex/bng6/vv+v3/tXv3zvpKp83LhkyZGzL+N5efAGCvLpD1r16RoYMGXMYV591/8z9e2obRNaVIUOGjNrr+CdeBc17kgwZMmRwRi1x7LxZhgwZMngCV6t0PRw+QTlv8VlchgwZGzL6IfK936/0N2TIkLEVoxYoayUzHijjr5IhQ8bRjLToz0cu+s3OeCxDhgwZhzI6w17ph/KWZzwoJkOGjDGM9LRYO/qmbUsU1mXIkHE0g4RU0iRIxylqof8hZMuQIeNQRm3Qgad6nTZkkJ7KkCFjGKMfdotRH7QcLt8mQ4aMAYza+BcvmaWNyXgtGTJkDGCQY+R9yCOf3g/KD1VDGTJkDGDUWon8aNop4T1sqAwZMgYzSHGfBOhaSCUBXYYMGRMYxUdBWKyxeTvzcoNkyJBxHIP/AU/X0oNrvN+1SQ0ZMmRsy0hh/GCZbtDiNFGGDBnHMXi4JK9OS3UkvAa5rQwZMgYweDhOm5edIyvaMhkyZAxgvBFAeTBNx9FkyJAxk8FTt05rMz2yLvi/IUOGjM0Z3/DqD2rwdDMo1cmQIeNoxqqeYJoC1gbFFjQ4ZciQsS2DD0zEWSdoQC6bbpMhQ8YARr8xSZbkqWdaepMhQ4YMfojlz3SGxoLFZMiQMZ7BQ2datovXkiFDxgAGH2OtFcU6wXfxWVyGDBkbMtIRh04pn7cQ+qU9GTJkHMH4A80ZS6lU0xg3AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/learn_programing/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/learn_programing/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/learn_programing/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

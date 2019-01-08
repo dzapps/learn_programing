@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>JavaScript | VanLiuZhi | 有梦想的人不睡觉</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#00e1ff">
+    
+    
+    <meta name="keywords" content="note,javascript">
+    <meta name="description" content="javascript学习笔记">
+<meta name="keywords" content="note,javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript">
+<meta property="og:url" content="http://www.liuzhidream.com/2018/10/22/JavaScript/javascript/index.html">
+<meta property="og:site_name" content="VanLiuZhi">
+<meta property="og:description" content="javascript学习笔记">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://www.liuzhidream.com/images/JavaScript/keyword.png">
+<meta property="og:updated_time" content="2018-10-21T16:00:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript">
+<meta name="twitter:description" content="javascript学习笔记">
+<meta name="twitter:image" content="http://www.liuzhidream.com/images/JavaScript/keyword.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="VanLiuZhi" href="/learn_programing/atom.xml">
+    
+    <link rel="shortcut icon" href="/learn_programing/favicon.ico">
+    <link rel="stylesheet" href="/learn_programing/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/learn_programing/img/brand.jpg)">
+      <div class="brand">
+        <a href="/learn_programing/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/learn_programing/img/me.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Liu Zhi</h5>
+          <a href="mailto:vanliuzhi@qq.com" title="vanliuzhi@qq.com" class="mail">vanliuzhi@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/tags/note">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/categories/python">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/VanLiuZhi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/custom">
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">JavaScript</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">JavaScript</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018-10-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/javascript/">javascript</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#JavaScript-笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text">JavaScript 笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DOM对象"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">DOM对象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Json-方法"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Json 方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#取得url中get请求的参数"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">取得url中get请求的参数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ready-和-onload事件"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">ready 和 onload事件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关键字"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">关键字</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#BOM-amp-DOM"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">BOM &amp; DOM</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#字面量，变量"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">字面量，变量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#异常"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">异常</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#快速测试一段代码的执行时间"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">快速测试一段代码的执行时间</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#对象总结"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">对象总结</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#virtual-DOM"><span class="post-toc-number">1.12.</span> <span class="post-toc-text">virtual DOM</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#indexOf"><span class="post-toc-number">1.13.</span> <span class="post-toc-text">indexOf</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#格式化字符串"><span class="post-toc-number">1.14.</span> <span class="post-toc-text">格式化字符串</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bject-keys-obj"><span class="post-toc-number">1.15.</span> <span class="post-toc-text">bject.keys(obj)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#length"><span class="post-toc-number">1.16.</span> <span class="post-toc-text">length</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#includes"><span class="post-toc-number">1.17.</span> <span class="post-toc-text">includes</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#this"><span class="post-toc-number">1.18.</span> <span class="post-toc-text">this</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#typeof-cb-“function”-amp-amp-cb"><span class="post-toc-number">1.19.</span> <span class="post-toc-text">typeof cb == “function” &amp;&amp; cb()</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-JavaScript/javascript" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">JavaScript</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-22 00:00:00" datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished">2018-10-22</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/javascript/">javascript</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>javascript学习笔记</p>
+<a id="more"></a>
+<h1 id="JavaScript-笔记"><a href="#JavaScript-笔记" class="headerlink" title="JavaScript 笔记"></a>JavaScript 笔记</h1><p>javascript学习笔记</p>
+<h2 id="DOM对象"><a href="#DOM对象" class="headerlink" title="DOM对象"></a>DOM对象</h2><p>DOM对象，即是我们用传统的方法(javascript)获得的对象，jQuery对象即是用jQuery类库的选择器获得的对象;<br>复制代码 代码如下:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> domObj = <span class="built_in">document</span>.getElementById(<span class="string">"id"</span>); <span class="comment">//DOM对象</span></span><br><span class="line"><span class="keyword">var</span> $obj = $(<span class="string">"#id"</span>); <span class="comment">//jQuery对象;</span></span><br></pre></td></tr></table></figure>
+<p>jQuery对象就是通过jQuery包装DOM对象后产生的对象，它是jQuery独有的。如果一个对象是jQuery对象，那么就可以使用jQuery里的方法，例:</p>
+<p>$(“#foo”).html(); //获取id为foo的元素内的html代码，html()是jQuery特有的方法;</p>
+<p>上面的那段代码等同于:</p>
+<p>document.getElementById(“foo”).innerHTML;<br>$(“#foo”).innerHTML  是错误的</p>
+<p>可以将jquery 和 dom  对象互相转换，这样dom对象就可以使用jquery的方法了，jquery对象亦如此。</p>
+<h2 id="Json-方法"><a href="#Json-方法" class="headerlink" title="Json 方法"></a>Json 方法</h2><p>JSON.stringify(a) stringify()用于从一个对象解析出字符串</p>
+<p>JSON.parse(str)  parse用于从一个字符串中解析出json对象</p>
+<h2 id="取得url中get请求的参数"><a href="#取得url中get请求的参数" class="headerlink" title="取得url中get请求的参数"></a>取得url中get请求的参数</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUrlParam</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"(^|&amp;)"</span> + name + <span class="string">"=([^&amp;]*)(&amp;|$)"</span>);</span><br><span class="line">	<span class="keyword">var</span> r = <span class="built_in">window</span>.location.search.substr(<span class="number">1</span>).match(reg);  </span><br><span class="line">	<span class="keyword">if</span> (r != <span class="literal">null</span>) <span class="keyword">return</span> <span class="built_in">decodeURI</span>(r[<span class="number">2</span>]); <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="ready-和-onload事件"><a href="#ready-和-onload事件" class="headerlink" title="ready 和 onload事件"></a>ready 和 onload事件</h2><p>页面加载完成有两种事件，一是ready，表示文档结构已经加载完成（不包含图片等非文字媒体文件），二是onload，指示页 面包含图片等文件在内的所有元素都加载完成。(可以说：ready 在onload 前加载！！！) 一般样式控制的，比如图片大小控制放在onload 里面加载。 </p>
+<h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><p>JavaScript 关键字必须以字母、下划线（_）或美元符（$）开始。</p>
+<p>后续的字符可以是字母、数字、下划线或美元符（数字是不允许作为首字符出现的，以便 JavaScript 可以轻易区分开关键字和数字）。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/JavaScript/keyword.png" alt="image" title="">
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+<h2 id="BOM-amp-DOM"><a href="#BOM-amp-DOM" class="headerlink" title="BOM &amp; DOM"></a>BOM &amp; DOM</h2><ul>
+<li>BOM是浏览器对象模型，用来获取或设置浏览器的属性、行为，例如：新建窗口、获取屏幕分辨率、浏览器版本号等。</li>
+<li>DOM是文档对象模型，用来获取或设置文档中标签的属性，例如获取或者设置input表单的value值。</li>
+<li>BOM的内容不多，主要还是DOM。</li>
+</ul>
+<h2 id="字面量，变量"><a href="#字面量，变量" class="headerlink" title="字面量，变量"></a>字面量，变量</h2><p>有时候会遇到字面量的概念，它和变量对应，字面量就是固定值的表示法。</p>
+<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p>js也有异常，不过很少见人使用。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>菜鸟教程(runoob.com)<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">try</span> &#123;</span></span><br><span class="line"><span class="javascript">		<span class="comment">//错误判断</span></span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> x = <span class="built_in">document</span>.getElementById(<span class="string">"demo"</span>).value;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">if</span> (x == <span class="string">""</span>) <span class="keyword">throw</span> <span class="string">"值为空"</span>;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">if</span> (<span class="built_in">isNaN</span>(x)) <span class="keyword">throw</span> <span class="string">"不是数字"</span>;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">if</span> (x &gt; <span class="number">10</span>) <span class="keyword">throw</span> <span class="string">"太大"</span>;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">if</span> (x &lt; <span class="number">5</span>) <span class="keyword">throw</span> <span class="string">"太小"</span>;</span></span><br><span class="line"><span class="javascript">	&#125; <span class="keyword">catch</span> (err) &#123;</span></span><br><span class="line"><span class="javascript">		<span class="comment">//发生错误时在此执行，err为自定义错误 throw 对应的值，</span></span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> y = <span class="built_in">document</span>.getElementById(<span class="string">"mess"</span>);</span></span><br><span class="line"><span class="javascript">		y.innerHTML = <span class="string">"错误："</span> + err + <span class="string">"。"</span>;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span>&gt;</span>我的第一个 JavaScript<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>请输出一个 5 到 10 之间的数字:<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"demo"</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"myFunction()"</span>&gt;</span>测试输入<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"mess"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>函数的定义方式大体有以下两种，浏览器对于不同的方式有不同的解析顺序。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//“定义式”函数定义</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">alert(<span class="string">"Hello World!"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//“赋值式”函数定义</span></span><br><span class="line"><span class="keyword">var</span> Fn2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">alert(<span class="string">"Hello wild!"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="快速测试一段代码的执行时间"><a href="#快速测试一段代码的执行时间" class="headerlink" title="快速测试一段代码的执行时间"></a>快速测试一段代码的执行时间</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.time(<span class="string">'test'</span>)</span><br><span class="line"><span class="comment">/* 这里运行待测代码 */</span></span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'test'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="对象总结"><a href="#对象总结" class="headerlink" title="对象总结"></a>对象总结</h2><p>对象</p>
+<ol>
+<li>javascript 对象</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JS Array     JS Boolean   JS Date  </span><br><span class="line">JS Number    JS String    JS RegExp </span><br><span class="line">JS Functions JS Events    JS Math</span><br></pre></td></tr></table></figure>
+<p>其它对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Browser  Window  Navigator </span><br><span class="line">Screen   History Location</span><br></pre></td></tr></table></figure>
+<p>Window 对象表示一个浏览器窗口或一个框架。在客户端 JavaScript 中，Window 对象是全局对象，所有的表达式都在当前的环境中计算。也就是说，要引用当前窗口根本不需要特殊的语法，可以把那个窗口的属性作为全局变量来使用。</p>
+<ol start="2">
+<li>HTML DOM 对象</li>
+</ol>
+<ul>
+<li>每个载入浏览器的 HTML 文档都会成为 Document 对象。</li>
+<li>Document 对象使我们可以从脚本中对 HTML 页面中的所有元素进行访问。</li>
+</ul>
+<p>Element 节点，文本节点，元素节点等。</p>
+<p>Attribute 属性； Event 事件； HTML 对象；</p>
+<p>标签即是HTML对象，标签和元素的区别，属性的定义：</p>
+<pre><code>比如&lt;p&gt;这就是一个标签； 
+&lt;p&gt;这里是内容&lt;/p&gt;这就是一个元素，
+也就是说元素由一个开始的标签和结束的标签组成，用来包含某些内容。
+</code></pre><p>属性：</p>
+<p>为HTML元素提供各种附加信息的就是HTML属性，它总是以”属性名=属性值”这种名值对的形式出现，而且属性总是在HTML元素的开始标签中进行定义。</p>
+<p>节点的作用：</p>
+<p>在有了标签，元素，属性后，引申出节点的概念，标签的元素中可能会有更多的元素，将多个或一个元素看作节点，节点就是为了去操作元素的。</p>
+<h2 id="virtual-DOM"><a href="#virtual-DOM" class="headerlink" title="virtual DOM"></a>virtual DOM</h2><p>一些理解：</p>
+<p>虚拟DOM，是一个模拟DOM数的js对象。 就是当我们需要更改DOM的时候，如果用原始方法比较慢，这在多节点的页面中体现就更明显了，原因是dom设计的复杂，所以我们用一个虚拟的DOM，虚拟的DOM记录了要更改的DOM，它通常不是立刻执行的，等到需要的时候，计算最小的执行，把执行更新到DOM上。这里为什么会有最小的DOM执行，是应为不是所有的地方都需要变更。</p>
+<p>总结：virtual DOM 通过计算最小的DOM执行，能更快的渲染DOM。</p>
+<p>别人的讲解：</p>
+<ul>
+<li>Virtual DOM 是一个模拟 DOM 树的 JavaScript 对象。 React 使用 Virtual DOM 来渲染 UI，当组件状态 state 有更改的时候，React 会自动调用组件的 render 方法重新渲染整个组件的 UI。</li>
+<li>React 主要的目标是提供一套不同的, 高效的方案来更新 DOM.不是通过直接把 DOM 变成可变的数据, 而是通过构建 “Virtual DOM”, 虚拟的 DOM, 随后 React 处- 理真实的 DOM 上的更新来进行模拟相应的更新。</li>
+</ul>
+<p>引入额外的一个层怎么就更快了呢?</p>
+<ul>
+<li>那不是意味着浏览器的 DOM 操作不是最优的, 如果在上边加上一层能让整体变快的话?是有这个意思, 只不过 virtual DOM 在语义上和真实的 DOM 有所差别.最主要的是, virtual DOM 的操作, 不保证马上就会产生真实的效果.这样就使得 React 能够等到事件循环的结尾, 而在之前完全不用操作真实的 DOM。在这基础上, React 计算出几乎最小的 diff, 以最小的步骤将 diff 作用到真实的 DOM 上。批量处理 DOM 操作和作用最少的 diff 是应用自身都能做到的.任何应用做了这个, 都能变得跟 React 一样地高效。但人工处理出来非常繁琐, 而且容易出错. React 可以替你做到。</li>
+<li>前面提到 virtual DOM 和真实的 DOM 有着不用的语义, 但同时也有明显不同的 API。</li>
+<li>DOM 树上的节点被称为元素, 而 virtual DOM 是完全不同的抽象, 叫做 components。</li>
+<li>component 的使用在 React 里极为重要, 因为 components 的存在让计算 DOM diff 更高效。</li>
+</ul>
+<p>简单的说就是：</p>
+<p>当然如果真的这样大面积的操作 DOM，性能会是一个很大的问题，所以 React 实现了一个虚拟 DOM，组件 DOM 结构就是映射到这个虚拟 DOM 上，React 在这个虚拟 DOM 上实现了一个 diff 算法，当要更新组件的时候，会通过 diff 寻找到要变更的 DOM 节点，再把这个修改更新到浏览器实际的 DOM 节点上，所以实际上不是真的渲染整个 DOM 树。这个虚拟 DOM 是一个纯粹的 JS 数据结构，所以性能会比原生 DOM 快很多。</p>
+<p>React的核心机制之一就是可以在内存中创建虚拟的DOM元素。React利用虚拟DOM来减少对实际DOM的操作从而提升性能。 </p>
+<h2 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf"></a>indexOf</h2><p>数组过滤。indexOf作用是返回字符串第一次出现在给定字符串的index，可以用来处理某个字符串有没有在给定字符串中。  给定 <code>str.indexOf(某个字符串) = 0</code> 说明第一个就匹配到，这个给定字符串。如果是空格分隔的，如几个单词，那么结果就不一定是0了，因为会在后面的位置。记住是给定来调用这个方法就行了</p>
+<p>补充：</p>
+<p>js array indexOf 参数是对象的时候，不一定能返回对应位置的index(有的时候可以，我查了资料，有人是这么说的：让数组去判断<code>一个新创建的对象</code>，所以会得到 -1。我在vue中，把循环出来的元素做为参数去在原数组中判断，是可以的，不是循环出来的对象，虽然对象和数组元素字面看起来一摸一样，但是不行，猜测这和底层有关) 所以这个东西的使用，要很小心<br>推荐使用 <code>Array.findIndex()</code></p>
+<p>findIndex()方法返回数组中满足提供的测试函数的第一个元素的索引。否则返回-1。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> array1 = [<span class="number">5</span>, <span class="number">12</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findFirstLargeNumber</span>(<span class="params">element</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> element &gt; <span class="number">13</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(array1.findIndex(findFirstLargeNumber));</span><br><span class="line"><span class="comment">// expected output: 3</span></span><br></pre></td></tr></table></figure>
+<p>find() 方法返回数组中满足提供的测试函数的第一个元素的值。否则返回 undefined。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> array1 = [<span class="number">5</span>, <span class="number">12</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> found = array1.find(<span class="function"><span class="keyword">function</span>(<span class="params">element</span>) </span>&#123;</span><br><span class="line"><span class="keyword">return</span> element &gt; <span class="number">10</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(found);</span><br><span class="line"><span class="comment">// expected output: 12</span></span><br></pre></td></tr></table></figure>
+<p>通过find，findIndex可以完成很多的事情，少用通过各种方法获取索引，然后再去 <code>array[index]</code>。find就可以了</p>
+<p>更详细的使用查看文档。<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/find" target="_blank" rel="noopener">文档地址</a></p>
+<p>我发现这个从列表中给出来的数据，你不段的引用，其中一个引用改了，也会影响到原数组。</p>
+<h2 id="格式化字符串"><a href="#格式化字符串" class="headerlink" title="格式化字符串"></a>格式化字符串</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`a<span class="subst">$&#123;<span class="keyword">var</span>&#125;</span>`</span></span><br></pre></td></tr></table></figure>
+<p>如果var是1，result 为 a1。注意两边的符号为tab键上面的</p>
+<h2 id="bject-keys-obj"><a href="#bject-keys-obj" class="headerlink" title="bject.keys(obj)"></a>bject.keys(obj)</h2><p>返回值: 一个表示给定对象的所有可枚举属性的字符串数组</p>
+<ol>
+<li><p>传入字符串，返回索引</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(arr)); <span class="comment">// console: ['0', '1', '2']</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>传入对象，返回属性名</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">a</span>: <span class="string">'alive'</span>, <span class="attr">b</span>: <span class="string">'bike'</span>, <span class="attr">c</span>: <span class="string">'color'</span> &#125;;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(obj)); <span class="comment">// console: ['a', 'b', 'c']</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="length"><a href="#length" class="headerlink" title="length"></a>length</h2><p>只对字符串和数组有用，整形数字和对象返回未定义undefined</p>
+<h2 id="includes"><a href="#includes" class="headerlink" title="includes"></a>includes</h2><p>数组调用，监测数组是否包含给定的元素 <code>array.include(0)</code> 返回boolean</p>
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>箭头函数与普通函数中的this指向不一样，前者基于定义时的上下文环境，后者则只是基于调用者。</p>
+<h2 id="typeof-cb-“function”-amp-amp-cb"><a href="#typeof-cb-“function”-amp-amp-cb" class="headerlink" title="typeof cb == “function” &amp;&amp; cb()"></a>typeof cb == “function” &amp;&amp; cb()</h2><p>强大的js总有一些没见过的用法</p>
+<p><code>function delay(time, cb) { typeof cb == &quot;function&quot; &amp;&amp; cb(time) }</code></p>
+<p><code>cb&amp;&amp;cb(value)</code> 的意思是：</p>
+<ul>
+<li>如果cb为真（有值），那么执行cb(value)；</li>
+<li>如果cb为假，&amp;&amp;短路，那么不执行cb(value)。</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-10-21T16:00:00.000Z" itemprop="dateUpdated">2018-10-22 00:00:00</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/learn_programing/2018/10/22/JavaScript/javascript/" target="_blank" rel="external">http://www.liuzhidream.com/2018/10/22/JavaScript/javascript/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.liuzhidream.com">
+            <img src="/learn_programing/img/me.jpg" alt="Liu Zhi">
+            Liu Zhi
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/note/">note</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/JavaScript/javascript/&title=《JavaScript》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/JavaScript/javascript/&title=《JavaScript》 — VanLiuZhi&source=javascript学习笔记" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/JavaScript/javascript/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JavaScript》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/JavaScript/javascript/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/JavaScript/javascript/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/learn_programing/2018/10/22/JavaScript/Vue/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Vue</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/learn_programing/2018/10/22/Web/ssl-credential/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">ssl-credential</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: '',
+            repo: '',
+            oauth: {
+                client_id: '',
+                client_secret: '',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/learn_programing/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Liu Zhi &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/JavaScript/javascript/&title=《JavaScript》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/JavaScript/javascript/&title=《JavaScript》 — VanLiuZhi&source=javascript学习笔记" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/JavaScript/javascript/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JavaScript》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/JavaScript/javascript/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/JavaScript/javascript/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACH0lEQVR42u3ay3HDMAwFQPfftFOBlAeAykTk8uTJ2CKXBwQffT7x+l6s/PvVXT5PLAwMjNcyvrfraoPkoFe/6u37y44YGBgHMK4Ocb998qveBeVnw8DAwEgOd/WchJQHaAwMDIyccf+XSejEwMDAuGckCVyvWVYNtY/X4hgYGC9k5F33v//8yHwDAwPjVYxvcSVDgmp7bsGpMDAwtmb00r68rZY/Z0EaioGBcQCjV3zmY4CkZZa08B6poTEwMP4xo5quVa9j7TjhMqxjYGBszZikfXmhmwff6kACAwPjHEY1EUwOPXmRIg+1GBgYZzLyEJykgNVwmV9QYdaKgYHxcka1EdZruuVHrAboX2pxDAyMjRjzRHAy4FxwKRgYGFszqslib26Yh9dVQR8DA2M/Rq/dnx+0F1LLV4aBgbE1ozcs7EXxvFitjhkwMDB2ZfRK0Cps2YtfvawTAwPj5Yw8OZtH9MmVRf8YMDAwDmBUk7/eqDIfGJS/iYGBcQyjmghO0sd89ygoY2BgHMC4D235yxarUslqkw4DA+MERvVxveSvVzyXi1gMDIyNGN/iqnbm58E0SjoxMDC2ZuQrCanV0UJ1FjkacGJgYLyckQTZyeGeaMBhYGCcyZhs32u9VVPPaISJgYGBMUgZ8/K1l3RiYGBgzDdbBb4M0xgYGAcwkiJ2/lpGL/gursUxMDBeyKi+4pBv0JtO9MYGGBgYmzJ+ABY9apidfXn9AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/learn_programing/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/learn_programing/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/learn_programing/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

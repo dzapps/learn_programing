@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>ECMAScript | VanLiuZhi | 有梦想的人不睡觉</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#00e1ff">
+    
+    
+    <meta name="keywords" content="note,javascript">
+    <meta name="description" content="ECMAScript6 是 JavaScript 的第六版本，是一个标准，主要增加了面向对象的支持等">
+<meta name="keywords" content="note,javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ECMAScript">
+<meta property="og:url" content="http://www.liuzhidream.com/2018/10/22/JavaScript/ECMAScript/index.html">
+<meta property="og:site_name" content="VanLiuZhi">
+<meta property="og:description" content="ECMAScript6 是 JavaScript 的第六版本，是一个标准，主要增加了面向对象的支持等">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-21T16:00:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ECMAScript">
+<meta name="twitter:description" content="ECMAScript6 是 JavaScript 的第六版本，是一个标准，主要增加了面向对象的支持等">
+    
+        <link rel="alternate" type="application/atom+xml" title="VanLiuZhi" href="/learn_programing/atom.xml">
+    
+    <link rel="shortcut icon" href="/learn_programing/favicon.ico">
+    <link rel="stylesheet" href="/learn_programing/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/learn_programing/img/brand.jpg)">
+      <div class="brand">
+        <a href="/learn_programing/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/learn_programing/img/me.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Liu Zhi</h5>
+          <a href="mailto:vanliuzhi@qq.com" title="vanliuzhi@qq.com" class="mail">vanliuzhi@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/tags/note">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/categories/python">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/VanLiuZhi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/custom">
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">ECMAScript</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">ECMAScript</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018-10-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/javascript/">javascript</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ECMAScript6"><span class="post-toc-number">1.</span> <span class="post-toc-text">ECMAScript6</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#扩展运算符（-spread-）"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">扩展运算符（ spread ）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#箭头函数"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">箭头函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#继承"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">继承</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#早绑定和晚绑定"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">早绑定和晚绑定</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件导入"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">文件导入</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Object-assign"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">Object.assign</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#import和require的区别"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">import和require的区别</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-JavaScript/ECMAScript" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">ECMAScript</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-22 00:00:00" datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished">2018-10-22</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/javascript/">javascript</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>ECMAScript6 是 JavaScript 的第六版本，是一个标准，主要增加了面向对象的支持等</p>
+<a id="more"></a>
+<h1 id="ECMAScript6"><a href="#ECMAScript6" class="headerlink" title="ECMAScript6"></a>ECMAScript6</h1><p>ECMAScript6 是 JavaScript 的第六版本，是一个标准，主要增加了面向对象的支持等</p>
+<h2 id="扩展运算符（-spread-）"><a href="#扩展运算符（-spread-）" class="headerlink" title="扩展运算符（ spread ）"></a>扩展运算符（ spread ）</h2><p>是三个点（…）。它好比 rest 参数的逆运算，将一个数组转为用逗号分隔的参数序列。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(...[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line"><span class="comment">// 1 2 3</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>, ...[<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], <span class="number">5</span>)</span><br><span class="line"><span class="comment">// 1 2 3 4 5</span></span><br><span class="line">[...document.querySelectorAll(<span class="string">'div'</span>)]</span><br></pre></td></tr></table></figure>
+<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Person = &#123;</span><br><span class="line">  <span class="string">'name'</span>: <span class="string">'little bear'</span>,</span><br><span class="line">  <span class="string">'age'</span>: <span class="number">18</span>,</span><br><span class="line">  <span class="string">'sayHello'</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'我叫'</span> + <span class="keyword">this</span>.Person + <span class="string">'我今年'</span> + <span class="keyword">this</span>.age + <span class="string">'岁!'</span>)</span><br><span class="line">    &#125;, <span class="number">1000</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">Person.sayHello()</span><br></pre></td></tr></table></figure>
+<p>基础语法</p>
+<ul>
+<li>(参数1, 参数2, …, 参数N) =&gt; {函数声明}</li>
+<li>(参数1, 参数2, …, 参数N) =&gt; 表达式（单一）</li>
+</ul>
+<p>相当于：(参数1, 参数2, …, 参数N) =&gt;{ return表达式}</p>
+<ol>
+<li>当只有一个参数时，圆括号是可选的：</li>
+</ol>
+<ul>
+<li>(单一参数) =&gt; {函数声明}</li>
+<li>单一参数 =&gt; {函数声明}</li>
+</ul>
+<ol start="2">
+<li>没有参数的函数应该写成一对圆括号。</li>
+</ol>
+<ul>
+<li>() =&gt; {函数声明}</li>
+</ul>
+<p>在上面的代码里面，谁调用，this指向谁，所以this指向的是setInterval, 就是window（因为setInterval）是window就注入的函数。 所以在setInterval 上一行，我们可以var self = this此时的this是sayHello 由Person来调用，这样才能得到我们想要的结果。</p>
+<p>箭头函数最大特点： 不绑定this  不绑定arguments</p>
+<p>es6箭头函数，这个是原来定义函数的缩写。let 和原来的 var 类似，var是声明变量，它所处的位置决定了变量的作用域，比如在函数里面就是函数的作用于，在外部就是全局作用域。let也是这样，但是它的位置决定的是最接近的块的作用域，作用域比var更细，除了函数全局外，如果你用在for，if里面，那么在整个函数里面是不可见的。所以可以用let声明作用域更细的变量。</p>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>理解继承的机制</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">DOG</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line"><span class="keyword">this</span>.name = name</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个函数我们称为构造函数，js通过对构造函数使用new 关键字创建实例（构造函数相当于Class），这样我们就从原型对象生产了一个实例对象。</p>
+<ol>
+<li>共有属性：</li>
+</ol>
+<ul>
+<li>这样创建的实例没有共有属性，于是通过为构造函数设置prototype属性，来让从这个构造函数创建的实例都有共有属性。</li>
+<li>这个属性包含一个对象（以下简称”prototype对象”），所有实例对象需要共享的属性和方法，都放在这个对象里面；那些不需要共享的属性和方法，就放在构造函数里面。</li>
+</ul>
+<p>实例对象一旦创建，将自动引用prototype对象的属性和方法。也就是说，实例对象的属性和方法，分成两种，一种是本地的，另一种是引用的。</p>
+<p>这个prototype是大家共同引用的，修改它会影响实例。</p>
+<ol start="2">
+<li>constructor：</li>
+</ol>
+<p>通过构造函数创建的实例，访问这个属性就可以知道实例的构造函数是谁。</p>
+<p><code>cat1 instanceof Cat</code> 判断实例cat1是否是通过构造函数Cat来的，类似python的isinstance。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">6.1 isPrototypeOf()</span><br><span class="line"></span><br><span class="line">这个方法用来判断，某个proptotype对象和某个实例之间的关系。</span><br><span class="line"></span><br><span class="line">　　alert(Cat.prototype.isPrototypeOf(cat1)); //true</span><br><span class="line"></span><br><span class="line">　　alert(Cat.prototype.isPrototypeOf(cat2)); //true</span><br><span class="line"></span><br><span class="line">6.2 hasOwnProperty()</span><br><span class="line"></span><br><span class="line">每个实例对象都有一个hasOwnProperty()方法，用来判断某一个属性到底是本地属性，还是继承自prototype对象的属性。</span><br><span class="line"></span><br><span class="line">　　alert(cat1.hasOwnProperty(&quot;name&quot;)); // true</span><br><span class="line"></span><br><span class="line">　　alert(cat1.hasOwnProperty(&quot;type&quot;)); // false</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">prototype constructor</span><br><span class="line">__proto__</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>普通对象</li>
+</ol>
+<ul>
+<li>最普通的对象：有<strong>proto</strong>属性（指向其原型链），没有prototype属性。</li>
+<li>原型对象(person.prototype 原型对象还有constructor属性（指向构造函数对象）)。</li>
+</ul>
+<ol start="4">
+<li>函数对象：</li>
+</ol>
+<ul>
+<li>凡是通过new Function()创建的都是函数对象。</li>
+<li>拥有<strong>proto</strong>、prototype属性（指向原型对象）。</li>
+<li>Function、Object、Array、Date、String、自定义函数。</li>
+</ul>
+<p>特例： Function.prototype(是原型对象，却是函数对象，下面会有解释)</p>
+<ol start="4">
+<li>如何判断是什么对象 typeof 对象</li>
+</ol>
+<p>其实原型对象就是构造函数的一个实例对象。person.prototype就是person的一个实例对象。相当于在person创建的时候，自动创建了一个它的实例，并且把这个实例赋值给了prototype。</p>
+<h2 id="早绑定和晚绑定"><a href="#早绑定和晚绑定" class="headerlink" title="早绑定和晚绑定"></a>早绑定和晚绑定</h2><p>所谓绑定（binding），即把对象的接口与对象实例结合在一起的方法。</p>
+<p>早绑定（early binding）是指在实例化对象之前定义它的属性和方法，这样编译器或解释程序就能够提前转换机器代码。在 Java 和 Visual Basic 这样的语言中，有了早绑定，就可以在开发环境中使用 IntelliSense（即给开发者提供对象中属性和方法列表的功能）。ECMAScript 不是强类型语言，所以不支持早绑定。</p>
+<p>另一方面，晚绑定（late binding）指的是编译器或解释程序在运行前，不知道对象的类型。使用晚绑定，无需检查对象的类型，只需检查对象是否支持属性和方法即可。ECMAScript 中的所有变量都采用晚绑定方法。这样就允许执行大量的对象操作，而无任何惩罚。</p>
+<h2 id="文件导入"><a href="#文件导入" class="headerlink" title="文件导入"></a>文件导入</h2><p>export default 和 export 区别：</p>
+<ol>
+<li>export与export default均可用于导出常量、函数、文件、模块等</li>
+<li>你可以在其它文件或模块中通过import+(常量 | 函数 | 文件 | 模块)名的方式，将其导入，以便能够对其进行使用</li>
+<li>在一个文件或模块中，export、import可以有多个，export default仅有一个</li>
+<li><p>通过export方式导出，在导入时要加{ }，export default则不需要</p>
+</li>
+<li><p>export</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//a.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> str = <span class="string">"blablabla~"</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">sth</span>) </span>&#123; </span><br><span class="line">  <span class="keyword">return</span> sth;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对应的导入方式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//b.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; str, log &#125; <span class="keyword">from</span> <span class="string">'a'</span>; <span class="comment">//也可以分开写两次，导入的时候带花括号</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>export default</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//a.js</span></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">"blablabla~"</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> str;</span><br></pre></td></tr></table></figure>
+<p>对应的导入方式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//b.js</span></span><br><span class="line"><span class="keyword">import</span> str <span class="keyword">from</span> <span class="string">'a'</span>; <span class="comment">//导入的时候没有花括号</span></span><br></pre></td></tr></table></figure>
+<h2 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign"></a>Object.assign</h2><p><code>Object.assign({}, row)</code> 拷贝对象</p>
+<h2 id="import和require的区别"><a href="#import和require的区别" class="headerlink" title="import和require的区别"></a>import和require的区别</h2><p>node编程中最重要的思想就是模块化，import和require都是被模块化所使用。</p>
+<ol>
+<li>遵循规范</li>
+</ol>
+<ul>
+<li>require 是 AMD规范引入方式</li>
+<li>import是es6的一个语法标准，如果要兼容浏览器的话必须转化成es5的语法</li>
+</ul>
+<ol start="2">
+<li>调用时间</li>
+</ol>
+<ul>
+<li>require是运行时调用，所以require理论上可以运用在代码的任何地方</li>
+<li>import是编译时调用，所以必须放在文件开头</li>
+</ul>
+<ol start="3">
+<li>本质</li>
+</ol>
+<ul>
+<li>require是赋值过程，其实require的结果就是对象、数字、字符串、函数等，再把require的结果赋值给某个变量</li>
+<li>import是解构过程，但是目前所有的引擎都还没有实现import，我们在node中使用babel支持ES6，也仅仅是将ES6转码为ES5再执行，import语法会被转码为require</li>
+</ul>
+<p>引用同级文件 <code>a.js</code>，<code>b.js</code> 都在一起，应该 <code>import  ./b</code> 不要直接 <code>import b</code></p>
+<p>1，给vue组件绑定事件时候，必须加上native ，不然不会生效（监听根元素的原生事件，使用 .native 修饰符）<br>2，等同于在自组件中：<br>   子组件内部处理click事件然后向外发送click事件：$emit(“click”.fn)</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-10-21T16:00:00.000Z" itemprop="dateUpdated">2018-10-22 00:00:00</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/learn_programing/2018/10/22/JavaScript/ECMAScript/" target="_blank" rel="external">http://www.liuzhidream.com/2018/10/22/JavaScript/ECMAScript/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.liuzhidream.com">
+            <img src="/learn_programing/img/me.jpg" alt="Liu Zhi">
+            Liu Zhi
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/note/">note</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/JavaScript/ECMAScript/&title=《ECMAScript》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/JavaScript/ECMAScript/&title=《ECMAScript》 — VanLiuZhi&source=ECMAScript6 是 JavaScript 的第六版本，是一个标准，主要增加了面向对象的支持等" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/JavaScript/ECMAScript/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ECMAScript》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/JavaScript/ECMAScript/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/JavaScript/ECMAScript/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/learn_programing/2018/10/22/Git/git-command/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">git-command</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/learn_programing/2018/10/22/JavaScript/element-UI/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">element-UI</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: '',
+            repo: '',
+            oauth: {
+                client_id: '',
+                client_secret: '',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/learn_programing/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Liu Zhi &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/JavaScript/ECMAScript/&title=《ECMAScript》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/JavaScript/ECMAScript/&title=《ECMAScript》 — VanLiuZhi&source=ECMAScript6 是 JavaScript 的第六版本，是一个标准，主要增加了面向对象的支持等" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/JavaScript/ECMAScript/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ECMAScript》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/JavaScript/ECMAScript/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/JavaScript/ECMAScript/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNUlEQVR42u3aS27DMAxF0ex/0+40E8v3kU4BiVejooijHA8I/j4ffK6v8/0f8vn1J9e3vHxkyJCxLeNanjVjffEan977cKMMGTIGMO5+xPp68lTtBfHfJkOGDBl3nyFB8AKnloDKkCFDRspIE0ESoGXIkCGjVsTWmmtpufvzWlyGDBkbMnjX/f///sl8Q4YMGVsxrvCkSV5tnBn/KhkyZBzN4AGOJH98YaI2DHhYy5AhQ8YARq31z4eXpGVGmnrxTpkMGTI2Z6TpWnpl/yk0ZpAhQ8YYBhkJ1Ard/mDg4eXKkCFjMIMnap1XUBtFxF1DGTJkbMtI2/HpshcfHpBVs7gilyFDxhEM/gAvTTk4HZTe3itDhowBjH67n7+CdGD5WtdQhgwZ2zI6lwVZJw6vfISA0kQZMmQcwegnZ7wMTkPqmhS/IRkyZBzEqAXcWthNW2zBsoUMGTIOYnTiVTrI5C25WuopQ4aMCQxe1vIEkaehL6SJMmTIGMkgX9dZmODhtTgSkCFDxnEM0pqvLVjU2v2cJEOGjDkMslpRW6ogT6Xp5m27TYYMGUczSHLGG2okpePD0aCIlSFDxnGMKzz8gnTZolb0ypAhYwKDn1qhy7+nVh7HGBkyZGzLIEG2dnG6otEaJMiQIWMAox/4eFutlnoWJ7EyZMgYyeDDgHRtIh1/ypAhQ8Zb6xT9MhiFaRkyZAxgpENKXnZ2xgM8WMuQIeNsRrriQHhxswyH4NYgU4YMGfsx/gAav4mHOuBtOQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/learn_programing/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/learn_programing/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/learn_programing/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
