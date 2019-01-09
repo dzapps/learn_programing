@@ -20,16 +20,16 @@
     <meta name="theme-color" content="#00e1ff">
     
     
-    <meta name="keywords" content="note">
+    <meta name="keywords" content="linux,note">
     <meta name="description" content="MQ全称为Message Queue, 消息队列（MQ）是一种应用程序对应用程序的通信方法。应用程序通过读写出入队列的消息（针对应用程序的数据）来通信，而无需专用连接来链接它们。">
-<meta name="keywords" content="note">
+<meta name="keywords" content="linux,note">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RabbitMQ">
 <meta property="og:url" content="http://www.liuzhidream.com/2018/10/22/Web/RabbitMQ/index.html">
 <meta property="og:site_name" content="VanLiuZhi">
 <meta property="og:description" content="MQ全称为Message Queue, 消息队列（MQ）是一种应用程序对应用程序的通信方法。应用程序通过读写出入队列的消息（针对应用程序的数据）来通信，而无需专用连接来链接它们。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-21T16:00:00.000Z">
+<meta property="og:updated_time" content="2019-01-09T15:52:04.697Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RabbitMQ">
 <meta name="twitter:description" content="MQ全称为Message Queue, 消息队列（MQ）是一种应用程序对应用程序的通信方法。应用程序通过读写出入队列的消息（针对应用程序的数据）来通信，而无需专用连接来链接它们。">
@@ -167,7 +167,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#RabbitMQ"><span class="post-toc-number">1.</span> <span class="post-toc-text">RabbitMQ</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#概念"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#交换机"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">交换机</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#虚拟主机"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">虚拟主机</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常用命令"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">常用命令</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#交换机"><span class="post-toc-number">2.</span> <span class="post-toc-text">交换机</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#虚拟主机"><span class="post-toc-number">3.</span> <span class="post-toc-text">虚拟主机</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常用命令"><span class="post-toc-number">4.</span> <span class="post-toc-text">常用命令</span></a></li></ol>
         </nav>
     </aside>
 
@@ -194,7 +194,6 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>MQ全称为Message Queue, 消息队列（MQ）是一种应用程序对应用程序的通信方法。应用程序通过读写出入队列的消息（针对应用程序的数据）来通信，而无需专用连接来链接它们。</p>
 <a id="more"></a>
-<h1 id="RabbitMQ"><a href="#RabbitMQ" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h1><p>MQ全称为Message Queue, 消息队列（MQ）是一种应用程序对应用程序的通信方法。应用程序通过读写出入队列的消息（针对应用程序的数据）来通信，而无需专用连接来链接它们。</p>
 <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>需要了解一个协议：AMQP协议，协议的流程由消息发布者，交换机，队列，到消息订阅者。交换机做路由分发，将收到的消息根据路由规则分发给绑定的队列。</p>
 <ol>
 <li><p>消息：消息实际包含两部分内容，1是有效载荷，就是要传输的数据，数据类型可以是纯文本或JSON。2是标签，它包含交换机的名字和可选的主题(topic)标记等，AMQP仅仅描述了标签，而RabbitMQ决定了把这个消息发给哪个消费者。</p>
@@ -239,12 +238,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-10-21T16:00:00.000Z" itemprop="dateUpdated">2018-10-22 00:00:00</time>
+    最后更新时间：<time datetime="2019-01-09T15:52:04.697Z" itemprop="dateUpdated">2019-01-09 23:52:04</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/learn_programing/2018/10/22/Web/RabbitMQ/" target="_blank" rel="external">http://www.liuzhidream.com/2018/10/22/Web/RabbitMQ/</a>
+        今天也是充满希望的一天！
         
     </div>
     
@@ -261,7 +260,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/note/">note</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/note/">note</a></li></ul>
 
 
             

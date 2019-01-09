@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="VanLiuZhi">
 <meta property="og:description" content="python多线程相关笔记">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-21T16:00:00.000Z">
+<meta property="og:updated_time" content="2019-01-09T15:52:04.697Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python-threading">
 <meta name="twitter:description" content="python多线程相关笔记">
@@ -167,7 +167,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#线程"><span class="post-toc-number">1.</span> <span class="post-toc-text">线程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#threading的属性和方法"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">threading的属性和方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#thread实例的属性和方法"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">thread实例的属性和方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多线程情况"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">多线程情况</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#线程安全"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">线程安全</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#线程daemon"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">线程daemon</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#join"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">join</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原子性"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">原子性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#队列"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">队列</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实例方法"><span class="post-toc-number">1.8.1.</span> <span class="post-toc-text">实例方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#本地线程"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">本地线程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#同步原语"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">同步原语</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#信号量"><span class="post-toc-number">1.10.1.</span> <span class="post-toc-text">信号量</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">总结</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#线程"><span class="post-toc-number">1.</span> <span class="post-toc-text">线程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#threading的属性和方法"><span class="post-toc-number">2.</span> <span class="post-toc-text">threading的属性和方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#thread实例的属性和方法"><span class="post-toc-number">3.</span> <span class="post-toc-text">thread实例的属性和方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多线程情况"><span class="post-toc-number">4.</span> <span class="post-toc-text">多线程情况</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#线程安全"><span class="post-toc-number">5.</span> <span class="post-toc-text">线程安全</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#线程daemon"><span class="post-toc-number">6.</span> <span class="post-toc-text">线程daemon</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#join"><span class="post-toc-number">7.</span> <span class="post-toc-text">join</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原子性"><span class="post-toc-number">8.</span> <span class="post-toc-text">原子性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#队列"><span class="post-toc-number">9.</span> <span class="post-toc-text">队列</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实例方法"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">实例方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#本地线程"><span class="post-toc-number">10.</span> <span class="post-toc-text">本地线程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#同步原语"><span class="post-toc-number">11.</span> <span class="post-toc-text">同步原语</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#信号量"><span class="post-toc-number">11.1.</span> <span class="post-toc-text">信号量</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">12.</span> <span class="post-toc-text">总结</span></a></li></ol>
         </nav>
     </aside>
 
@@ -194,7 +194,7 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>python多线程相关笔记</p>
 <a id="more"></a>
-<h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1><p>使用标准库threading来创建线程。threading 库可以在单独的线程中执行任何的在 Python 中可以调用的对象。你可 以创建一个 Thread 对象并将你要执行的对象以 target 参数的形式提供给该对象。虽然python GIL 的存在，导致多线程同一时刻只能有一个线程获得解释器（在py2中，大概执行1000行字节码后，会释放解释器，当线程被阻塞的时候，会让出解释器，释放GIL）</p>
+<h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>使用标准库threading来创建线程。threading 库可以在单独的线程中执行任何的在 Python 中可以调用的对象。你可 以创建一个 Thread 对象并将你要执行的对象以 target 参数的形式提供给该对象。虽然python GIL 的存在，导致多线程同一时刻只能有一个线程获得解释器（在py2中，大概执行1000行字节码后，会释放解释器，当线程被阻塞的时候，会让出解释器，释放GIL）</p>
 <p>可以通过time.sleep(3)来阻塞线程</p>
 <p>一个简单例子：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算密集型任务</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    a = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1111</span>)]</span><br><span class="line">    print(<span class="string">'hello world'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">t = threading.Thread(target=func)</span><br><span class="line">t.start()</span><br><span class="line">print(<span class="string">'sleep'</span>)</span><br><span class="line"><span class="comment"># 此时创建列表a占用了解释器，先hello world 再 sleep</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算密集型任务</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    a = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">11111111111</span>)]</span><br><span class="line">    print(<span class="string">'hello world'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">t = threading.Thread(target=func)</span><br><span class="line">t.start()</span><br><span class="line">print(<span class="string">'sleep'</span>)</span><br><span class="line"><span class="comment"># 这种情况，先打印sleep再是hello world（执行一定的字节码后，释放了解释器）</span></span><br></pre></td></tr></table></figure>
@@ -333,12 +333,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-10-21T16:00:00.000Z" itemprop="dateUpdated">2018-10-22 00:00:00</time>
+    最后更新时间：<time datetime="2019-01-09T15:52:04.697Z" itemprop="dateUpdated">2019-01-09 23:52:04</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/learn_programing/2018/10/22/Python-threading/Python-threading/" target="_blank" rel="external">http://www.liuzhidream.com/2018/10/22/Python-threading/Python-threading/</a>
+        今天也是充满希望的一天！
         
     </div>
     
@@ -413,18 +413,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/learn_programing/2018/10/22/Docker/Docker/" id="post-prev" class="post-nav-link">
+      <a href="/learn_programing/2018/10/22/Collect/collect/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Docker</h4>
+        <h4 class="title">Collect</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/learn_programing/2018/10/22/Web/Celery/" id="post-next" class="post-nav-link">
+      <a href="/learn_programing/2018/10/22/Python-asyncio/README/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Celery</h4>
+        <h4 class="title">Python-异步与协程</h4>
       </a>
     </div>
   

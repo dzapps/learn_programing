@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>linux-base | VanLiuZhi | 有梦想的人不睡觉</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#00e1ff">
+    
+    
+    <meta name="keywords" content="linux,note">
+    <meta name="description" content="Linux学习笔记">
+<meta name="keywords" content="linux,note">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux-base">
+<meta property="og:url" content="http://www.liuzhidream.com/2018/10/22/Linux/linux-base/index.html">
+<meta property="og:site_name" content="VanLiuZhi">
+<meta property="og:description" content="Linux学习笔记">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-09T15:48:05.168Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux-base">
+<meta name="twitter:description" content="Linux学习笔记">
+    
+        <link rel="alternate" type="application/atom+xml" title="VanLiuZhi" href="/learn_programing/atom.xml">
+    
+    <link rel="shortcut icon" href="/learn_programing/favicon.ico">
+    <link rel="stylesheet" href="/learn_programing/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/learn_programing/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/learn_programing/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/learn_programing/img/me.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Liu Zhi</h5>
+          <a href="mailto:vanliuzhi@qq.com" title="vanliuzhi@qq.com" class="mail">vanliuzhi@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/tags/note">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/categories/python">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/VanLiuZhi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://segmentfault.com/u/justicelz" target="_blank">
+                <i class="icon icon-lg icon-link"></i>
+                SegmentFault
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">linux-base</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">linux-base</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018-10-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/linux/">linux</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件目录"><span class="post-toc-number">1.</span> <span class="post-toc-text">文件目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件类型"><span class="post-toc-number">2.</span> <span class="post-toc-text">文件类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件权限"><span class="post-toc-number">3.</span> <span class="post-toc-text">文件权限</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#挂载与分区"><span class="post-toc-number">4.</span> <span class="post-toc-text">挂载与分区</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#磁盘冗余阵列"><span class="post-toc-number">5.</span> <span class="post-toc-text">磁盘冗余阵列</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#epoll"><span class="post-toc-number">6.</span> <span class="post-toc-text">epoll</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#nohup"><span class="post-toc-number">7.</span> <span class="post-toc-text">nohup</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#supervisor"><span class="post-toc-number">8.</span> <span class="post-toc-text">supervisor</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#守护进程"><span class="post-toc-number">9.</span> <span class="post-toc-text">守护进程</span></a></li></ol><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#apt-utils"><span class="post-toc-number"></span> <span class="post-toc-text">apt-utils</span></a>
+        </li></nav>
+    </aside>
+
+
+<article id="post-Linux/linux-base" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">linux-base</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-22 00:00:00" datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished">2018-10-22</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/linux/">linux</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>Linux学习笔记</p>
+<a id="more"></a>
+<h2 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h2><p>/etc<br>存放系统管理和配置文件</p>
+<p>/usr  (Unix System Resource)<br>用于存放系统应用程序，比较重要的目录/usr/local本地系统管理员软件安装目录（安装系统级的应用）。这是最庞大的目录，要用到的应用程序和文件几乎都在这个目录。</p>
+<p>/usr/bin众多的应用程序<br>/usr/sbin超级用户的一些管理程序</p>
+<p>/usr/src源代码，linux内核的源代码就放在/usr/src/linux里</p>
+<p>/usr/local/bin本地增加的命令<br>/usr/local/lib本地增加的库</p>
+<p>/proc<br>虚拟文件系统目录，是系统内存的映射。可直接访问这个目录来获取系统信息。</p>
+<p>/sbin<br>存放二进制可执行文件，只有root才能访问。这里存放的是系统管理员使用的系统级别的管理命令和程序。如ifconfig等</p>
+<p>一般，系统带的应用在/usr/bin   自己安装的在/usr/local/bin，/usr/sbin 也会有应用</p>
+<p>如果你是编译安装的，最好用ln -s 源命令 /usr/local/bin，把编译安装的启动程序在通用安装目录下创建符号链接，这样就能直接在任何地方从命令行运行程序</p>
+<h2 id="文件类型"><a href="#文件类型" class="headerlink" title="文件类型"></a>文件类型</h2><p>目录（d）   文件（-）  字符型文件（c ）  块设备（b） l 链接文件   p 管道文件</p>
+<p>创建文件  touch</p>
+<p>复制文件  cp -i  (覆盖提醒) cp -i file newfile</p>
+<p>链接文件（new）    命令  ln</p>
+<p>有硬链接和符号链接（软链接）</p>
+<p>重命名  命令 mv</p>
+<p>mv  a  b   操作上称为移动文件，a在当前目录移动成b，实现了修改名字的作用</p>
+<h2 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h2><p>权限 r  w  x  文件的权限如下图所示，开始指文件类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-rw-r--r-- 1 root root  664 Apr 12 22:46 uwsgi_params</span><br><span class="line">-rw-r--r-- 1 root root 3610 Apr 12 22:46 win-utf</span><br></pre></td></tr></table></figure>
+<p>除去类型，开始三个 rw-  描述的是文件所有者的权限，r–  文件所属组 ，最后是其他用户。</p>
+<p>关于所属组，比如system组，可以执行系统相关命令，当某个用户被临时加入到系统组，则该用户将拥有对应权限，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-r-xr-sr-x（- 类型， r-x 文件所有者权限  r-s  文件所属组权限  r-x 文件其它用户权限</span><br></pre></td></tr></table></figure>
+<p>如某个用户像执行它，只要加入系统组即可。</p>
+<p>文件特殊权限  <code>SUID</code>   <code>SGID</code></p>
+<p>目录给予SGID权限，该目录下创建的文件都将是这个组的。</p>
+<p>目录设置SBIT位，只能自己修改目录下的文件，该目录可能创建多个文件（不同用户），防止别人来修改自己的文件。</p>
+<p>文件权限可以隐藏，此时ls -l 看不到，用lsattr查看隐藏权限。  </p>
+<p>更进一步，对某个命令设置特定用户才能执行，对某个用户做设置。</p>
+<p>权限后面是链接数，然后是文件所属用户名，之后是所属组名，然后文件大小，日期时间，文件名。</p>
+<p>记住，一个文件被创建的时候，它拥有inode和block，每个文件占用一个独立的inode table，记录文件的权限和属性，包括数据地址。block数据存放的实际内容。ls -il  这个i参数可以查看inode。</p>
+<p>知道该文件的einode，使用find-inum 可以找到所有指向inode的文件。</p>
+<p>补充：</p>
+<p>符号链接，可以对文件和目录创建符合链接。符号链接可以理解为快捷方式，它和原文件是两个不同的文件，所有他们的inode不一样，而且他数据很小，因为只做指向。在ls命令下，可以看到文件类型是 <code>l</code>，并且后面会有 <code>fileA -&gt; fileB</code>，意为A是B的符号链接。原始文件被删除后，符号链接也失效。可以跨文件系统创建符号链接。不要创建符号链接的符号链接。</p>
+<p>硬链接，会创建独立的虚拟文件，但是共享原文件的inode，使用ls命令查看，会发现它们完全一样（链接数都是2），除了名字外。引用硬链接等于引用原文件。不能对目录创建硬链接（目录下的所有数据都会被创建硬链接），不能跨文件系统。</p>
+<h2 id="挂载与分区"><a href="#挂载与分区" class="headerlink" title="挂载与分区"></a>挂载与分区</h2><p>linux 硬盘第一扇区512byte，记录着主引导记录和分区信息。主引导占了446byte，后面的空间一般分配3个主分区，1个扩展分区。每个占16byte。如果全是主分区，只能有4个，所以主分区不能超过4个。</p>
+<p>挂载，/etc/fstab记载着挂载信息，SWAP称为交换分区，类似虚拟内存。</p>
+<h2 id="磁盘冗余阵列"><a href="#磁盘冗余阵列" class="headerlink" title="磁盘冗余阵列"></a>磁盘冗余阵列</h2><p><strong>RAID</strong></p>
+<p>RAID 0～RAID 50等数个规范</p>
+<p>RAID 0是组建磁盘阵列中最简单的一种形式，只需要2块以上的硬盘即可，成本低，可以提高整个磁盘的性能和吞吐量。RAID 0没有提供冗余或错误修复能力，但实现成本是最低的。最大的缺点在于任何一块硬盘出现故障，整个系统将会受到破坏，可靠性仅为单独一块硬盘的1/N。</p>
+<p><strong>RAID1</strong></p>
+<p>称为磁盘镜像，原理是把一个磁盘的数据镜像到另一个磁盘上，也就是说数据在写入一块磁盘的同时，会在另一块闲置的磁盘上生成镜像文件，在不影响性能情况下最大限度的保证系统的可靠性和可修复性上，只要系统中任何一对镜像盘中至少有一块磁盘可以使用，甚至可以在一半数量的硬盘出现问题时系统都可以正常运行,当一块硬盘失效时，系统会忽略该硬盘，转而使用剩余的镜像盘读写数据，具备很好的磁盘冗余能力。缺点磁盘利用率不高。</p>
+<h2 id="epoll"><a href="#epoll" class="headerlink" title="epoll"></a>epoll</h2><p>这是linux的模块，python 的 torado会对其进行封装，提供接口，是实现高并发的关键。BSD系统的是kqueue，大概概念应该是类似的，BSD接触的较少了。</p>
+<p>epoll是整个框架实现高性能的基础，所以为了发挥性能，你需要把程序部署在linux上，使用linux的epoll。 </p>
+<p>要理解这个模块是做什么的，先说任务阻塞，多个任务阻塞了，一般的操作系统机制是使用轮询的方法，循环所有阻塞任务，看是否有被唤醒的，这样太浪费时间了，如果当前循环任务没有被唤醒的，CPU白白浪费了一次循环，所以有了epoll 这是一个代理，在操作系统设计的代码大概是这样的，原来的思路是循环任务列表，现在使用epoll，被循环的任务列表将由epoll提供，如果没有，那么CPU就不用浪费时间了，那么什么情况下会有呢？就是当有任务被唤醒的时候，比如任务因为别人的事件被唤醒，比如A给被阻塞的任务B一个事件“缓冲区非空”，B得到这个事件，B不用被阻塞了，它需要去缓冲区读取数据，这个时候就通知epoll，我可以被调度了。epoll的好处就是可以告诉内核那个任务可以调度，传统的轮询要一个一个任务的查看谁能被调度，如此，加入一个代理加快了CPU处理任务的速度。</p>
+<h2 id="nohup"><a href="#nohup" class="headerlink" title="nohup"></a>nohup</h2><p>nohup 是后台作业的意思， nohup运行的进程将会忽略终端信号运行。即后台运行一个命令。 </p>
+<p>nohup COMMAND &amp; 用nohup运行命令可以使命令永久的执行下去，和用户终端没有关系，例如我们断开SSH连接都不会影响它的运行。</p>
+<h2 id="supervisor"><a href="#supervisor" class="headerlink" title="supervisor"></a>supervisor</h2><p>supervisor是用Python开发的一套通用的进程管理程序，能将一个普通的命令行进程变为后台daemon，并监控进程状态，异常退出时能自动重启。</p>
+<p>安装 <code>apt-get install -y supervisor</code></p>
+<p>注意：终止进程后重启电脑，进程将会重启。所以要移除某个进程，要把对应的配置删除。</p>
+<h2 id="守护进程"><a href="#守护进程" class="headerlink" title="守护进程"></a>守护进程</h2><p>什么是守护进程？其实感觉守护进程并没有什么明确的定义，只是守护进程有一些特征，这是它需要遵循的。</p>
+<p>守护进程的第一个特征是长时间在后台运行的程序，并且主要是为了提供某种服务，而为了能够让服务尽可能随时都可用，就要求这个服务是一直运行的，于是守护进程就守护着这个服务不挂掉。linux里面常见的守护进程一般都是以d结尾的，比如apache的httpd,samba的smbd,ssh的sshd。</p>
+<p>它的第二个特征是与启动它的进程的环境隔离，包括关闭它打开的所有文件描述符，终端，会话，进程组，某些环境变量（如工作目录），文件掩码。</p>
+<ol>
+<li>为什么要脱离终端？</li>
+</ol>
+<p>如果它不脱离终端，那么就有可能收到来自终端的信号，比如SIGINT(Ctrl+c,会被发往所有前台进程组的进程，它的默认行为就是结束进程),SIGHUP（会被发往会话首进程）</p>
+<ol start="2">
+<li>为什么要关闭它打开的所有文件描述符？</li>
+</ol>
+<p>如果创建它的进程之前打开了某个文件，然后创建这个守护进程，这样子进程就继承了fd,如果守护进程不关闭这个fd,一个是会占用资源，二个我猜测和改变工作目录一样，如果这个文件是位于挂载目录，那么就无法umount了</p>
+<ol start="3">
+<li>为什么要清掩码？</li>
+</ol>
+<p>这是因为假设它的父进程之前对掩码做过特殊设置，守护进程作为子进程会继承这个，那么它创建文件时，因为掩码的缘故，文件的权限就可能和实际设置的不一致。</p>
+<p>第三个特征，守护进程通常由启动脚本启动</p>
+<h1 id="apt-utils"><a href="#apt-utils" class="headerlink" title="apt-utils"></a>apt-utils</h1><p>apt-utils是Linux系统的兼容程序，在安装系统时有提示推荐安装apt-utils，如果未安装会无法安装第三方提供的Linux软件，只能使用官方推出的软件。比如wget是第三方软件，如果没有apt-utils会导致安装不上</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-01-09T15:48:05.168Z" itemprop="dateUpdated">2019-01-09 23:48:05</time>
+</span><br>
+
+
+        
+        今天也是充满希望的一天！
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.liuzhidream.com">
+            <img src="/learn_programing/img/me.jpg" alt="Liu Zhi">
+            Liu Zhi
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/note/">note</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/Linux/linux-base/&title=《linux-base》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/Linux/linux-base/&title=《linux-base》 — VanLiuZhi&source=Linux学习笔记" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/Linux/linux-base/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《linux-base》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/Linux/linux-base/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/Linux/linux-base/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/learn_programing/2018/10/22/JavaScript/javascript/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">JavaScript</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/learn_programing/2018/10/22/MySql/base/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Mysql</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: '',
+            repo: '',
+            oauth: {
+                client_id: '',
+                client_secret: '',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/learn_programing/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Liu Zhi &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/Linux/linux-base/&title=《linux-base》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/Linux/linux-base/&title=《linux-base》 — VanLiuZhi&source=Linux学习笔记" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/Linux/linux-base/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《linux-base》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/Linux/linux-base/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/Linux/linux-base/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMElEQVR42u3awWrEMAxF0fn/n063hSHOfVIyEPl6VWiT+LggZEmfD17Hv0V+e3yts6f4V25YMmTIeC3jWK50W99Prbe+fj/ZmwwZMvZhrAMiCYLrAEo2yr8rQ4YMGevXkYC4/sv+8cmQIUMGeR3fFg/TNaoMGTL2YfDQyUts6PL5+7u4DBkyXsiohcXf/PxIf0OGDBmvYhzhqqWJnbCLdiVDhozRjLToXyurkRSQXKovxjJkyJCxAYMPWJARis5Y2MV2+UnLkCFjBCMddOAwnhRy6mlYlyFDxmhG7cO8DXnX9ZV8V4YMGbsxnivo17ZIElYZMmRMZaRjDZ3Po5LZXWcvQ4aMQQzycO36WmtP8hra6ddlyJAxlNEfreDHUWt5oqdkyJAxlJEG0E6ntF9KuxgIkyFDxmhGGhz5hEN6iS0OismQIWM0Iy2Tda61PAHlP6O7uAwZMl7OqBXla+2B286bZ5EyZMgYweBJYbpdcgQ8DUW7kiFDxjaMm0cfwg21GgkyZMjYgFGrYvFRibTcnzY1ZciQsTMj/XAtHSQjF0GXQ4YMGUMZ6TBEmuTVrqxxwJUhQ8Y4xhEuHt9q42I8WQz+DzJkyHg5g69O8yAt1T3S4JQhQ8bLGbz1yG+OnSYBD7gyZMjYjRHcenFq2D+moPQmQ4YMGbhtyd+cFuCK/Q0ZMmRszEhL/J1Qi8p5MmTI2IDRT+/68w9pGU6GDBn7MGojDml6xzdRaxvIkCFjKOMPiGQD8em12yQAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/learn_programing/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/learn_programing/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/learn_programing/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

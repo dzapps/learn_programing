@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>css | VanLiuZhi | 有梦想的人不睡觉</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#00e1ff">
+    
+    
+    <meta name="keywords" content="css,html">
+    <meta name="description" content="css总结">
+<meta name="keywords" content="css,html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css">
+<meta property="og:url" content="http://www.liuzhidream.com/2018/10/22/HTML/css/index.html">
+<meta property="og:site_name" content="VanLiuZhi">
+<meta property="og:description" content="css总结">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-09T15:57:58.053Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css">
+<meta name="twitter:description" content="css总结">
+    
+        <link rel="alternate" type="application/atom+xml" title="VanLiuZhi" href="/learn_programing/atom.xml">
+    
+    <link rel="shortcut icon" href="/learn_programing/favicon.ico">
+    <link rel="stylesheet" href="/learn_programing/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/learn_programing/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/learn_programing/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/learn_programing/img/me.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Liu Zhi</h5>
+          <a href="mailto:vanliuzhi@qq.com" title="vanliuzhi@qq.com" class="mail">vanliuzhi@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/tags/note">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/categories/python">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/VanLiuZhi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://segmentfault.com/u/justicelz" target="_blank">
+                <i class="icon icon-lg icon-link"></i>
+                SegmentFault
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">css</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">css</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018-10-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/css/">css</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自动换行"><span class="post-toc-number">1.</span> <span class="post-toc-text">自动换行</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#不换行"><span class="post-toc-number">2.</span> <span class="post-toc-text">不换行</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#input"><span class="post-toc-number">3.</span> <span class="post-toc-text">input</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#空格"><span class="post-toc-number">4.</span> <span class="post-toc-text">空格</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#table"><span class="post-toc-number">5.</span> <span class="post-toc-text">table</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#width"><span class="post-toc-number">6.</span> <span class="post-toc-text">width</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#overflow"><span class="post-toc-number">7.</span> <span class="post-toc-text">overflow</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#scoped"><span class="post-toc-number">8.</span> <span class="post-toc-text">scoped</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#css3-选择器"><span class="post-toc-number">9.</span> <span class="post-toc-text">css3 选择器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#默认行为"><span class="post-toc-number">10.</span> <span class="post-toc-text">默认行为</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#内联和块级元素"><span class="post-toc-number">11.</span> <span class="post-toc-text">内联和块级元素</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#盒子模型"><span class="post-toc-number">12.</span> <span class="post-toc-text">盒子模型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#权值"><span class="post-toc-number">13.</span> <span class="post-toc-text">权值</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#定位"><span class="post-toc-number">14.</span> <span class="post-toc-text">定位</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#index-z"><span class="post-toc-number">15.</span> <span class="post-toc-text">index-z</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#hover"><span class="post-toc-number">16.</span> <span class="post-toc-text">:hover</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#超出显示文字省略"><span class="post-toc-number">17.</span> <span class="post-toc-text">超出显示文字省略</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#控制锚点"><span class="post-toc-number">18.</span> <span class="post-toc-text">控制锚点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#box-sizing"><span class="post-toc-number">19.</span> <span class="post-toc-text">box-sizing</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#cursor-pointer"><span class="post-toc-number">20.</span> <span class="post-toc-text">cursor: pointer</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其它"><span class="post-toc-number">21.</span> <span class="post-toc-text">其它</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-HTML/css" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">css</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-22 00:00:00" datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished">2018-10-22</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/css/">css</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>css总结</p>
+<a id="more"></a>
+<h2 id="自动换行"><a href="#自动换行" class="headerlink" title="自动换行"></a>自动换行</h2><p>style=’word-wrap:break-word; word-break:break-all;display:block;width:100%;’</p>
+<h2 id="不换行"><a href="#不换行" class="headerlink" title="不换行"></a>不换行</h2><p>white-space:nowrap</p>
+<h2 id="input"><a href="#input" class="headerlink" title="input"></a>input</h2><p>style=”-webkit-appearance:checkbox”   复选相关样式</p>
+<h2 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h2><ul>
+<li>使用 \&nbsp; </li>
+<li>使用样式，输出1 &nbsp; 2 &nbsp; 3 &nbsp;</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"white-space:pre"</span>&gt;</span>1  2  3<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="table"><a href="#table" class="headerlink" title="table"></a>table</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;tr&gt; - 定义表行</span><br><span class="line">&lt;th&gt; - 定义表头</span><br><span class="line">&lt;td&gt; - 定义表元(表格的具体数据)</span><br></pre></td></tr></table></figure>
+<h2 id="width"><a href="#width" class="headerlink" title="width"></a>width</h2><p>width  100%   auto</p>
+<ol>
+<li><p>某div不显示设置宽度，那么width为auto</p>
+</li>
+<li><p>某div的width在默认情况设置的是盒子模型中content的值</p>
+</li>
+<li><p>某div的width为100%表示的是此div盒子内容部分的宽度为其父元素的宽度</p>
+</li>
+<li><p>某个div的width不设置，或者设置为auto，那么表示的这个div的所有部分（内容、边框、内边距等的距离加起来）为父元素宽度</p>
+</li>
+</ol>
+<h2 id="overflow"><a href="#overflow" class="headerlink" title="overflow"></a>overflow</h2><p>关于滚动条：overflow 决定了溢出的操作，设置溢出用滚动条，那么这个容器必须有固定高度，才有溢出的概念。</p>
+<h2 id="scoped"><a href="#scoped" class="headerlink" title="scoped"></a>scoped</h2><p>scoped 属性是一个布尔属性。<br>如果使用该属性，则样式仅仅应用到 style 元素的父元素及其子元素。（在style type=”text/css” scoped  这里使用）</p>
+<h2 id="css3-选择器"><a href="#css3-选择器" class="headerlink" title="css3 选择器"></a>css3 选择器</h2><ul>
+<li>:nth-child(n)    —-&gt;选中某个元素，该元素必须是某个父元素下的第n个子元素</li>
+<li>p:nth-child(n)   —-&gt;选中p元素，且该p元素必须是某个父元素下的第n个子元素</li>
+</ul>
+<p>如果n是数字，比如2，那么第2个作用样式，如果是n+2 那么从第2个开始，后面的都作用样式</p>
+<h2 id="默认行为"><a href="#默认行为" class="headerlink" title="默认行为"></a>默认行为</h2><p>body 默认会有 margin 8px 这是浏览器决定的，不同浏览器不一样，所以初始创建一个项目，我们可以修改body 的css就可以0px 了</p>
+<h2 id="内联和块级元素"><a href="#内联和块级元素" class="headerlink" title="内联和块级元素"></a>内联和块级元素</h2><p>块级元素特点：</p>
+<p>1、每个块级元素都从新的一行开始，并且其后的元素也另起一行。（真霸道，一个块级元素独占一行）</p>
+<p>2、元素的高度、宽度、行高以及顶和底边距都可设置。</p>
+<p>3、元素宽度在不设置的情况下，是它本身父容器的100%（和父元素的宽度一致），除非设定一个宽度。</p>
+<p>内联元素(行内元素  inline)特点：</p>
+<p>1、和其他元素都在一行上；</p>
+<p>2、元素的高度、宽度及顶部和底部边距不可设置；</p>
+<p>3、元素的宽度就是它包含的文字或图片的宽度，不可改变。</p>
+<p>内联块级inline-block 元素特点：</p>
+<p>1、和其他元素都在一行上；</p>
+<p>2、元素的高度、宽度、行高以及顶和底边距都可设置。</p>
+<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><p>CSS 盒子模型(Box Model)</p>
+<p>所有HTML元素可以看作盒子，在CSS中，”box model”这一术语是用来设计和布局时使用。</p>
+<p>CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容。</p>
+<p>盒模型允许我们在其它元素和周围元素边框之间的空间放置元素。</p>
+<p>盒子模型居中显示，设置内联元素时 text-align:center;  这句话就可以让内联元素居中设置块状元素时定宽：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">div&#123;</span></span><br><span class="line"><span class="undefined">    border:1px solid red;/*为了显示居中效果明显为 div 设置了边框*/</span></span><br><span class="line"><span class="undefined">    </span></span><br><span class="line"><span class="undefined">    width:200px;/*定宽*/</span></span><br><span class="line"><span class="undefined">    margin:20px auto;/* margin-left 与 margin-right 设置为 auto */</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>定宽就是width值固定，此时设置margin左或右为自动即可，注意两个设置缺一不可。</p>
+<p>不定宽：</p>
+<p>加table，或者将其改为内联</p>
+<p>在实际工作中我们会遇到需要为“不定宽度的块状元素”设置居中，比如网页上的分页导航，因为分页的数量是不确定的，所以我们不能通过设置宽度来限制它的弹性。(不定宽块状元素：块状元素的宽度width不固定。)不定宽度的块状元素有三种方法居中（这三种方法目前使用的都很多）：</p>
+<ul>
+<li>加入 table 标签</li>
+<li>设置 display: inline 方法：与第一种类似，显示类型设为 行内元素，进行不定宽元素的属性设置</li>
+<li>设置 position:relative 和 left:50%：利用 相对定位 的方式，将元素向左偏移 50% ，即达到居中的目的<br>第一种方法：<br>为什么选择方法一加入table标签? 是利用table标签的长度自适应性—即不定义其长度也不默认父元素body的长度（table其长度根据其内文本长度决定），因此可以看做一个定宽度块元素，然后再利用定宽度块状居中的margin的方法，使其水平居中。</li>
+</ul>
+<p>第一步：为需要设置的居中的元素外面加入一个 table 标签 ( 包括 \<tbody>、\<tr>、\<td> )。</td></tr></tbody></p>
+<p>第二步：为这个 table 设置“左右 margin 居中”（这个和定宽块状元素的方法一样）。</p>
+<p>举例如下：</p>
+<p>html代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是第一行文本<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是第二行文本<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是第三行文本<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">css代码：</span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">table&#123;</span></span><br><span class="line"><span class="undefined">    border:1px solid;</span></span><br><span class="line"><span class="undefined">    margin:0 auto;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>隐形改变display类型</p>
+<ol>
+<li>position : absolute </li>
+<li>float : left 或 float:right 加入这两句话中任意一句，就可以将元素变化inline-block</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>:absolute;</span><br><span class="line">	<span class="attribute">width</span>:<span class="number">200px</span>;</span><br><span class="line">	<span class="attribute">background</span>:<span class="number">#ccc</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>a原来是内联的，不能改变width，加入绝对定位后变为内联块就可以了。</p>
+<p>width   height是改变盒子的背景background,    font-size才是改变文字大小</p>
+<h2 id="权值"><a href="#权值" class="headerlink" title="权值"></a>权值</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;<span class="attribute">color</span>:red;&#125; <span class="comment">/*权值为1*/</span></span><br><span class="line"><span class="selector-tag">p</span> <span class="selector-tag">span</span>&#123;<span class="attribute">color</span>:green;&#125; <span class="comment">/*权值为1+1=2*/</span></span><br><span class="line"><span class="selector-class">.warning</span>&#123;<span class="attribute">color</span>:white;&#125; <span class="comment">/*权值为10*/</span></span><br><span class="line"><span class="selector-tag">p</span> <span class="selector-tag">span</span><span class="selector-class">.warning</span>&#123;<span class="attribute">color</span>:purple;&#125; <span class="comment">/*权值为1+1+10=12*/</span></span><br><span class="line"><span class="selector-id">#footer</span> <span class="selector-class">.note</span> <span class="selector-tag">p</span>&#123;<span class="attribute">color</span>:yellow;&#125; <span class="comment">/*权值为100+10+1=111*/</span></span><br></pre></td></tr></table></figure>
+<p>浏览器默认的样式 &lt; 网页制作者样式 &lt; 用户自己设置的样式</p>
+<h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><p>层模型有三种形式：</p>
+<p>1、绝对定位(position: absolute)</p>
+<p>2、相对定位(position: relative)</p>
+<p>3、固定定位(position: fixed)</p>
+<p>Relative与Absolute组合使用</p>
+<p>在三种形式中，1是相对于浏览器，2是移动后原来位置有保留，3是固定盒子 <code>利用2，1可以实现相对与某一个的移动（不用相对于浏览器）</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#box1</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">position</span>:relative;        </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#box2</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>:absolute;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">left</span>:<span class="number">30px</span>;         </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样一来，box2就是相对于box1来移动的</p>
+<p>注意这样做的前提</p>
+<p>参照定位的元素box1必须是相对定位元素box2的前辈元素</p>
+<p>即：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box1"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box2"</span>&gt;</span>相对参照元素进行定位<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>关于代码编写时移动的问题</p>
+<p>绝对定位中，比如实现div元素相对于浏览器右移100px</p>
+<p>此时代码写为  left:100px；</p>
+<p>注意理解绝对定位，先把我的盒子定位好，来移动浏览器，这样为了让我在浏览器的右边，浏览器应该左移，绝对定位。</p>
+<p>另一个理解方法</p>
+<p>有四个参数来设置   left  right  top  bottom</p>
+<p>比如设置left=50px   可以理解为此时盒子与浏览器左边相距50px，也就是盒子右移动50px</p>
+<p>补充：</p>
+<ol>
+<li>static（静态定位）：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。</li>
+<li>relative（相对定位）：生成相对定位的元素，通过top,bottom,left,right的设置相对于其正常（原先本身）位置进行定位。可通过z-index进行层次分级。　　</li>
+<li>absolute（绝对定位）：生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。可通过z-index进行层次分级。</li>
+<li>fixed（固定定位）：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。可通过z-index进行层次分级。</li>
+</ol>
+<p>css 相对固定位置 处理方案：</p>
+<p>需要固定位置的时候，常使用 <code>position：fixed</code> 这种方式往往达不到理想的效果，我们经常需要的是容器在某个位置固定，这样你需要花时间去调整左右上下参数。可以让fixed定位的容器处在一个父容器内，父容器是relative定位的，这样我们固定定位的容器就不用调整位置了，以父容器为基准</p>
+<p>举例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"position: relative;"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"rich_text_class"</span> <span class="attr">style</span>=<span class="string">"position:fixed;"</span> <span class="attr">v-html</span>=<span class="string">"menu"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="index-z"><a href="#index-z" class="headerlink" title="index-z"></a>index-z</h2><p>z序决定了dom的层级关系，数值越大的在最上层。关于宽度，父容器的宽度受到子dom的影响，可以调整让子dom的宽度不超过父容器，在设置width属性的时候，是块的宽加上内边距，可以改属性，让这个width只有块的宽决定。理解外边距和内边距和元素自己。块级元素才是占一行。</p>
+<h2 id="hover"><a href="#hover" class="headerlink" title=":hover"></a>:hover</h2><p><code>:hover { }</code> css选择器中对被选中对象做操作，效果为鼠标指向时代码作用。例子鼠标指向时修改文字颜色（注意不能直接在便签中加style=color  先设置颜色，class设置的颜色就会失效，应该是遵循了就近原则）</p>
+<h2 id="超出显示文字省略"><a href="#超出显示文字省略" class="headerlink" title="超出显示文字省略"></a>超出显示文字省略</h2><p>css3 超出显示文字省略 <code>text-overflow: ellipsis; white-space: nowrap; overflow: hidden;</code></p>
+<p>设置行数，超出行数省略</p>
+<pre><code>overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 3;
+-webkit-box-orient: vertical;
+</code></pre><p>把该样式作用于p标签上</p>
+<h2 id="控制锚点"><a href="#控制锚点" class="headerlink" title="控制锚点"></a>控制锚点</h2><ol>
+<li><p>js控制锚点跳转</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;a name=&quot;anchor&quot;&gt;&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">location.hash=&quot;anchor&quot;;</span><br><span class="line"></span><br><span class="line">不只有a其他元素也可以，比如在报表中：</span><br><span class="line">&lt;tr id=&quot;tr1&quot;&gt;...&lt;/tr&gt;</span><br><span class="line">location.hash=&quot;tr1&quot;</span><br><span class="line"></span><br><span class="line">或者用jQuery的动画滚动效果：</span><br><span class="line">var id=&quot;tr1&quot;;</span><br><span class="line">$(&apos;html,body&apos;).animate(&#123;scrollTop: $(&quot;tr#&quot;+id).offset().top&#125;, 500);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>html控制锚点跳转</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;#btn&quot;&gt;跳转到点击位置&lt;/a&gt;</span><br><span class="line">&lt;a name=&quot;btn&quot; id=&quot;btn&quot;&gt;点击&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>跨页面锚点跳转</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">代码如下:</span><br><span class="line">&lt;a href=&quot;123.html#btn&quot;&gt;跳到btn&lt;/a&gt;</span><br><span class="line">&lt;a name=&quot;btn&quot; id=&quot;btn&quot;&gt;&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>js控制锚点跳转在HTML中实现方式</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 假设一个需要跳转到的节点 --&gt;</span><br><span class="line">&lt;div id=&quot;divNode&quot;&gt;&lt;!-- contents --&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;a href=&quot;#&quot; onclick=&quot;</span><br><span class="line">    document.getElemetnById(&apos;divNode&apos;).scrollIntoView(true);</span><br><span class="line">    return false;&quot;&gt;</span><br><span class="line">    通过scrollIntoView实现锚点效果</span><br><span class="line">&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="box-sizing"><a href="#box-sizing" class="headerlink" title="box-sizing"></a>box-sizing</h2><p>box-sizing属性用于更改用于计算元素宽度和高度的默认的 CSS 盒子模型。可以使用此属性来模拟不正确支持CSS盒子模型规范的浏览器的行为。</p>
+<p>简单来说就是改变盒子模型的计算方式，默认盒子模型，容器的width等于容器设置的width。如果box-sizing 设置为border-box 容器的宽度等于除外边距外的其它属性和。</p>
+<h2 id="cursor-pointer"><a href="#cursor-pointer" class="headerlink" title="cursor: pointer"></a>cursor: pointer</h2><p><code>cursor: pointer</code> 运用了该属性，鼠标指上元素时变成“小手”</p>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><p>给元素添加背景，做一个图标按钮，需要设置padding 扩充元素大小，不然图片没法显示</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-01-09T15:57:58.053Z" itemprop="dateUpdated">2019-01-09 23:57:58</time>
+</span><br>
+
+
+        
+        今天也是充满希望的一天！
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.liuzhidream.com">
+            <img src="/learn_programing/img/me.jpg" alt="Liu Zhi">
+            Liu Zhi
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/html/">html</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/HTML/css/&title=《css》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/HTML/css/&title=《css》 — VanLiuZhi&source=css总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/HTML/css/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《css》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/HTML/css/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/HTML/css/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/learn_programing/2018/10/22/Algorithm/README/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Algorithm</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/learn_programing/2018/10/22/JavaScript/Vue/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Vue</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: '',
+            repo: '',
+            oauth: {
+                client_id: '',
+                client_secret: '',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/learn_programing/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Liu Zhi &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/HTML/css/&title=《css》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/HTML/css/&title=《css》 — VanLiuZhi&source=css总结" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/HTML/css/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《css》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/HTML/css/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/HTML/css/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKUlEQVR42u3aQW7DMAwEwPz/0+61QFtlSToFLI1OgeHYnBwYkdTrFa/r21rf8/P+9beqbxktDAyMxzKu5Vrfsw7iryvz9/5CxcDAOICRJNAky1V/oPW7ktgwMDAweqTkSp6yMTAwMHoJN9qutcpgDAwMjEkRm6fR/GnrRPyRWhwDA+OBjLzr/v+fPzLfwMDAeBTjKq58G7dO0DdHhYGBsTUjT3B5KPNitfkWDAyMrRn5oa48jfZKzSStl/ewGBgYD2fMw0oSa3WcWd5uYmBgHMNIism8AVdl9wYAGBgYZzLytDsJMX9X9DNhYGAcyciDrjbOekc63iRfDAyMrRnVJld+zCsfBuTp+E2Kx8DA2JRR/XJ+8CIJPU/QUbsNAwNja0ZvDNArSsuttKSExsDA2Jox2br1jmvkh8PyQSkGBsZpjOqVfDBQLYObh9IwMDC2Y+SN+15zrZdYC8OA6vwBAwNjC0a+cZwk1sl2MPqvwMDA2IiRjyfz670n37C3xcDA2JqRF5+TVlq+cexFhYGBcQ7jitc8sd71o2BgYJzD6DXRJk26wmAy+RYGBsamjKu48jHkXcXt+vkYGBgnMKpprno8ojeeTEIvDDgxMDC2YMwPWFRHoXclXAwMjNMYhRZ88NDeIGF07AMDAwOjFeJ6+1gtU9/8AWBgYGAUE26eKPOBxJsyGAMD4wBGdRjQK0fnmBtqcQwMjAcy5m2yJLh8MDD5G8DAwNiO8QXyrWqYFvjCBAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/learn_programing/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/learn_programing/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/learn_programing/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

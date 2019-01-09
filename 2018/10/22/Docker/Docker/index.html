@@ -29,12 +29,12 @@
 <meta property="og:site_name" content="VanLiuZhi">
 <meta property="og:description" content="docker 容器技术学习笔记">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://www.liuzhidream.com/learn_programing/images/Mac/iterm2_key_1.png">
-<meta property="og:updated_time" content="2018-10-21T16:00:00.000Z">
+<meta property="og:image" content="http://www.liuzhidream.com/learn_programing/images/docker/docker.png">
+<meta property="og:updated_time" content="2019-01-09T15:47:07.832Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker">
 <meta name="twitter:description" content="docker 容器技术学习笔记">
-<meta name="twitter:image" content="http://www.liuzhidream.com/learn_programing/images/Mac/iterm2_key_1.png">
+<meta name="twitter:image" content="http://www.liuzhidream.com/learn_programing/images/docker/docker.png">
     
         <link rel="alternate" type="application/atom+xml" title="VanLiuZhi" href="/learn_programing/atom.xml">
     
@@ -152,7 +152,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/docker/">docker</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/linux/">linux</a></li></ul>
 
             
         </h5>
@@ -182,7 +182,7 @@
             <time class="post-time" title="2018-10-22 00:00:00" datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished">2018-10-22</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/docker/">docker</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/linux/">linux</a></li></ul>
 
 
 
@@ -199,7 +199,7 @@
 <h1 id="Docker-笔记"><a href="#Docker-笔记" class="headerlink" title="Docker 笔记"></a>Docker 笔记</h1><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/learn_programing/images/Mac/iterm2_key_1.png" alt="image" title="">
+                    <img src="/learn_programing/images/docker/docker.png" alt="image" title="">
                 </div>
                 <div class="image-caption">image</div>
             </figure>
@@ -308,10 +308,13 @@ docker logs 把容器运行后产生的输入都打印出来，不要轻易尝�
 </tr>
 </tbody>
 </table>
-<p>使用 <code>docker attach</code> 命令进入container（容器）有一个缺点，那就是每次从container中退出到前台时，container也跟着退出了。<br>要想退出container时，让container仍然在后台运行着，可以使用 <code>docker exec -it</code> 命令。每次使用这个命令进入container，当退出container后，container仍然在后台运行，命令使用方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it goofy_almeida /bin/bash</span><br><span class="line"></span><br><span class="line">goofy_almeida：要启动的container的名称</span><br><span class="line"></span><br><span class="line">/bin/bash：在container中启动一个bash shell</span><br></pre></td></tr></table></figure></p>
+<p>使用 <code>docker attach</code> 命令进入container（容器）有一个缺点，那就是每次从container中退出到前台时，container也跟着退出了。<br>要想退出container时，让container仍然在后台运行着，可以使用 <code>docker exec -it</code> 命令。每次使用这个命令进入container，当退出container后，container仍然在后台运行，命令使用方法：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it goofy_almeida /bin/bash</span><br><span class="line"></span><br><span class="line">goofy_almeida：要启动的container的名称</span><br><span class="line"></span><br><span class="line">/bin/bash：在container中启动一个bash shell</span><br></pre></td></tr></table></figure></p>
 <p>这样输入“exit”或者按键“Ctrl + C”退出container时，这个container仍然在后台运行。</p>
-<p>::: tip<br>关于容器的运行，我本人的做法会使用 <code>screen</code> (linux的一个软件)，一般没有做后台运行。<br>:::</p>
-<h3 id="container总结"><a href="#container总结" class="headerlink" title="container总结"></a>container总结</h3><p>run 命令后从镜像创建container(容器)，此时的容器是新的，如果修改了内容，用exit退出，这个容器被关闭了（进入了Exited状态），如果想留着修改，最好是Ctrl+P+Q  退出容器不关闭  这样docker ps  可以查看容器还在，这样就可以通过start 容器name再次进入容器了。（这里我感觉容器的状态是有用的，具体就要看文档了，因为run新容器后，通过exit命令退出了，再次run，此时ps命令应该是创建了一次，然后关闭，又创建了一次，出现过两个name, 但是第二次run的容器是新的，上次修改的拿不到。 但是修改后，exit退出，通过docker ps -l，可以看到容器id,  这里可以进行提交。所以像保持容器的修改，最好用上面的流程，等理清楚了生命周期，就比较清楚整个流程了）经测试，docker ps -l列不出的容器，通过docker ps -a找到，即使状态不是update也可以去commit。<br>::: tip 容器的status<br>One of created, restarting, running, removing, paused, exited, or dead<br>:::</p>
+<blockquote><p>关于容器的运行，我本人的做法会使用 <code>screen</code> (linux的一个软件)，一般没有做后台运行。</p>
+</blockquote>
+<h3 id="container总结"><a href="#container总结" class="headerlink" title="container总结"></a>container总结</h3><p>run 命令后从镜像创建container(容器)，此时的容器是新的，如果修改了内容，用exit退出，这个容器被关闭了（进入了Exited状态），如果想留着修改，最好是Ctrl+P+Q  退出容器不关闭  这样docker ps  可以查看容器还在，这样就可以通过start 容器name再次进入容器了。（这里我感觉容器的状态是有用的，具体就要看文档了，因为run新容器后，通过exit命令退出了，再次run，此时ps命令应该是创建了一次，然后关闭，又创建了一次，出现过两个name, 但是第二次run的容器是新的，上次修改的拿不到。 但是修改后，exit退出，通过docker ps -l，可以看到容器id,  这里可以进行提交。所以像保持容器的修改，最好用上面的流程，等理清楚了生命周期，就比较清楚整个流程了）经测试，docker ps -l列不出的容器，通过docker ps -a找到，即使状态不是update也可以去commit。</p>
+<blockquote><p>One of created, restarting, running, removing, paused, exited, or dead</p>
+</blockquote>
 <h2 id="容器导入导出"><a href="#容器导入导出" class="headerlink" title="容器导入导出"></a>容器导入导出</h2><pre><code>docker save imageID &gt; filename.tar
 docker load &lt; filename.tar
 
@@ -451,12 +454,12 @@ docker import &lt; filename.tar
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-10-21T16:00:00.000Z" itemprop="dateUpdated">2018-10-22 00:00:00</time>
+    最后更新时间：<time datetime="2019-01-09T15:47:07.832Z" itemprop="dateUpdated">2019-01-09 23:47:07</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/learn_programing/2018/10/22/Docker/Docker/" target="_blank" rel="external">http://www.liuzhidream.com/2018/10/22/Docker/Docker/</a>
+        今天也是充满希望的一天！
         
     </div>
     
@@ -531,18 +534,18 @@ docker import &lt; filename.tar
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/learn_programing/2018/10/22/Collect/collect/" id="post-prev" class="post-nav-link">
+      <a href="/learn_programing/2018/10/22/blog/sleep-blog/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Collect</h4>
+        <h4 class="title">为什么那么多成功的人，他们每天只睡几个小时？</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/learn_programing/2018/10/22/Python-threading/Python-threading/" id="post-next" class="post-nav-link">
+      <a href="/learn_programing/2018/10/22/Collect/collect/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Python-threading</h4>
+        <h4 class="title">Collect</h4>
       </a>
     </div>
   

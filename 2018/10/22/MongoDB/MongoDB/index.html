@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>MongoDB | VanLiuZhi | 有梦想的人不睡觉</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#00e1ff">
+    
+    
+    <meta name="keywords" content="note,database">
+    <meta name="description" content="MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。它支持的数据结构非常松散，是类似json的bson格式，因此可以存储比较复杂的数据类型。Mongo最大的特点是它支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引。">
+<meta name="keywords" content="note,database">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MongoDB">
+<meta property="og:url" content="http://www.liuzhidream.com/2018/10/22/MongoDB/MongoDB/index.html">
+<meta property="og:site_name" content="VanLiuZhi">
+<meta property="og:description" content="MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。它支持的数据结构非常松散，是类似json的bson格式，因此可以存储比较复杂的数据类型。Mongo最大的特点是它支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://www.liuzhidream.com/learn_programing/images/mongodb/MongoDB.png">
+<meta property="og:updated_time" content="2018-10-21T16:00:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MongoDB">
+<meta name="twitter:description" content="MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。它支持的数据结构非常松散，是类似json的bson格式，因此可以存储比较复杂的数据类型。Mongo最大的特点是它支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引。">
+<meta name="twitter:image" content="http://www.liuzhidream.com/learn_programing/images/mongodb/MongoDB.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="VanLiuZhi" href="/learn_programing/atom.xml">
+    
+    <link rel="shortcut icon" href="/learn_programing/favicon.ico">
+    <link rel="stylesheet" href="/learn_programing/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/learn_programing/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/learn_programing/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/learn_programing/img/me.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Liu Zhi</h5>
+          <a href="mailto:vanliuzhi@qq.com" title="vanliuzhi@qq.com" class="mail">vanliuzhi@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/tags/note">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/categories/python">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/VanLiuZhi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://segmentfault.com/u/justicelz" target="_blank">
+                <i class="icon icon-lg icon-link"></i>
+                SegmentFault
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">MongoDB</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">MongoDB</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018-10-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/database/">database</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MongoDB"><span class="post-toc-number">1.</span> <span class="post-toc-text">MongoDB</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ObjectID字段"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">ObjectID字段</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查询"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">查询</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#projection"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">projection</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#内嵌文档"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">内嵌文档</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据库引用"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">数据库引用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原子操作"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">原子操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#findAndModify方法"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">findAndModify方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#索引"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">索引</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#最大范围"><span class="post-toc-number">1.6.1.</span> <span class="post-toc-text">最大范围</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-MongoDB/MongoDB" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">MongoDB</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-22 00:00:00" datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished">2018-10-22</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/database/">database</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。它支持的数据结构非常松散，是类似json的bson格式，因此可以存储比较复杂的数据类型。Mongo最大的特点是它支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引。</p>
+<a id="more"></a>
+<h1 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/learn_programing/images/mongodb/MongoDB.png" alt="image" title="">
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+<h2 id="ObjectID字段"><a href="#ObjectID字段" class="headerlink" title="ObjectID字段"></a>ObjectID字段</h2><p><code>ObjectId</code>构成我们使用<code>MySQL</code>等关系型数据库时，主键都是设置成自增的。但在分布式环境下，这种方法就不可行了，会产生冲突。为此，<code>MongoDB</code>采用了一个称之为<code>ObjectId</code>的类型来做主键。<code>ObjectId</code>是一个12字节的<code>BSON</code>类型字符串。按照字节顺序，依次代表：</p>
+<ul>
+<li>4字节：UNIX时间戳</li>
+<li>3字节：表示运行MongoDB的机器</li>
+<li>2字节：表示生成此_id的进程</li>
+<li>3字节：由一个随机数开始的计数器生成的值</li>
+</ul>
+<p><code>MongoDB</code>对<code>ObjectId</code>对象提供了<code>getTimestamp()</code>方法来获取<code>ObjectId</code>的时间。</p>
+<p>这里不使用自增长<code>id</code>主要是因为<code>MongoDB</code>是分布式数据库，在并发插入的时候需要维护全局的唯一ID，传统的像MySQL是单机版的，使用自增长ID可以了，处理多条数据插入加锁就行了，虽然MySQL也可以部署集群，但是这种情况ID就没用了，需要自定义全局唯一字段。</p>
+<p><code>ObjectID</code>是字段类型，通常来说它是按照默认规则来生产的，文档中的其它字段也可以使用这种字段类型。</p>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><ul>
+<li>查询全部：<code>db.document.find({})</code></li>
+<li>查询字段是对象的：<code>db.document.find({&#39;id_card.idcard_type&#39;: &#39;身份证&#39;})</code></li>
+</ul>
+<h3 id="projection"><a href="#projection" class="headerlink" title="projection"></a>projection</h3><p>该参数指明要显示的字段或者要隐藏的字段</p>
+<ul>
+<li><code>db.document.find({}, {&#39;name&#39;:1})</code>  返回结果只显示name字段</li>
+<li><code>db.document.find({}, {&#39;name&#39;:0})</code>  返回结果把name字段隐藏了，其它展示出来</li>
+</ul>
+<h2 id="内嵌文档"><a href="#内嵌文档" class="headerlink" title="内嵌文档"></a>内嵌文档</h2><p>见文档</p>
+<h2 id="数据库引用"><a href="#数据库引用" class="headerlink" title="数据库引用"></a>数据库引用</h2><p>分为手动引用和DBRefs，手动引用就是自己建立关系，然后查多次或关联查询。</p>
+<p>使用方法：</p>
+<ul>
+<li>$ref：集合名称</li>
+<li>$id：引用的id</li>
+<li>$db:数据库名称，可选参数</li>
+</ul>
+<p>产品document中引用attr_data，attr_data是产品属性document</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> namedtuple</span><br><span class="line">Point = namedtuple(<span class="string">'Point'</span>, [<span class="string">'x'</span>, <span class="string">'y'</span>])</span><br><span class="line">p = Point(<span class="number">11</span>, <span class="number">22</span>)</span><br><span class="line">x, y = p</span><br><span class="line">print(x, y)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;   </span><br><span class="line">    <span class="string">"_id"</span>:ObjectId(<span class="string">"53402597d852426020000002"</span>),</span><br><span class="line">    <span class="string">"product_name"</span>: <span class="string">"卫龙辣条"</span>,</span><br><span class="line">    <span class="string">"attr_data"</span>: &#123;</span><br><span class="line">        <span class="string">"$ref"</span>: <span class="string">"product_attr"</span>,</span><br><span class="line">        <span class="string">"$id"</span>: ObjectId(<span class="string">"534009e4d852427820000002"</span>),</span><br><span class="line">        <span class="string">"$db"</span>: <span class="string">"testdata"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>product_attr document</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   <span class="attr">"_id"</span> : ObjectId(<span class="string">"534009e4d852427820000002"</span>),</span><br><span class="line">   <span class="attr">"size"</span>: <span class="string">"大"</span>,</span><br><span class="line">   <span class="attr">"weight"</span>: <span class="string">"100g"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>查询<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var product = db.products.findOne(&#123;<span class="string">"product_name"</span>:<span class="string">"卫龙辣条"</span>&#125;)</span><br><span class="line">var dbRef = product.attr_data</span><br><span class="line">db[dbRef.<span class="variable">$ref</span>].findOne(&#123;<span class="string">"_id"</span>:(dbRef.<span class="variable">$id</span>)&#125;)</span><br><span class="line">结果：</span><br><span class="line">&#123;</span><br><span class="line">   <span class="string">"_id"</span> : ObjectId(<span class="string">"534009e4d852427820000002"</span>),</span><br><span class="line">   <span class="string">"size"</span>: <span class="string">"大"</span>,</span><br><span class="line">   <span class="string">"weight"</span>: <span class="string">"100g"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="原子操作"><a href="#原子操作" class="headerlink" title="原子操作"></a>原子操作</h2><p>mongodb不支持事务，所以，在你的项目中应用时，要注意这点。无论什么设计，都不要要求mongodb保证数据的完整性。</p>
+<p>但是mongodb提供了许多原子操作，比如文档的保存，修改，删除等，都是原子操作。</p>
+<p>所谓原子操作就是要么这个文档保存到Mongodb，要么没有保存到Mongodb，不会出现查询到的文档没有保存完整的情况。</p>
+<h3 id="findAndModify方法"><a href="#findAndModify方法" class="headerlink" title="findAndModify方法"></a>findAndModify方法</h3><p>该方法将查询一些结果，如果查询到，执行更新。这些语句都是写在一个查询中的，并且使用对应的原子操作方法，让整个findAndModify实现原子性操作。<br>如果分开操作，就是先查询，再修改，在这两个操作之间，如果有人购买了产品，导致库存不足，那么修改操作就会导致数据库数据一致性问题。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">book = &#123;</span><br><span class="line">          _id: 123456789,</span><br><span class="line">          title: &quot;MongoDB: The Definitive Guide&quot;,</span><br><span class="line">          author: [ &quot;Kristina Chodorow&quot;, &quot;Mike Dirolf&quot; ],</span><br><span class="line">          published_date: ISODate(&quot;2010-09-24&quot;),</span><br><span class="line">          pages: 216,</span><br><span class="line">          language: &quot;English&quot;,</span><br><span class="line">          publisher_id: &quot;oreilly&quot;,</span><br><span class="line">          available: 3,</span><br><span class="line">          checkout: [ &#123; by: &quot;joe&quot;, date: ISODate(&quot;2012-10-15&quot;) &#125; ]</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
+<p>对于上述的book模型，available是我们的判别标志，当它大于0的时候，说明是可以操作的(比如借书)，这部分就是查询，查询成功了，就可以去执行要更新的操作。<br>db.document.findAndModify({<br>    query: {},<br>    update: {}<br>})<br>更新操作应该使用原子操作命令</p>
+<p> $set:用来指定一个键并更新键值，若键不存在并创建。</p>
+<p>{ $set : { field : value } }<br>  $unset:用来删除一个键</p>
+<p>{ $unset : { field : 1} }<br>  $inc:可以对文档的某个值为数字型的键进行增减操作 </p>
+<p>{ $inc : { field : value } }<br>  $push：把value追加到field里面去，field一定要是数组类型才行，如果field不存在，会新增一个数据类型加进去。</p>
+<p>{ $push : { field : value } }<br>  $pushAll:同$push,只是一次可以追加到多个值到一个数组字段内。</p>
+<p>{ $pushAll : { field : value_array } }<br>  $pull:从数组field内删除一个等于value值</p>
+<p>{ $pull : { field : _value } }<br>  $addToSet：增加一个值到数组内，而且只有当这个值不在数组内才增加。<br>  $pop：删除数组的第一个或最后一个元素<br>{ $pop : { field : 1 } }<br>  $rename：修改字段名称<br>{ $rename : { old_field_name : new_field_name } }<br>  $bit：位操作，integer类型<br>{$bit : { field : {and : 5}}}<br>  偏移操作符</p>
+<blockquote>
+<p>t.find() { “_id” : ObjectId(“4b97e62bf1d8c7152c9ccb74”), “title” : “ABC”, “comments” : [ { “by” : “joe”, “votes” : 3 }, { “by” : “jane”, “votes” : 7 } ] }</p>
+</blockquote>
+<blockquote>
+<p>t.update( {‘comments.by’:’joe’}, {$inc:{‘comments.$.votes’:1}}, false, true )</p>
+</blockquote>
+<blockquote>
+<p>t.find() { “_id” : ObjectId(“4b97e62bf1d8c7152c9ccb74”), “title” : “ABC”, “comments” : [ { “by” : “joe”, “votes” : 4 }, { “by” : “jane”, “votes” : 7 } ] }</p>
+</blockquote>
+<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>MongoDB通过索引加快查询速度，索引运行在内存中，数据库的操作也需要对索引进行操作，索引超过内存的情况，将会删除一些索引。最好只对大数据文档创建索引。</p>
+<p>索引不能被以下的查询使用：</p>
+<ul>
+<li>正则表达式及非操作符，如 $nin, $not, 等</li>
+<li>算术运算符，如 $mod, 等</li>
+<li>$where 子句</li>
+</ul>
+<p>所以，检测你的语句是否使用索引是一个好的习惯，可以用explain来查看。</p>
+<h3 id="最大范围"><a href="#最大范围" class="headerlink" title="最大范围"></a>最大范围</h3><ul>
+<li>集合中索引不能超过64个</li>
+<li>索引名的长度不能超过128个字符</li>
+<li>一个复合索引最多可以有31个字段</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-10-21T16:00:00.000Z" itemprop="dateUpdated">2018-10-22 00:00:00</time>
+</span><br>
+
+
+        
+        今天也是充满希望的一天！
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.liuzhidream.com">
+            <img src="/learn_programing/img/me.jpg" alt="Liu Zhi">
+            Liu Zhi
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/database/">database</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/note/">note</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/MongoDB/MongoDB/&title=《MongoDB》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/MongoDB/MongoDB/&title=《MongoDB》 — VanLiuZhi&source=MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。它支持的数据结构非常松散，是类似json的bs..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/MongoDB/MongoDB/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MongoDB》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/MongoDB/MongoDB/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/MongoDB/MongoDB/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/learn_programing/2018/10/22/MongoDB/MongoEngine/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">MongoEngine</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/learn_programing/2018/10/22/MySql/install-problem/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">MySQL install-problem</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: '',
+            repo: '',
+            oauth: {
+                client_id: '',
+                client_secret: '',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/learn_programing/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Liu Zhi &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/MongoDB/MongoDB/&title=《MongoDB》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/MongoDB/MongoDB/&title=《MongoDB》 — VanLiuZhi&source=MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。它支持的数据结构非常松散，是类似json的bs..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/MongoDB/MongoDB/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MongoDB》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/MongoDB/MongoDB/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/MongoDB/MongoDB/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIklEQVR42u3aQW4CMQwF0N7/0lTqqhJl+LZDBcnLCg1MmMfC2LG/vuJ1+1n3r39fuV+P9rnfLbl3wcLAwPhYxu1yJYweJrkreTYMDIxzGHmQzYPpdYCefxcGBgZGHvjysJikfRgYGBhrA25e3F5fSd7FwMDAyIvJ3sFZLyi/pBbHwMD4QMakMfDq1//U38DAwHhjxiuK0nn4Lj8PBgbG1ozrA/21sw3VZme+GwYGxt6MfLSiGhzXJppP9sHAwDiAkceuPNWbg68/80dSiIGBsSkjubmKqe6cB9/C6AYGBsZGjN7Qw6iJWPzhohCMgYFxAGMyYNFDXgfxaiGNgYFxDqO6abX4zPHlJigGBsYBjF57MqmJ8/bkJFXFwMDYm5GkbknA7SWL5ce6/EvAwMA4gZG3IXNAdWxiARUDA2M7Rt6e7DUMemlledQMAwNja0bvyH5tS6CXvT75DAYGxkaM6mBWr+lYDcTlUQ8MDIytGb3WY/UArrpnjiwft2FgYHwsIy8Ue6MYeTNyQVaLgYGxNWMe/qqBu3fXw+sYGBhbM3rDFtVhr+pB3mhaBAMDYyPGrbiqjYH5lSjpxMDA2JoxmV7ohdrqqBkGBgZGkln1Ct3emhzqYWBgnMCYj3BVj8+qUf9JwoqBgYERD2lVy+BlR3IYGBgYwaFbNfhOvgsDA+NMxksKy8H+eSGNgYFxAmPSGMjDYi9lvA7Hy/obGBgY78v4BpE1f60JAwV/AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/learn_programing/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/learn_programing/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/learn_programing/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

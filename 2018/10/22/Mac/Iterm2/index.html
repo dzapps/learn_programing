@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Iterm2 | VanLiuZhi | 有梦想的人不睡觉</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#00e1ff">
+    
+    
+    <meta name="keywords" content="note,util,mac">
+    <meta name="description" content="不错的终端软件">
+<meta name="keywords" content="note,util,mac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Iterm2">
+<meta property="og:url" content="http://www.liuzhidream.com/2018/10/22/Mac/Iterm2/index.html">
+<meta property="og:site_name" content="VanLiuZhi">
+<meta property="og:description" content="不错的终端软件">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://www.liuzhidream.com/learn_programing/images/Mac/iterm2_key_1.png">
+<meta property="og:image" content="http://www.liuzhidream.com/learn_programing/images/Mac/iterm2_ssh.png">
+<meta property="og:updated_time" content="2019-01-09T15:51:00.995Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Iterm2">
+<meta name="twitter:description" content="不错的终端软件">
+<meta name="twitter:image" content="http://www.liuzhidream.com/learn_programing/images/Mac/iterm2_key_1.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="VanLiuZhi" href="/learn_programing/atom.xml">
+    
+    <link rel="shortcut icon" href="/learn_programing/favicon.ico">
+    <link rel="stylesheet" href="/learn_programing/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/learn_programing/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/learn_programing/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/learn_programing/img/me.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Liu Zhi</h5>
+          <a href="mailto:vanliuzhi@qq.com" title="vanliuzhi@qq.com" class="mail">vanliuzhi@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/tags/note">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/categories/python">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/VanLiuZhi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://segmentfault.com/u/justicelz" target="_blank">
+                <i class="icon icon-lg icon-link"></i>
+                SegmentFault
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Iterm2</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Iterm2</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018-10-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/mac/">mac</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#移动一个单词"><span class="post-toc-number">1.</span> <span class="post-toc-text">移动一个单词</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置远程ssh登陆"><span class="post-toc-number">2.</span> <span class="post-toc-text">配置远程ssh登陆</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#命令"><span class="post-toc-number">3.</span> <span class="post-toc-text">命令</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Mac/Iterm2" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Iterm2</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-22 00:00:00" datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished">2018-10-22</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/mac/">mac</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>不错的终端软件</p>
+<a id="more"></a>
+<h2 id="移动一个单词"><a href="#移动一个单词" class="headerlink" title="移动一个单词"></a>移动一个单词</h2><p>在Profile – keys下，找到如同的原配置信息。<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/learn_programing/images/Mac/iterm2_key_1.png" alt="image" title="">
+                </div>
+                <div class="image-caption">image</div>
+            </figure><br>其实这是已有的功能，不过Mac默认的快捷键被占用了，修改成我们习惯的。<br>分别修改option+←和option+→的映射，选择Action为“Send Escape Sequence”，然后输入“b”和“f”即可。</p>
+<h2 id="配置远程ssh登陆"><a href="#配置远程ssh登陆" class="headerlink" title="配置远程ssh登陆"></a>配置远程ssh登陆</h2><p>使用脚本传参数的方式登陆，先准备脚本，内容如下：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/expect</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> timeout 30</span><br><span class="line">spawn ssh -p [lindex <span class="variable">$argv</span> 0] [lindex <span class="variable">$argv</span> 1]@[lindex <span class="variable">$argv</span> 2]</span><br><span class="line">expect &#123;</span><br><span class="line">        <span class="string">"(yes/no)?"</span></span><br><span class="line">        &#123;send <span class="string">"yes\n"</span>;exp_continue&#125;</span><br><span class="line">        <span class="string">"password:"</span></span><br><span class="line">        &#123;send <span class="string">"[lindex <span class="variable">$argv</span> 3]\n"</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line">interact</span><br></pre></td></tr></table></figure>
+<p>在本地创建这么一个文件 <code>*.sh</code><br>然后去配置iterm2，如下图，用绝对路径指向这个文件，后面加上参数。 端口，用户，IP，password。<br>举例：<br><code>/Users/liuzhi/Documents/LinuxServer/liuzhiTX.sh 22 root 123.207.***.202 12345</code></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/learn_programing/images/Mac/iterm2_ssh.png" alt="image" title="">
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">Command</th>
+<th style="text-align:left">Description </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">垂直分屏</td>
+<td style="text-align:left">command + d </td>
+</tr>
+<tr>
+<td style="text-align:left">水平分屏</td>
+<td style="text-align:left">command + shift + d </td>
+</tr>
+<tr>
+<td style="text-align:left">切换屏幕</td>
+<td style="text-align:left">command + option + 方向键 command + [ 或 command + ] </td>
+</tr>
+<tr>
+<td style="text-align:left">查看历史命令</td>
+<td style="text-align:left">command + ; </td>
+</tr>
+<tr>
+<td style="text-align:left">查看剪贴板历史</td>
+<td style="text-align:left">command + shift + h </td>
+</tr>
+<tr>
+<td style="text-align:left">新建标签</td>
+<td style="text-align:left">command + t </td>
+</tr>
+<tr>
+<td style="text-align:left">关闭标签</td>
+<td style="text-align:left">command + w </td>
+</tr>
+<tr>
+<td style="text-align:left">切换标签</td>
+<td style="text-align:left">command + 数字 command + 左右方向键 </td>
+</tr>
+<tr>
+<td style="text-align:left">切换全屏</td>
+<td style="text-align:left">command + enter </td>
+</tr>
+<tr>
+<td style="text-align:left">查找</td>
+<td style="text-align:left">command + f </td>
+</tr>
+<tr>
+<td style="text-align:left">清除当前行</td>
+<td style="text-align:left">ctrl + u </td>
+</tr>
+<tr>
+<td style="text-align:left">到行首</td>
+<td style="text-align:left">ctrl + a </td>
+</tr>
+<tr>
+<td style="text-align:left">到行尾</td>
+<td style="text-align:left">ctrl + e </td>
+</tr>
+<tr>
+<td style="text-align:left">前进后退</td>
+<td style="text-align:left">ctrl + f/b (相当于左右方向键) </td>
+</tr>
+<tr>
+<td style="text-align:left">上一条命令</td>
+<td style="text-align:left">ctrl + p </td>
+</tr>
+<tr>
+<td style="text-align:left">搜索命令历史</td>
+<td style="text-align:left">ctrl + r </td>
+</tr>
+<tr>
+<td style="text-align:left">删除当前光标的字符</td>
+<td style="text-align:left">ctrl + d </td>
+</tr>
+<tr>
+<td style="text-align:left">删除光标之前的字符</td>
+<td style="text-align:left">ctrl + h </td>
+</tr>
+<tr>
+<td style="text-align:left">删除光标之前的单词</td>
+<td style="text-align:left">ctrl + w </td>
+</tr>
+<tr>
+<td style="text-align:left">删除到文本末尾</td>
+<td style="text-align:left">ctrl + k </td>
+</tr>
+<tr>
+<td style="text-align:left">交换光标处文本</td>
+<td style="text-align:left">ctrl + t </td>
+</tr>
+<tr>
+<td style="text-align:left">清屏1</td>
+<td style="text-align:left">command + r </td>
+</tr>
+<tr>
+<td style="text-align:left">清屏2</td>
+<td style="text-align:left">ctrl + l </td>
+</tr>
+<tr>
+<td style="text-align:left">⌘ + f</td>
+<td style="text-align:left">所查找的内容会被自动复制 </td>
+</tr>
+<tr>
+<td style="text-align:left">⌘ + r</td>
+<td style="text-align:left">clear，而且只是换到新一屏，不会想 clear 一样创建一个空屏 </td>
+</tr>
+<tr>
+<td style="text-align:left">ctrl + u</td>
+<td style="text-align:left">清空当前行，无论光标在什么位置 </td>
+</tr>
+<tr>
+<td style="text-align:left">输入开头命令后 按 ⌘ +</td>
+<td style="text-align:left">会自动列出输入过的命令 </td>
+</tr>
+<tr>
+<td style="text-align:left">⌘ + shift + h</td>
+<td style="text-align:left">会列出剪切板历史 </td>
+</tr>
+</tbody>
+</table>
+<p>复制：</p>
+<p>选中即复制：iterm2有2种好用的选中即复制模式。</p>
+<p>一种是用鼠标，在iterm2中，选中某个路径或者某个词汇，那么，iterm2就自动复制了。</p>
+<p>另一种是无鼠标模式，command+f，弹出iterm2的查找模式，输入要查找并复制的内容的前几个字母，确认找到的是自己的内容之后，输入tab，查找窗口将自动变化内容，并将其复制。如果输入的是shift+tab（实测好像没用），则自动将查找内容的左边选中并复制。</p>
+<p>输入command+shift+h，iterm2将自动列出剪切板的历史记录，这个历史要使用过无鼠标模式才行</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-01-09T15:51:00.995Z" itemprop="dateUpdated">2019-01-09 23:51:00</time>
+</span><br>
+
+
+        
+        今天也是充满希望的一天！
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.liuzhidream.com">
+            <img src="/learn_programing/img/me.jpg" alt="Liu Zhi">
+            Liu Zhi
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/mac/">mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/note/">note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/util/">util</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/Mac/Iterm2/&title=《Iterm2》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/Mac/Iterm2/&title=《Iterm2》 — VanLiuZhi&source=不错的终端软件" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/Mac/Iterm2/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Iterm2》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/Mac/Iterm2/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/Mac/Iterm2/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/learn_programing/2018/10/22/MySql/install-problem/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">MySQL install-problem</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/learn_programing/2018/10/22/MySql/sqlAlchemy-query/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">sqlAlchemy-query</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: '',
+            repo: '',
+            oauth: {
+                client_id: '',
+                client_secret: '',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/learn_programing/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Liu Zhi &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/Mac/Iterm2/&title=《Iterm2》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/Mac/Iterm2/&title=《Iterm2》 — VanLiuZhi&source=不错的终端软件" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/Mac/Iterm2/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Iterm2》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/Mac/Iterm2/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/Mac/Iterm2/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJUlEQVR42u3aQZLiMBAEQP7/afYBE3irWmJiLKdPDiBkpQ9NSa3XK77eP67Z5/lTXt+4MDAwbst4X16z31x/svKaPlIxMDAewPg09PX99Tj5JNafhYGBgTGb4iwyYmBgYOxiREOXC9Q2SmJgYDyNkZTO5L4dbWVMDAyM5zDyXfffv/9KfwMDA+NWjHd5rVDzUFjPCgMD42hGu0Dd9cs8ehZPwcDAOJrRlry2eTkLoMNxMDAwjmMkTcf8YUlY3NXO/JhwMTAwjmNcl9r222RyyaGN4QvFwMA4lLGyQZYHuF2NzI+jYWBgHM3Y1bxMfv+N8r25B4uBgfHnGXmMy6eV74nlpP8snjEwMA5lrA8322LLY+Xm7TYMDIxbMdaXkW1kzKNevjGHgYHxHEaydJwFuzYsJqS6KmNgYNyW0Q6aB8Q8LK6/RAwMjLMZSQFdP80xK6zDZgAGBsZxjPYwxGyZmgfK/CkYGBjPZLRBbX2bLH9KkW0xMDAewEgCX77gbCPg0rEzDAyMBzCui13e2myXo237szgWhoGBcRxj1npsm5rDxuTsyAUGBsYRjHd5rbQTdsXN6B8DAwPjIMaszH2vbbArbmJgYJzHWCmyRYsxaBsMj4VhYGA8hpFvhCVHvtr4mP8DFJ1YDAwMjNERrrasF9tzGBgYGLPtrbYNGTcDNkRDDAyMGzKSUtgWxDz8zbbhMDAwnsPIy+VKZGxfSjsTDAyMQxn/AJEgIuD9ZtlxAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/learn_programing/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/learn_programing/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/learn_programing/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

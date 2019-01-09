@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>利用Docker快速构建开发环境 | VanLiuZhi | 有梦想的人不睡觉</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#00e1ff">
+    
+    
+    <meta name="keywords" content="linux,docker,technology">
+    <meta name="description" content="Docker是很不错的容器技术，利用Docker可用快速构建一个开发环境，这样的好处在于一台新的电脑，只要安装了Docker软件，搭建环境就是几个命令的事，这样整个开发团队都会在同样的环境下进行，而且部署的时候，运维的同学只需要针对安全性做一些调整即可上线。">
+<meta name="keywords" content="linux,docker,technology">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用Docker快速构建开发环境">
+<meta property="og:url" content="http://www.liuzhidream.com/2018/10/22/blog/docker-dev/index.html">
+<meta property="og:site_name" content="VanLiuZhi">
+<meta property="og:description" content="Docker是很不错的容器技术，利用Docker可用快速构建一个开发环境，这样的好处在于一台新的电脑，只要安装了Docker软件，搭建环境就是几个命令的事，这样整个开发团队都会在同样的环境下进行，而且部署的时候，运维的同学只需要针对安全性做一些调整即可上线。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-09T15:47:07.832Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="利用Docker快速构建开发环境">
+<meta name="twitter:description" content="Docker是很不错的容器技术，利用Docker可用快速构建一个开发环境，这样的好处在于一台新的电脑，只要安装了Docker软件，搭建环境就是几个命令的事，这样整个开发团队都会在同样的环境下进行，而且部署的时候，运维的同学只需要针对安全性做一些调整即可上线。">
+    
+        <link rel="alternate" type="application/atom+xml" title="VanLiuZhi" href="/learn_programing/atom.xml">
+    
+    <link rel="shortcut icon" href="/learn_programing/favicon.ico">
+    <link rel="stylesheet" href="/learn_programing/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/learn_programing/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/learn_programing/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/learn_programing/img/me.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Liu Zhi</h5>
+          <a href="mailto:vanliuzhi@qq.com" title="vanliuzhi@qq.com" class="mail">vanliuzhi@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/tags/note">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/categories/python">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/VanLiuZhi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://segmentfault.com/u/justicelz" target="_blank">
+                <i class="icon icon-lg icon-link"></i>
+                SegmentFault
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">利用Docker快速构建开发环境</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">利用Docker快速构建开发环境</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018-10-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/technology/">technology</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#序言"><span class="post-toc-number">1.</span> <span class="post-toc-text">序言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Dockerfile"><span class="post-toc-number">2.</span> <span class="post-toc-text">Dockerfile</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-blog/docker-dev" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">利用Docker快速构建开发环境</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-22 00:00:00" datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished">2018-10-22</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/technology/">technology</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>Docker是很不错的容器技术，利用Docker可用快速构建一个开发环境，这样的好处在于一台新的电脑，只要安装了Docker软件，搭建环境就是几个命令的事，这样整个开发团队都会在同样的环境下进行，而且部署的时候，运维的同学只需要针对安全性做一些调整即可上线。</p>
+<a id="more"></a>
+<h2 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h2><p>以Python语言为例，一个小团队的技术栈差不多会用到以下的东西：</p>
+<ol>
+<li>Python环境，包括各种需要的包</li>
+<li>数据库，包括MySQL、MongoDB等</li>
+<li>缓存服务，使用Redis等</li>
+<li>任务队列，使用celery，RabbitMQ</li>
+<li>Http服务器，Nginx</li>
+<li>WSGI服务器，gunicorn，uwsgi</li>
+</ol>
+<h2 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h2><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> python:<span class="number">3.7</span></span><br><span class="line"><span class="keyword">LABEL</span><span class="bash"> author=<span class="string">"liuzhi&lt;1441765847.com&gt;"</span></span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="comment"># 换源，Python镜像基于Debian，使用阿里的Debian源</span></span></span><br><span class="line"><span class="bash">RUN rm /etc/apt/sources.list</span></span><br><span class="line"><span class="bash">COPY sources.list /etc/apt/sources.list</span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="comment"># 运行命令，安装常用软件</span></span></span><br><span class="line"><span class="bash">RUN apt-get update \</span></span><br><span class="line"><span class="bash">    <span class="comment"># 修改时区</span></span></span><br><span class="line"><span class="bash">    &amp;&amp; ln -sf /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime \</span></span><br><span class="line"><span class="bash">    <span class="comment"># &amp;&amp; apt-get install -y apt-utils \</span></span></span><br><span class="line"><span class="bash">    <span class="comment"># &amp;&amp; apt-get install -y wget \</span></span></span><br><span class="line"><span class="bash">    &amp;&amp; apt-get install -y zsh \</span></span><br><span class="line"><span class="bash">    &amp;&amp; chsh -s /bin/zsh root \</span></span><br><span class="line"><span class="bash">    &amp;&amp; apt-get install -y curl \</span></span><br><span class="line"><span class="bash">    &amp;&amp; apt-get install -y git \</span></span><br><span class="line"><span class="bash">    &amp;&amp; apt-get install -y vim </span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="comment"># 安装zsh的扩展</span></span></span><br><span class="line"><span class="bash">RUN sh -c <span class="string">"<span class="variable">$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>"</span>  || <span class="literal">true</span></span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash">ENV FLASK_ENV dev</span></span><br><span class="line"><span class="bash">ENV APP_DIR /code</span></span><br><span class="line"><span class="bash">WORKDIR /code/</span></span><br><span class="line"><span class="bash">EXPOSE 5000</span></span><br></pre></td></tr></table></figure>
+<p>注意事项：</p>
+<ul>
+<li><p>记得在同级目录下装备源文件 <code>sources.list</code></p>
+</li>
+<li><p>有时候会提示需要安装 <code>apt-utils</code>，不过我这里是基于Debian的，这东西还装不上，没有apt-utils，安装不了第三方包，wget安装失败了，可用进入容器自行安装wget</p>
+</li>
+<li><p>RUN命令中通过 <code>&amp;&amp;</code> 连接命令，因为在Docker中，每一个指令都会构建一层，因此尽量将命令都放在一个RUN指令中，用 &amp;&amp; 来串联。还有命令后面的 <code>\</code> 符最后就不需要写了，不然和下面的命令连起来了，如果你使用Dockerfile静态语法检查工具，有错误提示的（xcode安装插件即可编写Dockerfile，错误的地方会有提示）</p>
+</li>
+<li><p>这里还安装了zsh的扩展，使用了 <code>||</code> ，不用直接安装镜像创建会失败，我猜测可能是这个命令后面没接上，不用 <code>||</code> 可以看到安装信息是成功了的，但是容器创建会失败，太具体的情况不知道了，安装了zsh，启动容器的时候记得通过 <code>/bin/zsh</code> 进入</p>
+</li>
+</ul>
+<p>这里使用了官方的Python镜像，体积有点大，好处是装软件一般不会出问题了，作为开发用就不在精简体积上花时间了。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-01-09T15:47:07.832Z" itemprop="dateUpdated">2019-01-09 23:47:07</time>
+</span><br>
+
+
+        
+        今天也是充满希望的一天！
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.liuzhidream.com">
+            <img src="/learn_programing/img/me.jpg" alt="Liu Zhi">
+            Liu Zhi
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/docker/">docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/technology/">technology</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/blog/docker-dev/&title=《利用Docker快速构建开发环境》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/blog/docker-dev/&title=《利用Docker快速构建开发环境》 — VanLiuZhi&source=Docker是很不错的容器技术，利用Docker可用快速构建一个开发环境，这样的好处在于一台新的电脑，只要安装了Docker软件，搭建环境就是几个命令的事..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/blog/docker-dev/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《利用Docker快速构建开发环境》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/blog/docker-dev/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/blog/docker-dev/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/learn_programing/2018/10/22/blog/ORID/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">ORID 焦点呈现法（Focused Conversation Method）</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/learn_programing/2018/10/22/Algorithm/README/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Algorithm</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: '',
+            repo: '',
+            oauth: {
+                client_id: '',
+                client_secret: '',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/learn_programing/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Liu Zhi &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/blog/docker-dev/&title=《利用Docker快速构建开发环境》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/blog/docker-dev/&title=《利用Docker快速构建开发环境》 — VanLiuZhi&source=Docker是很不错的容器技术，利用Docker可用快速构建一个开发环境，这样的好处在于一台新的电脑，只要安装了Docker软件，搭建环境就是几个命令的事..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/blog/docker-dev/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《利用Docker快速构建开发环境》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/blog/docker-dev/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/blog/docker-dev/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJklEQVR42u3aQW7DMAwEwP7/0+41QBFlSToFLI1ORWPIGh8IiuTPT7yul/X3P6//T359fWb9lpsXBgbGYxnXcuXHWh/03Z7r/ZOzYWBgnMNIDrF+Pj/6u1CbvwsDAwMj2XodQHPk/BkMDAyMahidwzAwMDAml9gk+M5Lb1+/i2NgYDyQ0Suc/c/fX+lvYGBgPIpxFVf19XmgvAYLAwNjb0b1qpmMRyRtg/zTFM6DgYGxKSNpMfaGMHpXzeagGAYGxtaMPHT2ym2TdkJ1NwwMjF0Z8+Zl0ozsXWLzRBMDA2NvRu/KWm18JsE0P2KhkYmBgbEFIy+N5aX/XudxxMbAwDiGsQ6vd8029J7/cEIMDIzDGNUXTyrzk1/fpoYYGBjbMZIL6iSZ642IjdJQDAyMIxnVkn31oPme5XkNDAyM7Rh5S6A62jVPNKvNVAwMjJ0YyUPVkty97cno82FgYBzAqA5+VZO5apAtp4kYGBhbM6pJWzUEVz/KaE8MDIwDGNVkMQm7k3J/9VqLgYFxAmMyzlVNCvNhi0JKioGBcQwjP1ASaicDYeU9MTAwNmVcxTUp8feq+knaioGBsTcjX5NNC7MerUs1BgbGCYy8JdAbjOiNfyUfDgMD4zTGvVfQvHjXu8R+aGFiYGBgJJu2EsT8w0XdUQwMjOMZ1ZGvSaiNioAYGBgHMPKRi15hbvJRbr6LY2BgPJDRG3GolsPy8lxzZgQDA2NPxi88crJQc/y8HQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/learn_programing/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/learn_programing/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/learn_programing/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

@@ -20,16 +20,16 @@
     <meta name="theme-color" content="#00e1ff">
     
     
-    <meta name="keywords" content="javascript,Util">
+    <meta name="keywords" content="javascript,util">
     <meta name="description" content="常见的JavaScript 相关设计">
-<meta name="keywords" content="javascript,Util">
+<meta name="keywords" content="javascript,util">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScriptUtil">
 <meta property="og:url" content="http://www.liuzhidream.com/2018/10/22/JavaScriptUtil/JavaScriptUtil/index.html">
 <meta property="og:site_name" content="VanLiuZhi">
 <meta property="og:description" content="常见的JavaScript 相关设计">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-21T16:00:00.000Z">
+<meta property="og:updated_time" content="2019-01-09T15:45:42.461Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScriptUtil">
 <meta name="twitter:description" content="常见的JavaScript 相关设计">
@@ -150,7 +150,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/Util/">Util</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/util/">util</a></li></ul>
 
             
         </h5>
@@ -167,7 +167,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#JavaScript-相关设计"><span class="post-toc-number">1.</span> <span class="post-toc-text">JavaScript 相关设计</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自定义遮蔽罩"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">自定义遮蔽罩</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自定义遮蔽罩"><span class="post-toc-number">1.</span> <span class="post-toc-text">自定义遮蔽罩</span></a></li></ol>
         </nav>
     </aside>
 
@@ -180,7 +180,7 @@
             <time class="post-time" title="2018-10-22 00:00:00" datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished">2018-10-22</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/Util/">Util</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/util/">util</a></li></ul>
 
 
 
@@ -194,7 +194,6 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>常见的JavaScript 相关设计</p>
 <a id="more"></a>
-<h1 id="JavaScript-相关设计"><a href="#JavaScript-相关设计" class="headerlink" title="JavaScript 相关设计"></a>JavaScript 相关设计</h1><p>常见的JavaScript 相关设计</p>
 <h2 id="自定义遮蔽罩"><a href="#自定义遮蔽罩" class="headerlink" title="自定义遮蔽罩"></a>自定义遮蔽罩</h2><p>使用了jQuery-WeUI，需要根据情况做调整</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">&lt;!--自定义遮罩层--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"bg"</span> <span class="attr">class</span>=<span class="string">"weui-mask weui-mask--visible"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">style</span>=<span class="string">"display: none;opacity: 1;visibility: visible;z-index: 100"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 简单示例 --&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>html 最简遮罩层<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">showDiv</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">document</span>.getElementById(<span class="string">'popDiv'</span>).style.display = <span class="string">'block'</span>;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">document</span>.getElementById(<span class="string">'bg'</span>).style.display = <span class="string">'block'</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">closeDiv</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">document</span>.getElementById(<span class="string">'popDiv'</span>).style.display = <span class="string">'none'</span>;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">document</span>.getElementById(<span class="string">'bg'</span>).style.display = <span class="string">'none'</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"popDiv"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">style</span>=<span class="string">"z-index:99;display:none;position:absolute;margin-top: 20%;margin-left: 40%;background-color: #FFF;"</span>&gt;</span>html</span><br><span class="line">    最简遮罩层<span class="tag">&lt;<span class="name">br</span>/&gt;</span>html 最简遮罩层<span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:closeDiv()"</span>&gt;</span>关闭遮罩层<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"bg"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">style</span>=<span class="string">"display:none;background-color: #ccc;width: 100%;position:absolute;height: 100%;opacity: 0.5;z-index: 1;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"padding-top: 10%;padding-left:40%;z-index:1;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"Submit"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">"打开遮罩层"</span> <span class="attr">onclick</span>=<span class="string">"javascript:showDiv()"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
         </div>
@@ -204,12 +203,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-10-21T16:00:00.000Z" itemprop="dateUpdated">2018-10-22 00:00:00</time>
+    最后更新时间：<time datetime="2019-01-09T15:45:42.461Z" itemprop="dateUpdated">2019-01-09 23:45:42</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/learn_programing/2018/10/22/JavaScriptUtil/JavaScriptUtil/" target="_blank" rel="external">http://www.liuzhidream.com/2018/10/22/JavaScriptUtil/JavaScriptUtil/</a>
+        今天也是充满希望的一天！
         
     </div>
     
@@ -226,7 +225,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/Util/">Util</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/javascript/">javascript</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/util/">util</a></li></ul>
 
 
             
@@ -284,18 +283,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/learn_programing/2018/10/22/JavaScript/npm/" id="post-prev" class="post-nav-link">
+      <a href="/learn_programing/2018/10/22/JavaScript/nvm/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">npm</h4>
+        <h4 class="title">nvm</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/learn_programing/2018/10/22/Web/Nginx/" id="post-next" class="post-nav-link">
+      <a href="/learn_programing/2018/10/22/Linux/linux-command/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Nginx</h4>
+        <h4 class="title">linux-command</h4>
       </a>
     </div>
   

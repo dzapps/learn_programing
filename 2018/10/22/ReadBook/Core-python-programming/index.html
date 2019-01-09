@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Core-python-programming 读书笔记 | VanLiuZhi | 有梦想的人不睡觉</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#00e1ff">
+    
+    
+    <meta name="keywords" content="readbook">
+    <meta name="description" content="Python 核心编程 读书笔记，节选部分内容">
+<meta name="keywords" content="readbook">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Core-python-programming 读书笔记">
+<meta property="og:url" content="http://www.liuzhidream.com/2018/10/22/ReadBook/Core-python-programming/index.html">
+<meta property="og:site_name" content="VanLiuZhi">
+<meta property="og:description" content="Python 核心编程 读书笔记，节选部分内容">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://www.liuzhidream.com/learn_programing/images/ReadBook/py-code-re_1.png">
+<meta property="og:image" content="http://www.liuzhidream.com/learn_programing/images/ReadBook/py-code-re_2.png">
+<meta property="og:updated_time" content="2019-01-09T16:07:27.898Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Core-python-programming 读书笔记">
+<meta name="twitter:description" content="Python 核心编程 读书笔记，节选部分内容">
+<meta name="twitter:image" content="http://www.liuzhidream.com/learn_programing/images/ReadBook/py-code-re_1.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="VanLiuZhi" href="/learn_programing/atom.xml">
+    
+    <link rel="shortcut icon" href="/learn_programing/favicon.ico">
+    <link rel="stylesheet" href="/learn_programing/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/learn_programing/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/learn_programing/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/learn_programing/img/me.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Liu Zhi</h5>
+          <a href="mailto:vanliuzhi@qq.com" title="vanliuzhi@qq.com" class="mail">vanliuzhi@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/tags/note">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/categories/python">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/VanLiuZhi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://segmentfault.com/u/justicelz" target="_blank">
+                <i class="icon icon-lg icon-link"></i>
+                SegmentFault
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Core-python-programming 读书笔记</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Core-python-programming 读书笔记</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018-10-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/readbook/">readbook</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#CGI"><span class="post-toc-number">1.</span> <span class="post-toc-text">CGI</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#RE"><span class="post-toc-number">2.</span> <span class="post-toc-text">RE</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-ReadBook/Core-python-programming" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Core-python-programming 读书笔记</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-22 00:00:00" datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished">2018-10-22</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/readbook/">readbook</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>Python 核心编程 读书笔记，节选部分内容</p>
+<a id="more"></a>
+<h2 id="CGI"><a href="#CGI" class="headerlink" title="CGI"></a>CGI</h2><p>CGI：</p>
+<p>对于静态资源（文件图片等，或者静态的HTML页面），利用web服务器就可以处理了（比如nginx），而动态资源（计算出来的数据）就要用CGI应用程序来处理。python可以用命令就在本地创建一个服务器，接着导入CGI模块，编写如何渲染页面的应用程序，就实现了CGI了。但是这种方式已经被淘汰了，一个弊端例如：</p>
+<p>这种方式无法扩展，CGI 进程（类似 Python 解释器）针对每个请求进行创建，用完就抛弃。</p>
+<p>如果应用程序接收数千个请求，创建大量的语言解释器进程很快就会导致服务器停机。<br>有两种方法可以解决这个问题，一是服务器集成，二是外部进程。因此CGI被框架或新的东西代替了。</p>
+<p>web服务器一般用C写，而应用程序用各种语言都可以。</p>
+<p>CGI是web服务器与应用程序（CGI程序）接口标准，两个直接信息传递的规程。这个规范运行web服务器执行外部程序，就是CGI程序，这样就实现了获取动态资源。这种方式每次来一个请求就要创建一个子进程，处理完成再结束这个子进程，就是fork-and-execute模式。后来又设计出了wsgi，成为web网关服务接口，也是在web服务器和应用程序之间提供一个通用的API标准。</p>
+<p>好了，我们来做一个总结，CGI是标准，WSGI也是标准，我们用CGI标准实现一个应用程序，用于处理动态数据并返回渲染后的HTML页面（其中一种情况），可以用python来实现这个程序。一个请求来的时候，用CGI方式的话，就会创建一个CGI子进程（我们不要管是谁来创建这个子进程的），然后子进程调用CGI程序得到返回数据传给客户端。  WSGI也是一个标准，我们会实现一个服务，这个服务负责处理请求，并将请求分配到对应的应用程序上。看起来有点类似，这个处理请求和分配到应用程序上的基于WSGI标准的程序不用像CGI那样每次都要创建子进程。在django的默认处理里面，就有wsgi程序。</p>
+<p>WSGI,实现这一标准的服务器，比如uWSGI, Gunicorn 。称为wsgi服务器，也就是server，这个服务器需要和一个实现WSGI规范的接口相配合，一般定义一个函application(environ,start_response)。</p>
+<h2 id="RE"><a href="#RE" class="headerlink" title="RE"></a>RE</h2><p>核心提示：搜索和匹配的比较</p>
+<p>本章通篇会使用搜索和匹配两个术语。当严格讨论与字符串中模式相关的正则表达式时，我们会用术语“匹配”（matching），指的是术语“模式匹配”（pattern-matching）。在Python 术语中，主要有两种方法完成模式匹配：“搜索”（searching），即在字符串任意部分中搜索匹配的模式；而“匹配”（matching）是指判断一个字符串能否从起始处全部或者部分地匹配某个模式。搜索通过 search()函数或方法来实现，而匹配通过调用 match()函数或方法实现。总之，当涉及模式时，全部使用术语“匹配”；我们按照 Python 如何完成模式匹配的方式来区分“搜索”和“匹配”。</p>
+<ol>
+<li>如何写出灵活的re是关键，比如  .+  就可以匹配任意长度的字符串，再和其它元字符等配合，可以实现高效的组合</li>
+<li>理解re表达式，结合模块的方法即可使用RE（可以概况为RE表达式和python语言）</li>
+<li>理解返回的结果</li>
+</ol>
+<p>预编译：re.compile()</p>
+<p>匹配  ： 一般指模式匹配。如何完成模式匹配？主要使用“搜索”和“匹配”两种方法实现</p>
+<p>re的组成：通用文本，如hello。特殊符号和字符，称为元字符</p>
+<p>元字符表：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/learn_programing/images/ReadBook/py-code-re_1.png" alt="image" title="">
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/learn_programing/images/ReadBook/py-code-re_2.png" alt="image" title="">
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+<p>择一匹配   “|”       re=’hello|world’</p>
+<p>匹配任意单个字符串  “.”  re = ‘fa.b’  可以匹配a和b之间可以是任意字符（换行除外，修改编译标记可以解除这个限制）。可以使用多个点  ..   则匹配任意两个  .灵活用在文本的前面后面，中间。</p>
+<p>数量词的贪婪模式与非贪婪模式</p>
+<ul>
+<li>贪婪     总是尝试匹配尽可能多的字符</li>
+<li>非贪婪   总是尝试匹配尽可能少的字符</li>
+</ul>
+<p>正则表达式通常用于在文本中查找匹配的字符串。Python里数量词默认是贪婪的（在少数语言里也可能是默认非贪婪），总是尝试匹配尽可能多的字符；非贪婪的则相反，总是尝试匹配尽可能少的字符。例如：正则表达式”ab<em>“如果用于查找”abbbc”，将找到”abbb”。而如果使用非贪婪的数量词”ab</em>?”，将找到”a”。</p>
+<p>compile  标记参数：</p>
+<ul>
+<li>re.I(re.IGNORECASE): 忽略大小写（括号内是完整写法，下同）</li>
+<li>M(MULTILINE): 多行模式，改变’^’和’$’的行为（参见上图）</li>
+<li>S(DOTALL): 点任意匹配模式，改变’.’的行为</li>
+<li>L(LOCALE): 使预定字符类 \w \W \b \B \s \S 取决于当前区域设定</li>
+<li>U(UNICODE): 使预定字符类 \w \W \b \B \s \S \d \D 取决于unicode定义的字符属性</li>
+<li>X(VERBOSE): 详细模式。这个模式下正则表达式可以是多行，忽略空白字符，并可以加入注释。</li>
+</ul>
+<p>字符集 [abc]</p>
+<p>限定范围和否定 [a-b] </p>
+<p>常用符号</p>
+<ul>
+<li>*   o次或者多次</li>
+<li>+   1次或者多次</li>
+<li>？  0次或者一次</li>
+</ul>
+<p>o次就是允许没有，比如z?  分析它是一个通用文本   “？”  号将前面的通用文本进行一次或0次匹配。</p>
+<p>比如zz, zx都是可以匹配到的，如此 *  + 也就理解了。</p>
+<p>{0，1} 前一个正则匹配的次数0次或1次，使用符号为{}</p>
+<p>注意：这些符号是对通用文本的扩充，比如原来的re=aa, 如果你想匹配8个a,好的做法是a{8}, 而不是写8个a.</p>
+<p>表示字符集的特殊字符：\d 数字  \w字母（大小写） 他们的大写如  \D  表示不匹配，即非十进制数字。</p>
+<p>分组：提取任何已经成功匹配的特定字符串或者子字符串</p>
+<p>使用（）包裹re表达式，可以进行分组或匹配子组，注意这两个的区别：</p>
+<ul>
+<li>分组：被包裹的re表达式会是一个整体，一般在后面接上量词。每一个括号得到分组为组1，后面的分组累加 <code>(a(b))   组1  ab   组2   b</code></li>
+<li>子组：上面得到的组1就是子组了，可以称为子组1</li>
+</ul>
+<p>扩展表示法：通常形式（?…） 尽管圆括号使用这些符号，但是只有（?P\<name>）表述一个分组匹配。所有其他的都没有创建一个分组。</name></p>
+<p>边界匹配 ： 符号   \b  \B     \b是一个单词的边界匹配，  r’\ber’   能匹配   ‘a er’  不能匹配  ‘aer’<br>要匹配  ’aer‘  re=r’er\b’</p>
+<p>闭合操作符是非贪婪的</p>
+<p>语言</p>
+<p>re可以先进行预编译，用得到的编译对象再去操作函数或方法，也可以用模块（re）直接调用方法，这个时候需要传入pattern参数，即一个re表达式。</p>
+<p>理解搜索和匹配，匹配是从头开始，如果第一个字符串就不匹配，则匹配模式失败，如果用搜索模式，则会把被匹配对象从头到尾都匹配一编，中间有符合条件的就可以得到匹配结果。</p>
+<p>findall() 该函数返回正则表达式模式全部的非重复情况，结果是一个列表，没有匹配就是空列表。</p>
+<p>这个函数的结果就是一个列表了，它没有group等属性了。</p>
+<p>finditer()和上面的类似，结果是一个迭代器。</p>
+<p>sub()和 subn()搜索与替换  功能就是将字符串能匹配到的都替换成其它字符串，subn会返回替换计数。</p>
+<p>split()分隔字符串：匹配成功的时候进行，号分割，返回的是分割后结果的列表。即一个字符串，左到右，满足条件就进行分割。</p>
+<p>扩展表示：</p>
+<p>在分组的时候重新起一个名字‘z’   re = r’ns(?P\<z>\d+)’   re.match(ns7).group(‘z’)    out:  7</z></p>
+<p>数量词组合：+， *  这两个是贪婪的，可以在后面加上？ 变成非贪婪。</p>
+<p>re = ‘.+c’    str=’abcabc’   out=’abcabc’   如果re=’.+?’  out=’abc’</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-01-09T16:07:27.898Z" itemprop="dateUpdated">2019-01-10 00:07:27</time>
+</span><br>
+
+
+        
+        今天也是充满希望的一天！
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.liuzhidream.com">
+            <img src="/learn_programing/img/me.jpg" alt="Liu Zhi">
+            Liu Zhi
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/readbook/">readbook</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/ReadBook/Core-python-programming/&title=《Core-python-programming 读书笔记》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/ReadBook/Core-python-programming/&title=《Core-python-programming 读书笔记》 — VanLiuZhi&source=Python 核心编程 读书笔记，节选部分内容" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/ReadBook/Core-python-programming/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Core-python-programming 读书笔记》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/ReadBook/Core-python-programming/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/ReadBook/Core-python-programming/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/learn_programing/2018/10/22/PythonUtil/common_tool/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">python常用方法</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/learn_programing/2018/10/22/ReadBook/javascript-definitive-guide/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">javascript-definitive-guide 读书笔记</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: '',
+            repo: '',
+            oauth: {
+                client_id: '',
+                client_secret: '',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/learn_programing/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Liu Zhi &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/ReadBook/Core-python-programming/&title=《Core-python-programming 读书笔记》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/ReadBook/Core-python-programming/&title=《Core-python-programming 读书笔记》 — VanLiuZhi&source=Python 核心编程 读书笔记，节选部分内容" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/ReadBook/Core-python-programming/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Core-python-programming 读书笔记》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/ReadBook/Core-python-programming/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/ReadBook/Core-python-programming/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvElEQVR42u3aQW7jMBAEwPz/01lgr47k7qEmRoDSKdDKNEsLcOgefn3F1/f/6/Xvq2eS0V7HvLrfjl9feHh4eKOpX11XX3P/zOzVvP7r/XfdzxkPDw9vm5dP63667eLeAurihIeHh/dR3tXkfmeDjoeHh/cXee3v/VlK0BYnPDw8vE/xki1s8vX3vKe24ytZCx4eHl7MO9kEf+rvX+rv4eHh4ZVd9eRql+88yMjLwOXc8PDw8BZ499vl2cGpKCCIjyC02+5oonh4eHgHvHZxb6eYjzOLHt58Fg8PD2+BN2t0PfV7vy1Rw0YdHh4e3hrvfsHNl+aTllU+hyLYxcPDw1vgtdTZk9svIopU8PDw8B7i3T+aB7XJdrx9Ee04UQMMDw8P74A3a963d/Igo410i5NieHh4eA/xZsPlgcXJ4n5+rAEPDw9vmzdrgM3aVHnZmG368fDw8PZ4sy1vfgigvT9rgF2WJTw8PLw1Xrtp3mh0taUi2srj4eHhrfFyal4S2qKSt9bqzh4eHh7eo7y2hZ/EtXmAm5SEWekqUmo8PDy8g/JQn9UKUuHZZ9v4401KjYeHh/cor232nx+BauOGdrTi/w0PDw/vgNdGpU/dz59pDyv80N/Dw8PDe5TXFoaT8nASFtcvAg8PD2+B1zac8sCi/VS+pc7jDzw8PLxt3qwBNiszJwFH/vrw8PDw9njJcG2gkJeZ2TfmI+Dh4eHt8b4OrpPwN5piPIc3m2k8PDy8Y953eeUBRBJD5C+ifRIPDw9vj7ex9LfxwWwDnb9KPDw8vA1eGzGc3MmD4/PjX3h4eHjbvLZB1QYE+bI+q11vGmB4eHh4H+WdN7fOj2EVLTE8PDy8j/Ly6CFPQdr2WP1a8fDw8NZ4SRhxsi2etcFONvR4eHh4e7yjn/rlkp0ft8pHW+nv4eHh4f185x9KJFS5BPnxzQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/learn_programing/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/learn_programing/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/learn_programing/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

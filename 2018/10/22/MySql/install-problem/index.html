@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>MySQL install-problem | VanLiuZhi | 有梦想的人不睡觉</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#00e1ff">
+    
+    
+    <meta name="keywords" content="note,database">
+    <meta name="description" content="安装MySQL遇到的问题">
+<meta name="keywords" content="note,database">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL install-problem">
+<meta property="og:url" content="http://www.liuzhidream.com/2018/10/22/MySql/install-problem/index.html">
+<meta property="og:site_name" content="VanLiuZhi">
+<meta property="og:description" content="安装MySQL遇到的问题">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-09T15:52:04.697Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL install-problem">
+<meta name="twitter:description" content="安装MySQL遇到的问题">
+    
+        <link rel="alternate" type="application/atom+xml" title="VanLiuZhi" href="/learn_programing/atom.xml">
+    
+    <link rel="shortcut icon" href="/learn_programing/favicon.ico">
+    <link rel="stylesheet" href="/learn_programing/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/learn_programing/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/learn_programing/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/learn_programing/img/me.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Liu Zhi</h5>
+          <a href="mailto:vanliuzhi@qq.com" title="vanliuzhi@qq.com" class="mail">vanliuzhi@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/tags/note">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/categories/python">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/VanLiuZhi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://segmentfault.com/u/justicelz" target="_blank">
+                <i class="icon icon-lg icon-link"></i>
+                SegmentFault
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">MySQL install-problem</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">MySQL install-problem</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018-10-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/database/">database</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装遇到的问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装遇到的问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#mysql-sock-无法被创建"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">mysql.sock 无法被创建</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#报错：MySQL-Illegal-mix-of-collations-for-operation-‘like’"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">报错：MySQL Illegal mix of collations for operation ‘like’</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-MySql/install-problem" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">MySQL install-problem</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-22 00:00:00" datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished">2018-10-22</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/database/">database</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>安装MySQL遇到的问题</p>
+<a id="more"></a>
+<h1 id="安装遇到的问题"><a href="#安装遇到的问题" class="headerlink" title="安装遇到的问题"></a>安装遇到的问题</h1><p>安装软件总会遇到很多问题，很多问题仅在当时情况下出现，其实解决的思路都是大致的，多看报错和官方文档。</p>
+<h2 id="mysql-sock-无法被创建"><a href="#mysql-sock-无法被创建" class="headerlink" title="mysql.sock 无法被创建"></a>mysql.sock 无法被创建</h2><p>mysql 的链接需要借助这个套接字，如果不小心删除了，会导致服务无法运行</p>
+<p>mac mysql 8.0.12安装教程</p>
+<p>本次中Mac上使用非root账户来安装mysql，终于装好了。主要原因在于8.0版本配置（说是没有配置，但还说有，通过brew安装的可以在 /usr/local/etc 目录下找到配置文件，linux包管理软件安装的东西一般都在这个目录）没有配置东西，用的是默认的，这导致要创建链接的socket的时候没有指定目录使用了默认的 /tmp，没有执行/tmp的权限或者是用户所属等问题导致创建失败（并不是很建议去操作这个文件，有些人直接运行成功了，可能和个人的系统有很大关系）。无法创建mysql服务</p>
+<p>大概解决思路<br>mysql安装会在data目录下生成很多东西，如果没有或生成的不对，可以把目录删除了，通过启动服务来生成（我就说这么干的），然后配置了socket的客户端和服务端的路径，路径指向data即可（以为mysql的data是有执行权限的），这样服务就启动成功了，然后安装brew指导，创建root用户。<br>配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[client]</span><br><span class="line">socket=/usr/local/lnmp/mysql/data/mysql.sock</span><br><span class="line">[mysqld]</span><br><span class="line">socket=/usr/local/lnmp/mysql/data/mysql.sock</span><br></pre></td></tr></table></figure></p>
+<p>两个都要指定</p>
+<p>mysql.sock 无法创建，问题可能是多方面的，在data目录下，会生成 .err后缀的文件，可以在里面查看错误信息，然后结合经验来解决问题。  还有就是data目录下数据不对，这个目录应该有很多文件的，但是我一直没有，我通过删除，再执行服务成功生成了，感觉并不是很正确的解决思路。</p>
+<p>mysqld –help –verbose | less<br>这个目录可以列出mysql的一些信息，包括配置文件可能的路径，一些已经配置的参数。</p>
+<p>最后，使用编译源代码的方式，估计是最后的活路。</p>
+<h2 id="报错：MySQL-Illegal-mix-of-collations-for-operation-‘like’"><a href="#报错：MySQL-Illegal-mix-of-collations-for-operation-‘like’" class="headerlink" title="报错：MySQL Illegal mix of collations for operation ‘like’"></a>报错：MySQL Illegal mix of collations for operation ‘like’</h2><p>MySQL Illegal mix of collations for operation ‘like’</p>
+<p>在 MySQL 5.5 以上, 若字段类型 Type 是 time,date,datetime </p>
+<p>在 select时如果使用 like ‘%中文%’ 会出现 Illegal mix of collations for operation ‘like’</p>
+<p>在编程时要对每个字段进行查找，在执行时可能就会出现时间字段 like ‘%中文%’ 这种语法，在旧版的 MySQL 是不会出现错误的。</p>
+<p>升到 MySQL 5.5 以上, 必需改成 like binary ‘%中文%’ 即可避免出现错误。</p>
+<p>在python代码中，解决方案为使用cast(fields, CHAR)转换类型后再做like.(高mysql版本中使用like的使用，非字符类型和字符类型混合在filter条件中做like，就会导致这个问题)</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-01-09T15:52:04.697Z" itemprop="dateUpdated">2019-01-09 23:52:04</time>
+</span><br>
+
+
+        
+        今天也是充满希望的一天！
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.liuzhidream.com">
+            <img src="/learn_programing/img/me.jpg" alt="Liu Zhi">
+            Liu Zhi
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/database/">database</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/note/">note</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/MySql/install-problem/&title=《MySQL install-problem》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/MySql/install-problem/&title=《MySQL install-problem》 — VanLiuZhi&source=安装MySQL遇到的问题" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/MySql/install-problem/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MySQL install-problem》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/MySql/install-problem/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/MySql/install-problem/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/learn_programing/2018/10/22/MongoDB/MongoDB/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">MongoDB</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/learn_programing/2018/10/22/Mac/Iterm2/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Iterm2</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: '',
+            repo: '',
+            oauth: {
+                client_id: '',
+                client_secret: '',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/learn_programing/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Liu Zhi &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/MySql/install-problem/&title=《MySQL install-problem》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/MySql/install-problem/&title=《MySQL install-problem》 — VanLiuZhi&source=安装MySQL遇到的问题" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/MySql/install-problem/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MySQL install-problem》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/MySql/install-problem/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/MySql/install-problem/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMElEQVR42u3aS3LDIBBFUe1/08rEs5TQfd3YVcBl5EpswfGgTX+uC6/7YfH3P73n6VPXN5YMGTKWZdzDNd6AHPT/c/gXRM4mQ4aMcxjjgEhI5J3jr2P8+uXMMmTIkAFI5HDpEWXIkCGj8zgSTGuHliFDhoxOElsrw/HS249ycRkyZCzI4FX337/+Sn9DhgwZSzHucJHgmCa6nfN8niZDhoytGTzAdcpqpLVJkuqXJ8iQIWNTRpp8ksOliSv5ywtMhgwZWzP6SSxpFcwaqkjDugwZMvZgpEOrcxNd3hJ4+XJlyJBxPIOPZZACXOei+biXDBkytmaQDfjgRVpQ65f5grkPGTJkLMvgKWXtnWl7spgSy5Ah4wAGD45pysrZ6WeDFqYMGTIWZ/BmQP+/xVJa7bYrQ4aMjRg3Xun2aZrKG5lX+psgQ4aM7Ri1JLbG4+2E4g1XhgwZmzJqG6QJJwmscZoqQ4aMAxidxLUzUlbbS4YMGecw0iJXh1QryRUDsQwZMrZjdFqPvGTGA3F6fZQhQ8Y5DLJlZ2M+/lW7esqQIeMcRm04bG7ILo6AyJAhY1PGHS6+Za21yQN6cSxMhgwZCzL44qX/9Dn8B6DY4JQhQ8YWjFqQrTU+SRLLA64MGTJOY6SBb7xZOmyRJrGPqawMGTJkhMjadZPsGJQTZciQcSRjLq9WvJt2NZQhQ8ZSDH7hI5dFcojaWMaEXFyGDBkLMtIRB74BT2JnnUSGDBnbMf4ANIPbGcg3Mp4AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/learn_programing/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/learn_programing/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/learn_programing/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

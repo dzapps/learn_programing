@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>MongoEngine | VanLiuZhi | 有梦想的人不睡觉</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#00e1ff">
+    
+    
+    <meta name="keywords" content="note,python,database">
+    <meta name="description" content="文档http://docs.mongoengine.org/index.htmlMongoEngine是Python操作MongoDB的ORM封装，可以看到很多ORM框架的影子，比如Django的ORM。底层调用了pymongo。 基本用法都是创建Document的class，得到class的instance，然后去操作instance。 MongoDB数据库是文档型的，在一个集合中，每一个文档都">
+<meta name="keywords" content="note,python,database">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MongoEngine">
+<meta property="og:url" content="http://www.liuzhidream.com/2018/10/22/MongoDB/MongoEngine/index.html">
+<meta property="og:site_name" content="VanLiuZhi">
+<meta property="og:description" content="文档http://docs.mongoengine.org/index.htmlMongoEngine是Python操作MongoDB的ORM封装，可以看到很多ORM框架的影子，比如Django的ORM。底层调用了pymongo。 基本用法都是创建Document的class，得到class的instance，然后去操作instance。 MongoDB数据库是文档型的，在一个集合中，每一个文档都">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-09T15:52:04.696Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MongoEngine">
+<meta name="twitter:description" content="文档http://docs.mongoengine.org/index.htmlMongoEngine是Python操作MongoDB的ORM封装，可以看到很多ORM框架的影子，比如Django的ORM。底层调用了pymongo。 基本用法都是创建Document的class，得到class的instance，然后去操作instance。 MongoDB数据库是文档型的，在一个集合中，每一个文档都">
+    
+        <link rel="alternate" type="application/atom+xml" title="VanLiuZhi" href="/learn_programing/atom.xml">
+    
+    <link rel="shortcut icon" href="/learn_programing/favicon.ico">
+    <link rel="stylesheet" href="/learn_programing/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/learn_programing/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/learn_programing/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/learn_programing/img/me.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Liu Zhi</h5>
+          <a href="mailto:vanliuzhi@qq.com" title="vanliuzhi@qq.com" class="mail">vanliuzhi@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/tags/note">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/categories/python">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/VanLiuZhi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://segmentfault.com/u/justicelz" target="_blank">
+                <i class="icon icon-lg icon-link"></i>
+                SegmentFault
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">MongoEngine</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">MongoEngine</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018-10-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/database/">database</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Document-instances"><span class="post-toc-number">1.</span> <span class="post-toc-text">Document instances</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#clean"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">clean</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Cascading-Saves"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Cascading Saves</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#delete"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">delete</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Document-IDs"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Document IDs</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Querying-the-database"><span class="post-toc-number">2.</span> <span class="post-toc-text">Querying the database</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Filtering-queries"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Filtering queries</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Query-operators"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Query operators</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#String-queries"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">String queries</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Geo-queries-特定字段扩展的查询"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">Geo queries(特定字段扩展的查询)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Querying-lists-查询list字段的扩展"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text">Querying lists(查询list字段的扩展)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Raw-queries-pymongo查询"><span class="post-toc-number">2.2.4.</span> <span class="post-toc-text">Raw queries(pymongo查询)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Limiting-and-skipping-results"><span class="post-toc-number">2.2.5.</span> <span class="post-toc-text">Limiting and skipping results</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Default-Document-queries-扩展模型管理器"><span class="post-toc-number">2.2.6.</span> <span class="post-toc-text">Default Document queries(扩展模型管理器)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Custom-QuerySets-封装查询集方法"><span class="post-toc-number">2.2.7.</span> <span class="post-toc-text">Custom QuerySets(封装查询集方法)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Aggregation"><span class="post-toc-number">2.2.8.</span> <span class="post-toc-text">Aggregation</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-MongoDB/MongoEngine" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">MongoEngine</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-22 00:00:00" datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished">2018-10-22</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/database/">database</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>文档<a href="http://docs.mongoengine.org/index.html" target="_blank" rel="noopener">http://docs.mongoengine.org/index.html</a><br>MongoEngine是Python操作MongoDB的ORM封装，可以看到很多ORM框架的影子，比如Django的ORM。底层调用了pymongo。</p>
+<p>基本用法都是创建Document的class，得到class的instance，然后去操作instance。</p>
+<p>MongoDB数据库是文档型的，在一个集合中，每一个文档都可以是不同的结构，不过使用了ORM，查询写入都会受到ORM的限制，当然你应该规范文档的结构。</p>
+<p>ORM提供的功能比较有限，基础操作满足不了的，查pymongo，框架底层是基于pymongo。</p>
+<a id="more"></a>
+<h1 id="Document-instances"><a href="#Document-instances" class="headerlink" title="Document instances"></a>Document instances</h1><h2 id="clean"><a href="#clean" class="headerlink" title="clean"></a>clean</h2><p>实例方法，用来做save前操作。</p>
+<h2 id="Cascading-Saves"><a href="#Cascading-Saves" class="headerlink" title="Cascading Saves"></a>Cascading Saves</h2><p>If your document contains ReferenceField or GenericReferenceField objects, then by default the save() method will not save any changes to those objects.<br>如果文档包含ReferenceField或者GenericReferenceField字段，save方法不会保存他们的修改，需要在save(cascade=True)设置，save方法描述：</p>
+<blockquote>
+<p>:param cascade: Sets the flag for cascading saves.  You can set a default by setting “cascade” in the document <strong>meta</strong><br>暂时没有做过测试。</p>
+</blockquote>
+<h2 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h2><p>执行delete，需要有id字段。</p>
+<h2 id="Document-IDs"><a href="#Document-IDs" class="headerlink" title="Document IDs"></a>Document IDs</h2><p>文档要保存了才能访问id，通过情况不需要声明id字段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; page = Page(title=&quot;Test Page&quot;)</span><br><span class="line">&gt;&gt;&gt; page.id</span><br><span class="line">&gt;&gt;&gt; page.save()</span><br><span class="line">&gt;&gt;&gt; page.id</span><br><span class="line">ObjectId(&apos;123456789abcdef000000000&apos;)</span><br></pre></td></tr></table></figure></p>
+<p>通过设置字段的关键字来创建id，这里把email作为id，事实上id是主键的别名，pk == id 是等价的<br>? 修改了默认主键，是不是就不存在唯一表示了，既没有了ObjectId(‘123456789abcdef000000000’)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; class User(Document):</span><br><span class="line">...     email = StringField(primary_key=True)</span><br><span class="line">...     name = StringField()</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; bob = User(email=&apos;bob@example.com&apos;, name=&apos;Bob&apos;)</span><br><span class="line">&gt;&gt;&gt; bob.save()</span><br><span class="line">&gt;&gt;&gt; bob.id == bob.email == &apos;bob@example.com&apos;</span><br><span class="line">True</span><br></pre></td></tr></table></figure></p>
+<h1 id="Querying-the-database"><a href="#Querying-the-database" class="headerlink" title="Querying the database"></a>Querying the database</h1><p>QuerySetManager QuerySet 的概念在MongoEngine中也是适用的。<br>查询集使用本地缓存，如果想返回新的结果，使用no_cache方法。</p>
+<h2 id="Filtering-queries"><a href="#Filtering-queries" class="headerlink" title="Filtering queries"></a>Filtering queries</h2><p>user = User.objects(name=’liu zhi’)</p>
+<h2 id="Query-operators"><a href="#Query-operators" class="headerlink" title="Query operators"></a>Query operators</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ne – not equal to 不等于</span><br><span class="line">lt – less than 小于</span><br><span class="line">lte – less than or equal to 小于等于</span><br><span class="line">gt – greater than 大于</span><br><span class="line">gte – greater than or equal to 大于等于</span><br><span class="line">not – negate a standard check, may be used before other operators (e.g. Q(age__not__mod=5)) 否定其它条件，比如查询所有age不在[20, 30]中的 age__not__in=[20, 30]</span><br><span class="line">in – value is in list (a list of values should be provided)</span><br><span class="line">nin – value is not in list (a list of values should be provided)</span><br><span class="line">mod – value % x == y, where x and y are two provided values</span><br><span class="line">all – every item in list of values provided is in array</span><br><span class="line">size – the size of the array is</span><br><span class="line">exists – value for field exists</span><br></pre></td></tr></table></figure>
+<h3 id="String-queries"><a href="#String-queries" class="headerlink" title="String queries"></a>String queries</h3><p>The following operators are available as shortcuts to querying with regular expressions:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">exact – string field exactly matches value</span><br><span class="line">iexact – string field exactly matches value (case insensitive)</span><br><span class="line">contains – string field contains value</span><br><span class="line">icontains – string field contains value (case insensitive)</span><br><span class="line">startswith – string field starts with value</span><br><span class="line">istartswith – string field starts with value (case insensitive)</span><br><span class="line">endswith – string field ends with value</span><br><span class="line">iendswith – string field ends with value (case insensitive)</span><br><span class="line">match – performs an $elemMatch so you can match an entire document within an array</span><br></pre></td></tr></table></figure>
+<h3 id="Geo-queries-特定字段扩展的查询"><a href="#Geo-queries-特定字段扩展的查询" class="headerlink" title="Geo queries(特定字段扩展的查询)"></a>Geo queries(特定字段扩展的查询)</h3><p>PointField, LineStringField and PolygonField字段增加了特殊的查询方法，详情看文档。</p>
+<h3 id="Querying-lists-查询list字段的扩展"><a href="#Querying-lists-查询list字段的扩展" class="headerlink" title="Querying lists(查询list字段的扩展)"></a>Querying lists(查询list字段的扩展)</h3><h3 id="Raw-queries-pymongo查询"><a href="#Raw-queries-pymongo查询" class="headerlink" title="Raw queries(pymongo查询)"></a>Raw queries(pymongo查询)</h3><p>使用pyMongo的原生查询，document.objects(<strong>raw</strong>={‘name’: ‘liuzhi’})</p>
+<h3 id="Limiting-and-skipping-results"><a href="#Limiting-and-skipping-results" class="headerlink" title="Limiting and skipping results"></a>Limiting and skipping results</h3><p>使用切片实现原生db.document.find().limit().skip()，get，first方法，get是检索唯一结果，如果有多个结果匹配，会触发MultipleObjectsReturned异常。get_or_create()已经弃用，最好不要使用，由于没有事务的原因，它不是安全的。</p>
+<h3 id="Default-Document-queries-扩展模型管理器"><a href="#Default-Document-queries-扩展模型管理器" class="headerlink" title="Default Document queries(扩展模型管理器)"></a>Default Document queries(扩展模型管理器)</h3><p>相当于对objects重写，使用特定的装饰器，方法名字可以自定义，这样可以做到使用原始的查询原始数据，使用自定义，查询自定义数据，比如自定义的只查询状态是正常的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class BlogPost(Document):</span><br><span class="line">    title = StringField()</span><br><span class="line">    date = DateTimeField()</span><br><span class="line"></span><br><span class="line">    @queryset_manager</span><br><span class="line">    def objects(doc_cls, queryset):</span><br><span class="line">        # This may actually also be done by defining a default ordering for</span><br><span class="line">        # the document, but this illustrates the use of manager methods</span><br><span class="line">        return queryset.order_by(&apos;-date&apos;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="Custom-QuerySets-封装查询集方法"><a href="#Custom-QuerySets-封装查询集方法" class="headerlink" title="Custom QuerySets(封装查询集方法)"></a>Custom QuerySets(封装查询集方法)</h3><p>把某些特定查询条件组合，通过新的方法获取查询集，可以给多个文档模型使用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class AwesomerQuerySet(QuerySet):</span><br><span class="line"></span><br><span class="line">    def get_awesome(self):</span><br><span class="line">        return self.filter(awesome=True)</span><br><span class="line"></span><br><span class="line">class Page(Document):</span><br><span class="line">    meta = &#123;&apos;queryset_class&apos;: AwesomerQuerySet&#125;</span><br><span class="line"></span><br><span class="line"># To call:</span><br><span class="line">Page.objects.get_awesome()</span><br></pre></td></tr></table></figure></p>
+<h3 id="Aggregation"><a href="#Aggregation" class="headerlink" title="Aggregation"></a>Aggregation</h3><p>MongoDB的聚合方法<br>objects 方法</p>
+<ul>
+<li>count() 返回QuerySet() 数目</li>
+<li>sun(‘quantitu’) 求和</li>
+<li>average() 求平均</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-01-09T15:52:04.696Z" itemprop="dateUpdated">2019-01-09 23:52:04</time>
+</span><br>
+
+
+        
+        今天也是充满希望的一天！
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.liuzhidream.com">
+            <img src="/learn_programing/img/me.jpg" alt="Liu Zhi">
+            Liu Zhi
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/database/">database</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/note/">note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/python/">python</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/MongoDB/MongoEngine/&title=《MongoEngine》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/MongoDB/MongoEngine/&title=《MongoEngine》 — VanLiuZhi&source=文档http://docs.mongoengine.org/index.htmlMongoEngine是Python操作MongoDB的ORM封装，可以看..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/MongoDB/MongoEngine/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MongoEngine》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/MongoDB/MongoEngine/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/MongoDB/MongoEngine/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/learn_programing/2018/10/22/Mac/HomeBrew/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">HomeBrew</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/learn_programing/2018/10/22/MongoDB/MongoDB/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">MongoDB</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: '',
+            repo: '',
+            oauth: {
+                client_id: '',
+                client_secret: '',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/learn_programing/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Liu Zhi &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/MongoDB/MongoEngine/&title=《MongoEngine》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/MongoDB/MongoEngine/&title=《MongoEngine》 — VanLiuZhi&source=文档http://docs.mongoengine.org/index.htmlMongoEngine是Python操作MongoDB的ORM封装，可以看..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/MongoDB/MongoEngine/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MongoEngine》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/MongoDB/MongoEngine/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/MongoDB/MongoEngine/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLElEQVR42u3aS46DMBAFQO5/6cx6FOF53XZGwS5WCBFwsej0x9cVH6/hMb6/95brEwcGBsZjGckS7668n78/efyE/L1/fD4MDIwDGMki8riXLH3VB8LAwMBIzpOULg+dGBgYGGsDbpLY9WpPDAwMjF4RO26KJdd7wX1xLY6BgfFARq80/Z/zj8w3MDAwHsV4FY88pcvv6a3k19MwMDC2ZvRKzSQRzGNjL+BiYGCcxrj7cbVorA4Mkk9QLlkxMDA2ZcwE3PyeVRvLPvK/gYGB8cWM3uKqiWO1iK2+FwMD4wRG76H5lVWJ5u1zMDAwDmAkzf2ZyjEvdJPAXRhhYmBgbMToNeOqtXKePlbLZgwMjBMYeRFb3TBRDdnjcL+s3YaBgfEoRq+h1mvPNVtp+UgVAwNjU0Z1k1YeamfGCeUqFQMDY2tGte21qtDNm3rN1BADA2MjxtqNXDONs6SIvXqRGwMDYwvGzPVxAM3HAFNrw8DA2JpR3QCRjweStloSmgvPxMDAOIaR/zgPvr12f7WsxcDAOIfRC3/VIjbfbFEogzEwMA5gVNO4tU23qK2WpIYYGBjbMXol69qNX0ljLkoKMTAwNmXkR2/7xXjRvQ0W+WfCwMDYidHbFjYTiKvzRwwMDIxeI6yX2FXHAOVaHAMDA6OYxuVFbP7hrnw6ioGBgTERKKuhNtqahoGBcQAjHwb0AmU1+OaFLgYGxgmMPFyuarTlg4He3wAGBsZGjB9hsrwq2ZrftAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/learn_programing/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/learn_programing/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/learn_programing/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

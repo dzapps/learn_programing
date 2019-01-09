@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Algorithm | VanLiuZhi | 有梦想的人不睡觉</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#00e1ff">
+    
+    
+    <meta name="keywords" content="note,algorithm">
+    <meta name="description" content="算法相关">
+<meta name="keywords" content="note,algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Algorithm">
+<meta property="og:url" content="http://www.liuzhidream.com/2018/10/22/Algorithm/README/index.html">
+<meta property="og:site_name" content="VanLiuZhi">
+<meta property="og:description" content="算法相关">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-09T15:56:18.358Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Algorithm">
+<meta name="twitter:description" content="算法相关">
+    
+        <link rel="alternate" type="application/atom+xml" title="VanLiuZhi" href="/learn_programing/atom.xml">
+    
+    <link rel="shortcut icon" href="/learn_programing/favicon.ico">
+    <link rel="stylesheet" href="/learn_programing/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/learn_programing/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/learn_programing/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/learn_programing/img/me.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Liu Zhi</h5>
+          <a href="mailto:vanliuzhi@qq.com" title="vanliuzhi@qq.com" class="mail">vanliuzhi@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/tags/note">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/categories/python">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/VanLiuZhi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://segmentfault.com/u/justicelz" target="_blank">
+                <i class="icon icon-lg icon-link"></i>
+                SegmentFault
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Algorithm</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Algorithm</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018-10-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/algorithm/">algorithm</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#算法"><span class="post-toc-number">1.</span> <span class="post-toc-text">算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#聚合"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">聚合</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#找出数组中，只出现一次的两个数字"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">找出数组中，只出现一次的两个数字</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#A-B-问题"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">A + B 问题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#冒泡排序"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">冒泡排序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#快速排序"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">快速排序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#范围内的质数"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">范围内的质数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二叉数遍历"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">二叉数遍历</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#斐波那契数列"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">斐波那契数列</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#跳台阶"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">跳台阶</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Algorithm/README" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Algorithm</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-22 00:00:00" datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished">2018-10-22</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/algorithm/">algorithm</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>算法相关</p>
+<a id="more"></a>
+<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><ul>
+<li>有穷性(Finiteness)<br>算法的有穷性是指算法必须能在执行有限个步骤之后终止；</li>
+<li>确切性(Definiteness)<br>算法的每一步骤必须有确切的定义；</li>
+<li>输入项(Input)<br>一个算法有0个或多个输入，以刻画运算对象的初始情况，所谓0个输入是指算法本身定出了初始条件；</li>
+<li>输出项(Output)<br>一个算法有一个或多个输出，以反映对输入数据加工后的结果。没有输出的算法是毫无意义的；</li>
+<li>可行性(Effectiveness)<br>算法中执行的任何计算步骤都是可以被分解为基本的可执行的操作步，即每个计算步都可以在有限时间内完成（也称之为有效性）。</li>
+</ul>
+<h2 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h2><ol>
+<li>先准备一个dict</li>
+<li>循环数据</li>
+<li>准备唯一键</li>
+<li>如果唯一键没在dict中，生成新的dict2</li>
+<li>并且 <code>dict[key] = dict2</code></li>
+<li>如果在，<code>dict2 = dict[key]</code></li>
+<li>然后修改dict2</li>
+</ol>
+<p>利用字典在原引用修改的特性，把数据进行聚合分组，每次循环都会根据唯一键从临时数据字典dict处取出要聚合到这个key对应的字典中，然后对其进行操作。</p>
+<h2 id="找出数组中，只出现一次的两个数字"><a href="#找出数组中，只出现一次的两个数字" class="headerlink" title="找出数组中，只出现一次的两个数字"></a>找出数组中，只出现一次的两个数字</h2><p>list = [2, 4, 3, 6, 3, 2, 5, 5]</p>
+<p>核心思路：</p>
+<p>1、数组中全部数据异或操作后，依次对数组中的每个元素进行异或（相同位为0，不同为1）操作，得到0000 0010。</p>
+<p>2、倒数第二位是1，说明我们要找的那两个只出现一次的数字，倒数第二位是不同的。(会出现不同，是因为这两个数不同，所以至少有一位是不同的)</p>
+<p>3、下面根据每个数二进制倒数第二位是不是1来分成两组，倒数第二位为1的是{2, 3, 6, 3, 2}，倒数第二位为0的是{4, 5, 5}。</p>
+<p>4、接下来对这两个数组分别进行异或操作，剩下的数字就是只出现一次的数字。</p>
+<p>为什么分组可以实现：因为4，6是不同的两个数，它们二进制的至少某一位是不同的（记为N位），所以把这位是1的分在一起，试想所有的数在N位不同的是4或6中的一个，加上其它的数，其它的数都是成对的，所有其它的数也只会分成两组（其它的数N位同样只会是1或0），一组包含4和多个重复的数，一组包含6和多个重复的数，重复的数是可以消去的。</p>
+<h2 id="A-B-问题"><a href="#A-B-问题" class="headerlink" title="A + B 问题"></a>A + B 问题</h2><p>给出两个整数 aa 和 bb , 求他们的和。</p>
+<ul>
+<li><p>样例<br>如果 a=1 并且 b=2，返回3。</p>
+</li>
+<li><p>挑战<br>显然你可以直接 return a + b，但是你是否可以挑战一下不这样做？（不使用++等算数运算符）</p>
+</li>
+<li><p>说明<br>a和b都是 32位 整数么？</p>
+<p>  是的</p>
+</li>
+<li><p>我可以使用位运算符么？</p>
+<p>  当然可以</p>
+</li>
+</ul>
+<p>思路：运用位运算模拟加法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    @param a: An integer</span></span><br><span class="line"><span class="string">    @param b: An integer</span></span><br><span class="line"><span class="string">    @return: The sum of a and b </span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">aplusb</span><span class="params">(self, a, b)</span>:</span></span><br><span class="line">        <span class="comment"># write your code here</span></span><br><span class="line">        <span class="keyword">if</span> a == -b:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">while</span> b != <span class="number">0</span>:</span><br><span class="line">                a, b = a ^ b, (a &amp; b) &lt;&lt; <span class="number">1</span></span><br><span class="line">                <span class="comment"># 每次去算进位的地方，进位的和a一直相加</span></span><br><span class="line">            <span class="keyword">return</span> a</span><br></pre></td></tr></table></figure>
+<p>主要利用异或运算来完成 </p>
+<ul>
+<li>异或运算有一个别名叫做：不进位加法</li>
+<li>那么a ^ b就是a和b相加之后，该进位的地方不进位的结果</li>
+<li>然后下面考虑哪些地方要进位，自然是a和b里都是1的地方</li>
+<li>a &amp; b就是a和b里都是1的那些位置，a &amp; b &lt;&lt; 1 就是进位</li>
+<li>之后的结果。所以：a + b = (a ^ b) + (a &amp; b &lt;&lt; 1)</li>
+<li>令a’ = a ^ b, b’ = (a &amp; b) &lt;&lt; 1</li>
+<li>可以知道，这个过程是在模拟加法的运算过程，进位不可能</li>
+<li>一直持续，所以b最终会变为0。因此重复做上述操作就可以</li>
+<li>求得a + b的值。</li>
+</ul>
+<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubbleSort</span><span class="params">(relist)</span>:</span></span><br><span class="line">    len_ = len(relist)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len_):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, len_ - i - <span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> relist[j] &gt; relist[j + <span class="number">1</span>]:</span><br><span class="line">                relist[j + <span class="number">1</span>], relist[j] = relist[j], relist[j + <span class="number">1</span>]</span><br><span class="line">    <span class="keyword">return</span> relist</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># print(bubbleSort([1, 5, 2, 6, 9, 3]))</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubbleSort2</span><span class="params">(inlist)</span>:</span></span><br><span class="line">    len_ = len(inlist)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len_):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len_ - i - <span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> inlist[j] &gt; inlist[j + <span class="number">1</span>]:</span><br><span class="line">                inlist[j + <span class="number">1</span>], inlist[j] = inlist[j], inlist[j + <span class="number">1</span>]</span><br><span class="line">    <span class="keyword">return</span> inlist</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># print(bubbleSort2([1, 5, 2, 6, 9, 3]))</span></span><br></pre></td></tr></table></figure>
+<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quickSort</span><span class="params">(array)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> len(array) &lt; <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> array</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        pivot = array[<span class="number">0</span>]</span><br><span class="line">        less = [i <span class="keyword">for</span> i <span class="keyword">in</span> array[<span class="number">1</span>:] <span class="keyword">if</span> i &lt; pivot]</span><br><span class="line">        greater = [j <span class="keyword">for</span> j <span class="keyword">in</span> array[<span class="number">1</span>:] <span class="keyword">if</span> j &gt; pivot]</span><br><span class="line">        <span class="keyword">return</span> quickSort(less) + [pivot] + quickSort(greater)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(quickSort([<span class="number">1</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">3</span>]))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 快排 分片的思想+递归的思想，这是取了第一个为基准值，栈高为O(log(n)),栈长O(n),所以运行时间为栈高x栈长，也就是算法平均运算时间为O(nlog(n))</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quickSort2</span><span class="params">(array)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> len(array) &lt; <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> array</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        piovt = array[<span class="number">0</span>]</span><br><span class="line">        less = [i <span class="keyword">for</span> i <span class="keyword">in</span> array[<span class="number">1</span>:] <span class="keyword">if</span> i&lt; piovt]</span><br><span class="line">        greater = [j <span class="keyword">for</span> j <span class="keyword">in</span> array[<span class="number">1</span>:] <span class="keyword">if</span> j&gt;piovt]</span><br><span class="line">        <span class="keyword">return</span> quickSort2(less) + [piovt] + quickSort2(greater)</span><br><span class="line"></span><br><span class="line">print(quickSort2([<span class="number">1</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">3</span>]))</span><br></pre></td></tr></table></figure>
+<h2 id="范围内的质数"><a href="#范围内的质数" class="headerlink" title="范围内的质数"></a>范围内的质数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    res = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">101</span>):</span><br><span class="line">        <span class="keyword">if</span> compute(i):</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            res.append(i)</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">compute</span><span class="params">(value)</span>:</span></span><br><span class="line">    flag = <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">if</span> value &lt;= <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>, value - <span class="number">1</span>):</span><br><span class="line">        r = value % i</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> r:</span><br><span class="line">            flag = <span class="keyword">True</span></span><br><span class="line">    <span class="keyword">return</span> flag</span><br><span class="line"></span><br><span class="line">print(func())</span><br></pre></td></tr></table></figure>
+<h2 id="二叉数遍历"><a href="#二叉数遍历" class="headerlink" title="二叉数遍历"></a>二叉数遍历</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BinaryTreeNode</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, data=None, left=None, right=None)</span>:</span></span><br><span class="line">        self.data = data</span><br><span class="line">        self.left = left</span><br><span class="line">        self.right = right</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BinaryTree</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="string">"""docstring for BinaryTree"""</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, root=None)</span>:</span></span><br><span class="line">        self.root = root</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_empty</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.root == <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">preOrder</span><span class="params">(self, this_Node)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> this_Node == <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        print(this_Node.data)</span><br><span class="line">        self.preOrder(this_Node.left)</span><br><span class="line">        self.preOrder(this_Node.right)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inOrder</span><span class="params">(self, this_Node)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> this_Node == <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.inOrder(this_Node.left)</span><br><span class="line"></span><br><span class="line">        print(this_Node.data)</span><br><span class="line">        self.inOrder(this_Node.right)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">postOrder</span><span class="params">(self, this_Node)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> this_Node == <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.postOrder(this_Node.left)</span><br><span class="line">        self.postOrder(this_Node.right)</span><br><span class="line">        print(this_Node.data)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">levelOrder</span><span class="params">(self, this_Node)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> this_Node == <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        _queue = []</span><br><span class="line">        _queue.append(this_Node)</span><br><span class="line">        <span class="keyword">while</span> _queue:</span><br><span class="line">            node = _queue.pop(<span class="number">0</span>)</span><br><span class="line">            print(node.data)</span><br><span class="line">            <span class="keyword">if</span> node.left != <span class="keyword">None</span>:</span><br><span class="line">                _queue.append(node.left)</span><br><span class="line">            <span class="keyword">if</span> node.right != <span class="keyword">None</span>:</span><br><span class="line">                _queue.append(node.right)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">deep</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        print(root.data)</span><br><span class="line">        self.deep(root.left)</span><br><span class="line">        self.deep(root.right)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">deepTree</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> root == <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        ld = self.deepTree(root.left)</span><br><span class="line">        rd = self.deepTree(root.right)</span><br><span class="line">        <span class="keyword">return</span> max(ld, rd) + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">n1 = BinaryTreeNode(data=<span class="string">"D"</span>)</span><br><span class="line">n2 = BinaryTreeNode(data=<span class="string">"E"</span>)</span><br><span class="line">n3 = BinaryTreeNode(data=<span class="string">"F"</span>)</span><br><span class="line">n4 = BinaryTreeNode(data=<span class="string">"B"</span>, left=n1, right=n2)</span><br><span class="line">n5 = BinaryTreeNode(data=<span class="string">"C"</span>, left=n3, right=<span class="keyword">None</span>)</span><br><span class="line">root = BinaryTreeNode(data=<span class="string">"A"</span>, left=n4, right=n5)</span><br><span class="line"></span><br><span class="line">bt = BinaryTree(root)</span><br><span class="line"></span><br><span class="line">bt = BinaryTree(root)</span><br><span class="line"><span class="comment"># print('先序遍历')</span></span><br><span class="line"><span class="comment"># bt.preOrder(bt.root)</span></span><br><span class="line"><span class="comment"># print('中序遍历')</span></span><br><span class="line"><span class="comment"># bt.inOrder(bt.root)</span></span><br><span class="line"><span class="comment"># print('后序遍历')</span></span><br><span class="line"><span class="comment"># bt.postOrder(bt.root)</span></span><br><span class="line">bt.levelOrder(root)</span><br><span class="line"></span><br><span class="line"><span class="comment"># print bt.deepTree(bt.root)</span></span><br></pre></td></tr></table></figure>
+<h2 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">flb</span><span class="params">(num)</span>:</span></span><br><span class="line">    result = <span class="keyword">None</span></span><br><span class="line">    n, a, b = <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> n &lt; num:</span><br><span class="line">        print(b)</span><br><span class="line">        result = b</span><br><span class="line">        a, b = b, a + b</span><br><span class="line">        n += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = flb(<span class="number">6</span>)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+<h2 id="跳台阶"><a href="#跳台阶" class="headerlink" title="跳台阶"></a>跳台阶</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># def jump_floor(number):</span></span><br><span class="line"><span class="comment">#     if number &lt;= 2:</span></span><br><span class="line"><span class="comment">#         return number</span></span><br><span class="line"><span class="comment">#     prev, curr = 1, 2</span></span><br><span class="line"><span class="comment">#     for _ in range(3, number + 1):</span></span><br><span class="line"><span class="comment">#         prev, curr = curr, prev + curr</span></span><br><span class="line"><span class="comment">#         print(curr)</span></span><br><span class="line"><span class="comment">#     return curr</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># print(jump_floor(5))</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">jump</span><span class="params">(time)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> time &lt;= <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> time</span><br><span class="line">    a, b = <span class="number">1</span>, <span class="number">2</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>, time + <span class="number">1</span>):</span><br><span class="line">        a, b = b, a + b</span><br><span class="line">    <span class="keyword">return</span> b</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># print(jump(6))</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># def jumpm(time):</span></span><br><span class="line"><span class="comment">#     if time == 0:</span></span><br><span class="line"><span class="comment">#         return 0</span></span><br><span class="line"><span class="comment">#     return 2 ** (time - 1)</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># fff = lambda a: a if a &lt;= 2 else (fff(a - 1) + fff(a - 2))</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># print(fff(6))</span></span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-01-09T15:56:18.358Z" itemprop="dateUpdated">2019-01-09 23:56:18</time>
+</span><br>
+
+
+        
+        今天也是充满希望的一天！
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.liuzhidream.com">
+            <img src="/learn_programing/img/me.jpg" alt="Liu Zhi">
+            Liu Zhi
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/algorithm/">algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/note/">note</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/Algorithm/README/&title=《Algorithm》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/Algorithm/README/&title=《Algorithm》 — VanLiuZhi&source=算法相关" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/Algorithm/README/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Algorithm》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/Algorithm/README/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/Algorithm/README/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/learn_programing/2018/10/22/blog/docker-dev/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">利用Docker快速构建开发环境</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/learn_programing/2018/10/22/HTML/css/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">css</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: '',
+            repo: '',
+            oauth: {
+                client_id: '',
+                client_secret: '',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/learn_programing/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Liu Zhi &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/Algorithm/README/&title=《Algorithm》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/Algorithm/README/&title=《Algorithm》 — VanLiuZhi&source=算法相关" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/Algorithm/README/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Algorithm》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/Algorithm/README/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/Algorithm/README/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACN0lEQVR42u3ay47CQAxEUf7/p4PECinQqSo3SLFvViOefVh4bFceD/k6Xtf5kffr/Pj5vevXn5/dfMGAAeO2jGN5KUfRP1PH6GeDAQPGHMa6yFZq+fpHWX+XcjYYMGDAWBdZt0ArABgwYMDYVXCVhq8+xMKAAQOGO8Sux1f92cpwu2EWhwEDxg0ZbjDwz79/mG/AgAHjJowjurJVWhZzSueBAQNGa4YeSSpDqd7AZY3mxQlhwIDRlJGNnW5jlwWWys/64f8GDBgw2jGysus2eXrYWbrZAgYMGAMYWXjpho6Vm8OUUg4DBox+jKwVUxrKbLp0fwijQsOAAePmDH1NrxdQl+oW3It8AwYMGI0Y+qBYCTgrjaB+AxkMGDAmMLKj/G71ry/1YMCA0Zuhr/X1GzWU9Zyx3FdGXxgwYAxgKF/vjqZu3Fgp9zBgwJjAyJZi7krObSuV98KAAWMaY1ckWYkq9WZRyjdgwIDRgqGXufUjWSSQjbsXJRgGDBhNGfoKXi+RRvRoNoVfn4UBA8YwRj16dAu3+8nG7hAGDBiNGHrbV+nH3IbPiDlhwIDRmuG2eutDZAOwG3NKUQEMGDBaMA7z2htPuuX+azmGAQNGa0bWa2XLuHqoAAMGjMkMpcjqLaMbUmYF17jNAgYMGI0YWZFVRlxprW+uBS8iTBgwYIxnZLGlwsvCCRgwYMDIVv97o1Bp/oYBA8YARv12Ljdg2DC4woABYwyjEgzoY2oWDLjvhQEDRjvGEzskiYclOpfEAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/learn_programing/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/learn_programing/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/learn_programing/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>博客迁移 | VanLiuZhi | 有梦想的人不睡觉</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#00e1ff">
+    
+    
+    <meta name="keywords" content="water">
+    <meta name="description" content="关于博客迁移，最开始是在有道上做笔记，学习记录，后来萌生了写类似博客网站的想法，于是用element-UI框架写了一个，整体的效果还不错，还有一个后台管理，使用Django作为web服务，每篇文章存储在数据库，但是想要的功能太多了，设计的功能也显得格格不入（完全按照自己的想法来），后来放弃了，转用了VuePress，后来又看到Hexo，还是迁移到Hexo吧。开始使用VuePress，也是因为作者说">
+<meta name="keywords" content="water">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博客迁移">
+<meta property="og:url" content="http://www.liuzhidream.com/2018/10/22/Water/UseHexo/index.html">
+<meta property="og:site_name" content="VanLiuZhi">
+<meta property="og:description" content="关于博客迁移，最开始是在有道上做笔记，学习记录，后来萌生了写类似博客网站的想法，于是用element-UI框架写了一个，整体的效果还不错，还有一个后台管理，使用Django作为web服务，每篇文章存储在数据库，但是想要的功能太多了，设计的功能也显得格格不入（完全按照自己的想法来），后来放弃了，转用了VuePress，后来又看到Hexo，还是迁移到Hexo吧。开始使用VuePress，也是因为作者说">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-09T15:52:04.697Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="博客迁移">
+<meta name="twitter:description" content="关于博客迁移，最开始是在有道上做笔记，学习记录，后来萌生了写类似博客网站的想法，于是用element-UI框架写了一个，整体的效果还不错，还有一个后台管理，使用Django作为web服务，每篇文章存储在数据库，但是想要的功能太多了，设计的功能也显得格格不入（完全按照自己的想法来），后来放弃了，转用了VuePress，后来又看到Hexo，还是迁移到Hexo吧。开始使用VuePress，也是因为作者说">
+    
+        <link rel="alternate" type="application/atom+xml" title="VanLiuZhi" href="/learn_programing/atom.xml">
+    
+    <link rel="shortcut icon" href="/learn_programing/favicon.ico">
+    <link rel="stylesheet" href="/learn_programing/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/learn_programing/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/learn_programing/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/learn_programing/img/me.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Liu Zhi</h5>
+          <a href="mailto:vanliuzhi@qq.com" title="vanliuzhi@qq.com" class="mail">vanliuzhi@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/tags/note">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/categories/python">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/VanLiuZhi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://segmentfault.com/u/justicelz" target="_blank">
+                <i class="icon icon-lg icon-link"></i>
+                SegmentFault
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">博客迁移</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">博客迁移</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018-10-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/water/">water</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#博客迁移"><span class="post-toc-number">1.</span> <span class="post-toc-text">博客迁移</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#迁移脚本"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">迁移脚本</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#采坑"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">采坑</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Water/UseHexo" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">博客迁移</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-22 00:00:00" datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished">2018-10-22</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/water/">water</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>关于博客迁移，最开始是在有道上做笔记，学习记录，后来萌生了写类似博客网站的想法，于是用element-UI框架写了一个，整体的效果还不错，还有一个后台管理，使用Django作为web服务，每篇文章存储在数据库，但是想要的功能太多了，设计的功能也显得格格不入（完全按照自己的想法来），后来放弃了，转用了VuePress，后来又看到Hexo，还是迁移到Hexo吧。开始使用VuePress，也是因为作者说会在后续添加博客的功能，结果没有后续了，Hexo作为博客提供了很全面的功能</p>
+<a id="more"></a>
+<h1 id="博客迁移"><a href="#博客迁移" class="headerlink" title="博客迁移"></a>博客迁移</h1><p>关于博客迁移，最开始是在有道上做笔记，学习记录，后来萌生了写类似博客网站的想法，于是用element-UI框架写了一个，整体的效果还不错，还有一个后台管理，使用Django作为web服务，每篇文章存储在数据库，但是想要的功能太多了，设计的功能也显得格格不入（完全按照自己的想法来），后来放弃了，转用了VuePress，后来又看到Hexo，还是迁移到Hexo吧。开始使用VuePress，也是因为作者说会在后续添加博客的功能，结果没有后续了，Hexo作为博客提供了很全面的功能</p>
+<h2 id="迁移脚本"><a href="#迁移脚本" class="headerlink" title="迁移脚本"></a>迁移脚本</h2><p>大概扫描了一下Hexo的官方，马上起了一个项目，发现这个文件结构和VuePress差的有点多啊，不怕，写个迁移脚本就行了，这样就把原来文件结构都取出来放到通用目录下，顺便生成一下Hexo的yaml-Front-matter，对README的文件做一下重命名。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">@author:   LiuZhi</span></span><br><span class="line"><span class="string">@file:     hexo_change.py</span></span><br><span class="line"><span class="string">@time:     2019-10-22 23:48</span></span><br><span class="line"><span class="string">@contact:  vanliuzhi@qq.com</span></span><br><span class="line"><span class="string">@software: PyCharm</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">path = <span class="string">'/Users/liuzhi/PycharmProjects/test_code/zh/'</span></span><br><span class="line"></span><br><span class="line">op_list = os.listdir(path)</span><br><span class="line"></span><br><span class="line">write_data2 = <span class="string">'''</span></span><br><span class="line"><span class="string">---</span></span><br><span class="line"><span class="string">title: %s</span></span><br><span class="line"><span class="string">date: 2018-10-22 00:00:00</span></span><br><span class="line"><span class="string">updated: 2018-10-22 00:00:00</span></span><br><span class="line"><span class="string">tags:</span></span><br><span class="line"><span class="string">categories:</span></span><br><span class="line"><span class="string">---</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">write_data</span><span class="params">(title)</span>:</span></span><br><span class="line">    a = write_data2 % title</span><br><span class="line">    <span class="keyword">return</span> a</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_absolute_path</span><span class="params">(dir_name)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> path + dir_name</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_dir_file</span><span class="params">(_dir, result)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> _dir != <span class="string">'/Users/liuzhi/PycharmProjects/test_code/zh/.DS_Store'</span>:</span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> os.listdir(_dir):</span><br><span class="line">            res = _dir + <span class="string">'/'</span> + item</span><br><span class="line">            result.append(res)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loop_file_path</span><span class="params">()</span>:</span></span><br><span class="line">    result = []</span><br><span class="line">    dir_list = map(get_absolute_path, op_list)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> list(dir_list):</span><br><span class="line">        get_dir_file(i, result)</span><br><span class="line">    print(result)</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_name</span><span class="params">(_dir, data)</span>:</span></span><br><span class="line">    _list = _dir.split(<span class="string">'/'</span>)</span><br><span class="line">    name = _list[<span class="number">-1</span>]</span><br><span class="line">    <span class="keyword">if</span> name == <span class="string">'README.md'</span>:</span><br><span class="line">        name = _list[<span class="number">-2</span>] + <span class="string">'.md'</span></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'/Users/liuzhi/PycharmProjects/test_code/result/'</span> + name, <span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        f.write(data)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_name</span><span class="params">(_dir)</span>:</span></span><br><span class="line">    _list = _dir.split(<span class="string">'/'</span>)</span><br><span class="line">    name = _list[<span class="number">-1</span>]</span><br><span class="line">    <span class="keyword">if</span> name == <span class="string">'README.md'</span>:</span><br><span class="line">        name = _list[<span class="number">-2</span>] + <span class="string">'.md'</span></span><br><span class="line">    <span class="keyword">return</span> name[:<span class="number">-3</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hexo_change</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    实现在文件头写入，不能使用a+模式，需要截断成0字节</span></span><br><span class="line"><span class="string">    总体来说，要实现任意位置写入，只能是通过读取整个文件，然后将</span></span><br><span class="line"><span class="string">    需要写入的插入，然后把整个结果写入</span></span><br><span class="line"><span class="string">    :param file_name:</span></span><br><span class="line"><span class="string">    :return:</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">for</span> file_name <span class="keyword">in</span> loop_file_path():</span><br><span class="line">        <span class="keyword">with</span> open(file_name, <span class="string">'r+'</span>) <span class="keyword">as</span> _file:</span><br><span class="line">            old = _file.read()</span><br><span class="line">            _file.seek(<span class="number">0</span>)</span><br><span class="line">            _file.write(write_data(get_name(file_name)))</span><br><span class="line">            _file.write(old)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> file_name <span class="keyword">in</span> loop_file_path():</span><br><span class="line">        <span class="keyword">with</span> open(file_name, <span class="string">'r+'</span>) <span class="keyword">as</span> _file:</span><br><span class="line">            old = _file.read()</span><br><span class="line">            save_name(file_name, old)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insert_content_to_file</span><span class="params">()</span>:</span></span><br><span class="line">    file = open(<span class="string">"a.txt"</span>, <span class="string">"r"</span>)</span><br><span class="line">    file_add = open(<span class="string">"a.txt"</span>, <span class="string">"r"</span>)</span><br><span class="line">    content = file.read()</span><br><span class="line">    content_add = file_add.read()</span><br><span class="line">    pos = content.find(<span class="string">"buildTypes"</span>)</span><br><span class="line">    <span class="keyword">if</span> pos != <span class="number">-1</span>:</span><br><span class="line">        content = content[:pos] + content_add + content[pos:]</span><br><span class="line">        file = open(<span class="string">"a.txt"</span>, <span class="string">"w"</span>)</span><br><span class="line">        file.write(content)</span><br><span class="line">        file.close()</span><br><span class="line">        file_add.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">init</span><span class="params">()</span>:</span></span><br><span class="line">    cp_cmd = <span class="string">'cp -rf ~/JavaScriptProjects/my-notebook/docs/zh/ ~/PycharmProjects/test_code/zh'</span></span><br><span class="line">    rm_zh = <span class="string">'rm -rf ~/PycharmProjects/test_code/zh/'</span></span><br><span class="line">    mark_dir = <span class="string">'mkdir ~/PycharmProjects/test_code/zh'</span></span><br><span class="line">    cmd_list = [rm_zh, mark_dir, cp_cmd]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> cmd_list:</span><br><span class="line">        os.system(i)</span><br><span class="line">    <span class="comment"># map(lambda x: os.system(x), cmd_list)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cp_new_file</span><span class="params">()</span>:</span></span><br><span class="line">    cp_cmd = <span class="string">'cp -rf ~/PycharmProjects/test_code/result/ /Users/liuzhi/JavaScriptProjects/hexo_blog/source/_posts'</span></span><br><span class="line">    os.system(cp_cmd)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="comment"># init()</span></span><br><span class="line">    <span class="comment"># hexo_change()</span></span><br><span class="line">    cp_new_file()</span><br></pre></td></tr></table></figure>
+<h2 id="采坑"><a href="#采坑" class="headerlink" title="采坑"></a>采坑</h2><p>浏览过一遍文档，如果不着急搞分享，评论什么的，上手会很快，开始我的图片资源也是没有问题了，直到我看了官方的<code>资源文件夹</code>功能，它提出了一个顾虑（我真的没感觉到会有这个问题，分类和主页的资源，怎么会有路径问题呢？难道是历史原因），推荐使用此功能，需要进行对应的配置，使用<code>{% asset_img example.jpg This is an example image %}</code>，坑就坑在这么用完全没效果，然后我Google，发现别人都是装插件的，查了我的package.json，没插件啊，官方这文档不负责啊。</p>
+<p>然而坑还没结束，装了插件仍然没用，于是我去看了GitHub对插件的用法，需要使用Markdown语法，我真是哔了狗了，Hexo的文档英文也是明确说明不要使用Markdown语法，用插件语法，这完全没用啊，看了别人的用法也是用Markdown语法。</p>
+<p>最后，经过我的测试，使用Markdown语法，配合插件可以使用相对路径，如果这样用，你的每篇博客不能创建独立的文件夹，只能放在_posts下，不知道是BUG还是什么问题，总之一点官方文档给的用法没有效果，插件的作者都没这么用，个人猜测框架扩展了插件后，使用插件语法应该是没问题的，Hexo支持这么多插件，然而在这个插件上出了问题估计是BUG了。</p>
+<p>解决方案：使用Markdown语法，图片放在<code>_posts/images</code>下，由于这是绝对路径，部署和本地都是正常的，另外不一定要把文章放在_posts下，可以再创建一个父级目录，虽然编译后文章被分类了，但是原始项目这么搞就太混乱了，这让我觉得使用命令创建文章有点鸡肋了。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-01-09T15:52:04.697Z" itemprop="dateUpdated">2019-01-09 23:52:04</time>
+</span><br>
+
+
+        
+        今天也是充满希望的一天！
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.liuzhidream.com">
+            <img src="/learn_programing/img/me.jpg" alt="Liu Zhi">
+            Liu Zhi
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/water/">water</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/Water/UseHexo/&title=《博客迁移》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/Water/UseHexo/&title=《博客迁移》 — VanLiuZhi&source=关于博客迁移，最开始是在有道上做笔记，学习记录，后来萌生了写类似博客网站的想法，于是用element-UI框架写了一个，整体的效果还不错，还有一个后台管理..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/Water/UseHexo/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《博客迁移》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/Water/UseHexo/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/Water/UseHexo/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/learn_programing/2018/10/22/ReadBook/javascript-definitive-guide/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">javascript-definitive-guide 读书笔记</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/learn_programing/2018/10/22/Web/Nginx/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Nginx</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: '',
+            repo: '',
+            oauth: {
+                client_id: '',
+                client_secret: '',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/learn_programing/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Liu Zhi &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/Water/UseHexo/&title=《博客迁移》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/Water/UseHexo/&title=《博客迁移》 — VanLiuZhi&source=关于博客迁移，最开始是在有道上做笔记，学习记录，后来萌生了写类似博客网站的想法，于是用element-UI框架写了一个，整体的效果还不错，还有一个后台管理..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/Water/UseHexo/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《博客迁移》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/Water/UseHexo/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/Water/UseHexo/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACI0lEQVR42u3aQZLCMAwFUe5/6cwJ4vSXAlOW2yuKAuOXhZAsfT54XTeLfL72K59vLBkyZGzLuJarfyyyA/ndh4coQ4aMAxjkEG99a73beofb92XIkCFjGQTJPiRopnvKkCFDRhpwySEIQIYMGTI6RSz5PD/iv9XiMmTI2JBRuzj7zeuv9DdkyJCxFeMKV5rGpSHyKi0ZMmTMZvAA178g40MVxR1kyJAxlFErO2uFbpqABkMeMmTIOIDx7mgFeSd9WA+/JUOGjNGM2l0WoaYX+mRcrJZEypAhYxKjP7DFAy4Jl+llnwwZMqYyOg2A2hUbf2QBW4YMGaMZaTCtBdZa8E1PJUOGjBMYnWBH2LV6OrhukyFDxsEMXqb2QzZvZ95W4TJkyBjH6FyZvTAkgUNzMGwhQ4aMoQwScPtDYP0rtoeZERkyZIxm1LbrDGzVhszi/w0ZMmSMY/B2JmmC8p1fSBNlyJAxmkG+kAZQHjT50AbaU4YMGQczWkkbPnqHJEOGjHMYaVisXbGlw2G8XSFDhowTGP10MB0O46Nj8f+GDBkyBjGucPUTPlIk8xYmiusyZMjYnFErPslYGA/NPBC/UEjLkCFjWwYvNeOsEz+C1liYDBkyjmHUDsdTTB5M09aCDBkyZNRer3cjaWKagMqQIUMGSdFIsRofDievMmTIOIHRH4ngiSNvLQRNUxkyZIxmpCMOaQtz/bCCMrXfyJQhQ8Z+jD94aSLgoPy9CAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/learn_programing/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/learn_programing/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/learn_programing/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
