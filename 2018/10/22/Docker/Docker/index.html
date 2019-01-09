@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Docker | VanLiuZhi | 有梦想的人不睡觉</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#00e1ff">
+    
+    
+    <meta name="keywords" content="note,linux,docker">
+    <meta name="description" content="docker 容器技术学习笔记">
+<meta name="keywords" content="note,linux,docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker">
+<meta property="og:url" content="http://www.liuzhidream.com/2018/10/22/Docker/Docker/index.html">
+<meta property="og:site_name" content="VanLiuZhi">
+<meta property="og:description" content="docker 容器技术学习笔记">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://www.liuzhidream.com/images/Mac/iterm2_key_1.png">
+<meta property="og:updated_time" content="2018-10-21T16:00:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Docker">
+<meta name="twitter:description" content="docker 容器技术学习笔记">
+<meta name="twitter:image" content="http://www.liuzhidream.com/images/Mac/iterm2_key_1.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="VanLiuZhi" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/me.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Liu Zhi</h5>
+          <a href="mailto:vanliuzhi@qq.com" title="vanliuzhi@qq.com" class="mail">vanliuzhi@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags/note">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories/python">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/VanLiuZhi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://segmentfault.com/u/justicelz" target="_blank">
+                <i class="icon icon-lg icon-link"></i>
+                SegmentFault
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Docker</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Docker</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018-10-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/docker/">docker</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Docker-笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text">Docker 笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#命令"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多个终端访问容器"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">多个终端访问容器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建容器的参数"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">创建容器的参数</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#容器连接"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">容器连接</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#相关命令"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">相关命令</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据卷"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">数据卷</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件操作"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">文件操作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#容器"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">容器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#docker-ps-–选项"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">docker ps –选项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#container总结"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">container总结</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#容器导入导出"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">容器导入导出</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Dockerfile-使用"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">Dockerfile 使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#指令"><span class="post-toc-number">1.7.1.</span> <span class="post-toc-text">指令</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#docker-compose"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">docker-compose</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#编写yaml文件"><span class="post-toc-number">1.8.1.</span> <span class="post-toc-text">编写yaml文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#命令-1"><span class="post-toc-number">1.8.2.</span> <span class="post-toc-text">命令</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Docker/Docker" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Docker</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-22 00:00:00" datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished">2018-10-22</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/docker/">docker</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>docker 容器技术学习笔记</p>
+<a id="more"></a>
+<h1 id="Docker-笔记"><a href="#Docker-笔记" class="headerlink" title="Docker 笔记"></a>Docker 笔记</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/Mac/iterm2_key_1.png" alt="image" title="">
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><pre><code>docker ps 列出容器列表
+docker container ls 管理容器
+</code></pre><p>两个命令都是查看正在运行的容器，加 -a 参数可以查看更多的信息</p>
+<pre><code>docker run     docker container run   都是运行容器(但是本质还是不同的，可以深入研究下)
+Ctrl+P+Q  退出容器不关闭
+
+docker start goofy_almeida  启动容器在后台运行
+docker attach goofy_almeida 后台容器进入终端
+
+docker network create &lt;name&gt;
+docker network inspect &lt;name&gt;
+
+docker stats 容器ID  查看容器状态
+docker logs 把容器运行后产生的输入都打印出来，不要轻易尝试
+</code></pre><h3 id="多个终端访问容器"><a href="#多个终端访问容器" class="headerlink" title="多个终端访问容器"></a>多个终端访问容器</h3><p>有时候需要开启多个终端来访问容器，通过容器ID，执行命令 <code>docker exec -it 40c330755e61 /bin/bash</code> 就可以了，这个终端的退出不会影响到已经开启的终端</p>
+<h3 id="创建容器的参数"><a href="#创建容器的参数" class="headerlink" title="创建容器的参数"></a>创建容器的参数</h3><ul>
+<li>-d：后台运行容器，并返回容器ID</li>
+<li>-i：以交互模式运行容器，通常与 -t 同时使用</li>
+<li>-t：为容器重新分配一个伪输入终端，通常与 -i 同时使用</li>
+</ul>
+<h2 id="容器连接"><a href="#容器连接" class="headerlink" title="容器连接"></a>容器连接</h2><p>容器连接就是把容器接到一起，让它们可以相互通信，如果你使用一个容器运行一个软件的方式，容器连接就是很有必要的，比如你的服务和数据库进行通信，那么你的容器就要连接在一起。<br>使用到的命令有 <code>--link</code> ，不过新的特性推荐使用 <code>network</code> ，network把容器都加到一个网络中，实现之间的互相通信。</p>
+<h3 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h3><hr>
+<ol>
+<li>创建网络，<code>my_network</code> 是网络的名称。创建完网络，把容器加入到网络就行了。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network create my_network</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>tip 加入网络示例：</p>
+<p><code>docker run -it --name=web_django --network web_network --network-alias django -v /root/py_web_vadmin/:/root/web_work -p 8080:8080 debian:v2 bash</code></p>
+<p><code>docker run -it --name=web_nginx --network web_network --network-alias nginx -v /root/py_web_vadmin/:/root/web_work -p 80:80 nginx bash</code></p>
+<p>把debian和nginx加入到一个已创建的网络中。</p>
+<ol start="2">
+<li>查看网络<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network ls 查看已创建的网络，默认有服务自己创建的网络</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>效果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">NETWORK ID      NAME    DRIVER  SCOPE</span><br><span class="line">9872c9881f6e    bridge  bridge  local</span><br><span class="line">6fc119c0ceda    host    host    local</span><br><span class="line">c3fdf8d5c56e    none    null    local</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>bridge：默认网络，所有容器默认连接到它</li>
+<li>none：没有网络接口</li>
+<li>host：连接到主机的网络栈，主机和容器间的网络没有隔离</li>
+</ul>
+<h2 id="数据卷"><a href="#数据卷" class="headerlink" title="数据卷"></a>数据卷</h2><p>数据卷用来做数据持久化，如果你的数据在容器中，比如数据库文件，日志文件等，这些文件是会不断生成的，当你关闭容器，再次启动容器，数据倒是不会丢失，如果你从镜像启动新的容器，数据就没了（出现这种情况是因为：通常使用run命令来启动容器，如果没有定义name，那么每次使用run命令都会从镜像创建新的容器，这样上次容器的操作都没了，应该养成定义容器name的习惯，创建同名的容器是不允许的）。数据要想保持，除非你不断的提交镜像，当然这种做法是不可取的，所以要用到数据卷技术。数据可以让容器和宿主主机共享一个目录，通常把程序，数据库文件等放在宿主机上，通过创建数据卷，让容器可以操作到宿主机文件，并把新的数据写到此。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container run -v /root/data:/root/PythonProjects/GitTest -it -p 8080:8080 debian:v2 bash</span><br></pre></td></tr></table></figure>
+<p>上面命令的含意是：本机目录/root/data映射到容器目录/root/PythonProjects/GitTest（在启动容器的时候就得使用-v 命令，容器和主机共用一个目录，关闭容器，在启动容器也得带-v命令）<br>一般会把程序放在宿主机上，更新修改都在这，不过修改了代码后，记得进入容器中去重启项目。</p>
+<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">从主机复制到容器 sudo docker cp host_path containerID:container_path</span><br><span class="line">从容器复制到主机 sudo docker cp containerID:container_path host_path</span><br></pre></td></tr></table></figure>
+<p>操作流程：先把容器运行起来，宿主主机执行 docker container 查询正在运行的container 的containerID 然后去执行上面的命令</p>
+<p>保存容器修改：</p>
+<ul>
+<li>pull 了一个新的image后，或操作已有的容器，并对容器做了修改，退出容器后</li>
+<li>执行 docker ps -l 得到 容器的ID</li>
+<li>执行 docker commit 容器ID 镜像名称 该操作将覆盖现有进行为修改后的容器</li>
+<li>docker commit 容器ID 镜像名称:v2 保存修改为tag为v2的镜像</li>
+</ul>
+<h2 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h2><p>容器(container)是docker一个很重要的概念，通过镜像我们就可以创建容器。这里记录一些相关命令。</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">查看</span><br><span class="line">docker container <span class="keyword">ls</span> 等同于 docker <span class="keyword">ps</span>  -<span class="keyword">a</span> 查看更多的信息</span><br><span class="line"></span><br><span class="line">删除</span><br><span class="line">docker rm  container id</span><br><span class="line">docker rmi  image id</span><br><span class="line"></span><br><span class="line">杀死所有正在运行的容器</span><br><span class="line">docker kill $(docker <span class="keyword">ps</span> -<span class="keyword">a</span> -q)</span><br><span class="line"></span><br><span class="line">删除所有已经停止的容器(容器不再使用了，可以使用此命令把它们都清空了)</span><br><span class="line">docker rm $(docker <span class="keyword">ps</span> -<span class="keyword">a</span> -q)</span><br><span class="line"></span><br><span class="line">删除所有未打 dangling 标签的镜像</span><br><span class="line">docker rmi $(docker images -q -<span class="keyword">f</span> dangling=true)</span><br><span class="line"></span><br><span class="line">删除所有镜像</span><br><span class="line">docker rmi $(docker images -q)</span><br><span class="line"></span><br><span class="line">强制删除镜像名称中包含“doss-api”的镜像</span><br><span class="line">docker rmi --force $(docker images | <span class="keyword">grep</span> doss-api | awk <span class="string">'&#123;print $3&#125;'</span>)</span><br><span class="line"></span><br><span class="line">删除所有未使用数据</span><br><span class="line">docker <span class="built_in">system</span> prune</span><br><span class="line"></span><br><span class="line">只删除未使用的volumes</span><br><span class="line">docker volume prune</span><br><span class="line"></span><br><span class="line">docker start goofy_almeida  启动容器在后台运行</span><br><span class="line">docker attach goofy_almeida 后台容器进入终端</span><br></pre></td></tr></table></figure>
+<h3 id="docker-ps-–选项"><a href="#docker-ps-–选项" class="headerlink" title="docker ps –选项"></a>docker ps –选项</h3><table>
+<thead>
+<tr>
+<th>Name, shorthand</th>
+<th style="text-align:center">Default</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–all , -a</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">Show all containers (default shows just running)</td>
+</tr>
+<tr>
+<td>–filter , -f</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">Filter output based on conditions provided</td>
+</tr>
+<tr>
+<td>–format</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">Pretty-print containers using a Go template</td>
+</tr>
+<tr>
+<td>–last , -n</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">Show n last created containers (includes all states)</td>
+</tr>
+<tr>
+<td>–latest , -l</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">Show the latest created container (includes all states)</td>
+</tr>
+<tr>
+<td>–no-trunc</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">Don’t truncate output</td>
+</tr>
+<tr>
+<td>–quiet , -q</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">Only display numeric IDs</td>
+</tr>
+<tr>
+<td>–size , -s</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">Display total file sizes</td>
+</tr>
+</tbody>
+</table>
+<p>使用 <code>docker attach</code> 命令进入container（容器）有一个缺点，那就是每次从container中退出到前台时，container也跟着退出了。<br>要想退出container时，让container仍然在后台运行着，可以使用 <code>docker exec -it</code> 命令。每次使用这个命令进入container，当退出container后，container仍然在后台运行，命令使用方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it goofy_almeida /bin/bash</span><br><span class="line"></span><br><span class="line">goofy_almeida：要启动的container的名称</span><br><span class="line"></span><br><span class="line">/bin/bash：在container中启动一个bash shell</span><br></pre></td></tr></table></figure></p>
+<p>这样输入“exit”或者按键“Ctrl + C”退出container时，这个container仍然在后台运行。</p>
+<p>::: tip<br>关于容器的运行，我本人的做法会使用 <code>screen</code> (linux的一个软件)，一般没有做后台运行。<br>:::</p>
+<h3 id="container总结"><a href="#container总结" class="headerlink" title="container总结"></a>container总结</h3><p>run 命令后从镜像创建container(容器)，此时的容器是新的，如果修改了内容，用exit退出，这个容器被关闭了（进入了Exited状态），如果想留着修改，最好是Ctrl+P+Q  退出容器不关闭  这样docker ps  可以查看容器还在，这样就可以通过start 容器name再次进入容器了。（这里我感觉容器的状态是有用的，具体就要看文档了，因为run新容器后，通过exit命令退出了，再次run，此时ps命令应该是创建了一次，然后关闭，又创建了一次，出现过两个name, 但是第二次run的容器是新的，上次修改的拿不到。 但是修改后，exit退出，通过docker ps -l，可以看到容器id,  这里可以进行提交。所以像保持容器的修改，最好用上面的流程，等理清楚了生命周期，就比较清楚整个流程了）经测试，docker ps -l列不出的容器，通过docker ps -a找到，即使状态不是update也可以去commit。<br>::: tip 容器的status<br>One of created, restarting, running, removing, paused, exited, or dead<br>:::</p>
+<h2 id="容器导入导出"><a href="#容器导入导出" class="headerlink" title="容器导入导出"></a>容器导入导出</h2><pre><code>docker save imageID &gt; filename.tar
+docker load &lt; filename.tar
+
+docker export imageID &gt; filename.tar
+docker import &lt; filename.tar
+</code></pre><p>镜像和容器导出和导入的区别</p>
+<p>镜像导入和容器导入的区别：</p>
+<ol>
+<li>容器导入 是将当前容器 变成一个新的镜像</li>
+<li>镜像导入 是复制的过程</li>
+</ol>
+<p>save 和 export区别：</p>
+<ol>
+<li>save 保存镜像所有的信息-包含历史</li>
+<li>export 只导出当前的信息</li>
+</ol>
+<h2 id="Dockerfile-使用"><a href="#Dockerfile-使用" class="headerlink" title="Dockerfile 使用"></a>Dockerfile 使用</h2><p>除了通过拉取官方镜像的方式外，使用Dockerfile可以定制镜像，使其更加灵活。<br>整个Dockerfile文件就是执行的脚本，由特定的命令组成，一个redis镜像Dockerfile文件大概是这样的。</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">FROM cento<span class="variable">s:latest</span></span><br><span class="line"></span><br><span class="line">RUN yum -y update; yum clean all</span><br><span class="line">RUN yum -y install epel-release; yum clean all</span><br><span class="line">RUN yum -y install redis; yum clean all</span><br><span class="line"></span><br><span class="line"># 设置挂载点</span><br><span class="line">VOLUME [<span class="string">"/data/redis"</span>]</span><br><span class="line"></span><br><span class="line"># Define working directory.</span><br><span class="line">WORKDIR /data</span><br><span class="line"></span><br><span class="line">EXPOSE <span class="number">6379</span></span><br><span class="line"></span><br><span class="line">CMD [<span class="string">"redis-server"</span>]</span><br></pre></td></tr></table></figure>
+<p>上述Dockerfile文件是基于基础镜像CentOS来制作Redis。</p>
+<p><code>docker build -t centos:v2 .</code> 在文件所在目录下执行构建命令</p>
+<h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><p>Dockerfile指令就是上述文件中开头的FROM，RUN等。Dockerfile 是一个文本文件，其内包含了一条条的指令(Instruction)，每一条指令构建一层，因此每一条指令的内容，就是描述该层应当如何构建。镜像的定制实际上就是定制每一层所添加的配置、文件。如果我们可以把每一层修改、安装、构建、操作的命令都写入一个脚本，用这个脚本来构建、定制镜像。</p>
+<p>FROM scratch 如果你以 scratch 为基础镜像的话，意味着你不以任何镜像为基础，接下来所写的指令将作为镜像第一层开始存在。</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ADD</span><br><span class="line">COPY</span><br><span class="line">ENV</span><br><span class="line">EXPOSE</span><br><span class="line">FROM</span><br><span class="line">LABEL</span><br><span class="line">STOPSIGNAL</span><br><span class="line">USER</span><br><span class="line">VOLUME</span><br><span class="line">WORKDIR</span><br></pre></td></tr></table></figure>
+<h2 id="docker-compose"><a href="#docker-compose" class="headerlink" title="docker-compose"></a>docker-compose</h2><p>这个工具是用来做容器编排的，简单来说就是可以一次启动多个容器，包括了设置端口映射，数据卷，容器连接等。在使用docker部署项目时，还是应该一个软件对应一个容器，而不是基于一个容器安装多个软件（这样就搞成一个虚拟机了），你要依次启动4，5个容器，设置端口映射，容器连接等会很麻烦，使用docker-compose只需要编写一个 <code>docker-compose.yaml</code> 文件就可以了。</p>
+<p>使用了docker-compose，最好再配合一下Dockerfile，这样很快速就可以搭建一个环境。</p>
+<p>以Python语言为例，流程应该是编写Dockerfile，在Dockerfile中基于一个基本容器（ubuntu，或者是Python3等容器），设置一些参数，然后安装依赖 <code>RUN pip install -r requirements.txt</code>，这样语言环境就有了，下面就是各个服务，比如MySQL，Redis等，这些不是太复杂的情况，直接在Dockerfile中指定image就行了。</p>
+<p>总结：</p>
+<ol>
+<li>Dockerfile 定义应用的运行环境</li>
+<li>docker-compose.yml 定义组成应用的各服务</li>
+<li>docker-compose up 启动整个应用</li>
+</ol>
+<h3 id="编写yaml文件"><a href="#编写yaml文件" class="headerlink" title="编写yaml文件"></a>编写yaml文件</h3><p>这个编写很简单，就是把各个容器怎么运行，参数配置组织在一起</p>
+<p>来看一个简单的官方例子：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">'3'</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"><span class="attr">  web:</span></span><br><span class="line"><span class="attr">    build:</span> <span class="string">.</span></span><br><span class="line"><span class="attr">    ports:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">"5000:5000"</span></span><br><span class="line"><span class="attr">    volumes:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">.:/code</span></span><br><span class="line"><span class="attr">    - logvolume01:</span><span class="string">/var/log</span></span><br><span class="line"><span class="attr">    links:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">redis</span></span><br><span class="line"><span class="attr">  redis:</span></span><br><span class="line"><span class="attr">    image:</span> <span class="string">redis</span></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line"><span class="attr">  logvolume01:</span> <span class="string">&#123;&#125;</span></span><br></pre></td></tr></table></figure>
+<p>官方文档总结：</p>
+<p>一份标准配置文件应该包含 version、services、networks 三大部分，其中最关键的就是 services 和 networks 两个部分，官方这里的例子使用links，而没有使用新的networks特性。configs配置在3.3及以上版本使用，用于配置文件的访问权限。</p>
+<ul>
+<li><p>version：用来指定版本，依照官方的例子，现在可以使用3版本了，不同版本对一些配置的支持不同，比如配置参数从字符串到对象的变化，这里不再深入了</p>
+</li>
+<li><p>services：就是需要运行的容器，容器通过build或image指定，build就是使用Dockerfile文件，image就是使用镜像，本地有的使用本地的，否则下载仓库的。build后面还可以加参数，例如context，args，用来设置上下文，参数等，这属于Dockerfile相关的内容，一般情况，直接在build指定当前目录就行了。ports指定端口映射，volums指定数据卷（使用数据卷，修改代码不用重启容器），在这个官方例子中，在最外层也就是顶级定义了volumes，这是为服务定义的，使用一个单机开发环境在services中定义就行了。标签有两种情况，在服务上（部署集群的时候）deploy: labels: ’标签内容‘，在容器上只需要用labels。看到deploy，它下面的配置都是和部署有关的。depends_on依赖关系，依赖的容器会先启动。command命令，类似python3 manage.py runserver 0.0.0.0:8000。pid: “host” 将PID模式设置为主机PID模式，跟主机系统共享进程命名空间。容器使用这个标签将能够访问和操纵其他容器和宿主机的名称空间。extra_hosts 添加主机名的标签，就是往/etc/hosts文件中添加一些记录，与Docker client的–add-host类似。</p>
+</li>
+</ul>
+<h3 id="命令-1"><a href="#命令-1" class="headerlink" title="命令"></a>命令</h3><table>
+<thead>
+<tr>
+<th>Command</th>
+<th style="text-align:left">Description </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>build</td>
+<td style="text-align:left">构建或重建服务，这会把Dockerfile再执行一次</td>
+</tr>
+<tr>
+<td>help</td>
+<td style="text-align:left">命令帮助 </td>
+</tr>
+<tr>
+<td>kill</td>
+<td style="text-align:left">杀掉容器 </td>
+</tr>
+<tr>
+<td>logs</td>
+<td style="text-align:left">显示容器的输出内容 </td>
+</tr>
+<tr>
+<td>port</td>
+<td style="text-align:left">打印绑定的开放端口 </td>
+</tr>
+<tr>
+<td>ps</td>
+<td style="text-align:left">显示容器 </td>
+</tr>
+<tr>
+<td>pull</td>
+<td style="text-align:left">拉取服务镜像 </td>
+</tr>
+<tr>
+<td>restart</td>
+<td style="text-align:left">重启服务 </td>
+</tr>
+<tr>
+<td>rm</td>
+<td style="text-align:left">删除停止的容器 </td>
+</tr>
+<tr>
+<td>run</td>
+<td style="text-align:left">运行一个一次性命令，run web bash</td>
+</tr>
+<tr>
+<td>exec</td>
+<td style="text-align:left">Execute a command in a running container，感觉run差不多</td>
+</tr>
+<tr>
+<td>scale</td>
+<td style="text-align:left">设置服务的容器数目 </td>
+</tr>
+<tr>
+<td>start</td>
+<td style="text-align:left">开启服务 </td>
+</tr>
+<tr>
+<td>stop</td>
+<td style="text-align:left">停止服务 </td>
+</tr>
+<tr>
+<td>up</td>
+<td style="text-align:left">创建并启动容器 </td>
+</tr>
+<tr>
+<td>version</td>
+<td style="text-align:left">查看版本，如果你是2版本的，就不要在yaml里面使用3版本的写法了</td>
+</tr>
+</tbody>
+</table>
+<p>使用总结：</p>
+<ul>
+<li><p>个人心得，大致浏览了一下官方文档，docker-compose最大的用处应该是集群，它提供了很多功能，不过对于单机来说仍然有它的价值，省去了很多命令，同样作为单机来用，不需要学的很深入，很多配置都是用不到的</p>
+</li>
+<li><p>启动容器：使用up命令来启动容器，同时也会把build配置生成镜像，在我使用的版本中，给出了警告，对于需要使用Dockerfile构建的镜像，警告说应该先使用 <code>docker-compose up --build</code>，不过这对容器的启动到是没什么影响（不知道这里官方想表达什么）。build命令只会构建镜像，并不会去启动容器，up命令启动容器后，会把容器的输出打印到终端，要想在后台运行，应该 <code>up -d</code></p>
+</li>
+<li><p>name：使用image的，镜像名称就是指定的，使用build，镜像名称为当前目录加上在services中的配置，在容器中的name也是当前目录加上在services中的配置。使用docker-compose需要在yaml文件目录执行，这样在services中的配置，比如一个叫做web的配置，第一次使用镜像（或用build构建）是Python，生成的容器也是 <code>当前目录_web_1</code>，修改了web配置，image变成Redis，那么上次创建的容器会被删除，创建新的容器，容器的名称是一样的，因为修改的是image，而不是web。使用container_name可以自定义容器name，不过通过ps命令可以看到系统的缺省名称是web_1，如果自定义了，那么在集群上因为名称相同导致错误</p>
+</li>
+<li><p>exited with code 0：我用自定义的dockerfile启动容器，结果返回这么一个信息容器就停止了，我分析了官方例子做了一些测试后发现，如果你的容器启动后，什么都不做，那就会退出了，一些情况也是会退出的，比如你用 <code>command echo $HOME</code> 终端会打印这个信息，然后退出容器，我写了一个Python循环，用logging打印信息，终端一直在打印信息，没有退出。也就是说启动容器不能什么也不做</p>
+</li>
+<li><p>使用command，推荐绝对路径</p>
+</li>
+</ul>
+<p>:sunny:docker-compose应该这么来理解，它把多个容器组织在一起，并默认加到一个网络中（如果你没有定义网络或把容器分到不同的网络），通过run命令可以向整个环境发送命令(<code>docker-compose run dev /bin/zsh</code> 进入交互环境)，同时也可以使用docker的命令。体现了一个整体的概念。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-10-21T16:00:00.000Z" itemprop="dateUpdated">2018-10-22 00:00:00</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/10/22/Docker/Docker/" target="_blank" rel="external">http://www.liuzhidream.com/2018/10/22/Docker/Docker/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.liuzhidream.com">
+            <img src="/img/me.jpg" alt="Liu Zhi">
+            Liu Zhi
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/note/">note</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/Docker/Docker/&title=《Docker》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/Docker/Docker/&title=《Docker》 — VanLiuZhi&source=docker 容器技术学习笔记" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/Docker/Docker/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Docker》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/Docker/Docker/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/Docker/Docker/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/10/22/Collect/collect/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Collect</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/10/22/Web/Celery/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Celery</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: '',
+            repo: '',
+            oauth: {
+                client_id: '',
+                client_secret: '',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Liu Zhi &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/Docker/Docker/&title=《Docker》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/Docker/Docker/&title=《Docker》 — VanLiuZhi&source=docker 容器技术学习笔记" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/Docker/Docker/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Docker》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/Docker/Docker/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/Docker/Docker/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3awW7CQAwE0P7/T9MrUpUw44VK7L6cqiokPA4j2+ufn/h6PF3P/8nvv7qn/dTShYGB8bWMx+01Y/y95/4JyXuv7sHAwDiHkXyJPGrbSG3fhYGBgZE/+kUI3obm7IfAwMDAmEXnfWHXNsMYGBgYK01s3nDeP78N9zf34hgYGF/IyKfu///3R843MDAwvorxKK98ZJZH7Ru+FQYGxtaM9jBy1pS2qxvD74OBgXEko21K2wODZIhWPAEDA+MARn6seB+as2WyNsovAxcDA2M7Rrse0R49JgP9ok29wmNgYGzNSCIvyuxRBLdvjIpODAyM7RhtaK4cN87WNaLwxcDA2JrRhmlbOOafmjXAlwcDGBgYWzNmk/a8yGsr1npqiIGBcQCj7YDbYdxseFd34RgYGNsxZiOz9SWJlQPOevECAwPjaxmzUix//UrgFqUhBgbGAYy8pJuVfXmAJlE+TG4MDIwtGHkZN2to25guykQMDIytGZ9uRO+fkDTM7TMxMDB2ZeQNZDGaH+XhSluLgYFxAqNtLNdHbLNR3YtlCwwMjK0Zs7Z2paRbj2wMDIwTGI/yWi/42jBNVtYwMDD2ZrQxN3tB2wy3C7UYGBgnMPLjyTw02/CdBS4GBsZpjKLrHQXryuJF9JNhYGBgxIeLKwcM7Q+HgYGBMWMUh46jI8zLQhMDA+MARtLErixvJWHajuEwMDDOYbQrDskorR6Wre+MYGBg7Mn4BUpSvCpLZWSjAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
