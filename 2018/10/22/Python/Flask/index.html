@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Flask | VanLiuZhi | 有梦想的人不睡觉</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#00e1ff">
+    
+    
+    <meta name="keywords" content="note,farmework,python">
+    <meta name="description" content="flask框架学习笔记">
+<meta name="keywords" content="note,farmework,python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flask">
+<meta property="og:url" content="http://www.liuzhidream.com/2018/10/22/Python/Flask/index.html">
+<meta property="og:site_name" content="VanLiuZhi">
+<meta property="og:description" content="flask框架学习笔记">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://www.liuzhidream.com/learn_programing/images/Python/Flask.png">
+<meta property="og:updated_time" content="2019-01-09T16:20:08.706Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flask">
+<meta name="twitter:description" content="flask框架学习笔记">
+<meta name="twitter:image" content="http://www.liuzhidream.com/learn_programing/images/Python/Flask.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="VanLiuZhi" href="/learn_programing/atom.xml">
+    
+    <link rel="shortcut icon" href="/learn_programing/favicon.ico">
+    <link rel="stylesheet" href="/learn_programing/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/learn_programing/img/brand2.jpg)">
+      <div class="brand">
+        <a href="/learn_programing/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/learn_programing/img/me.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Liu Zhi</h5>
+          <a href="mailto:vanliuzhi@qq.com" title="vanliuzhi@qq.com" class="mail">vanliuzhi@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/tags/note">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/learn_programing/categories/python">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/VanLiuZhi" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://segmentfault.com/u/justicelz" target="_blank">
+                <i class="icon icon-lg icon-link"></i>
+                SegmentFault
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Flask</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Flask</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018-10-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/python/">python</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Flask"><span class="post-toc-number">1.</span> <span class="post-toc-text">Flask</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于扩展"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">关于扩展</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自定义url转换器"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">自定义url转换器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#唯一url"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">唯一url</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#扩展响应"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">扩展响应</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#静态文件管理"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">静态文件管理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于视图"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">关于视图</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#标准类视图"><span class="post-toc-number">1.6.1.</span> <span class="post-toc-text">标准类视图</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基于调度方法的视图"><span class="post-toc-number">1.6.2.</span> <span class="post-toc-text">基于调度方法的视图</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用命令行接口"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">使用命令行接口</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Context"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">Context</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#werkzeug"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">werkzeug</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置参数讲解"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">配置参数讲解</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#扩展模块"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">扩展模块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#flask-script"><span class="post-toc-number">1.11.1.</span> <span class="post-toc-text">flask_script</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#flask-migrate"><span class="post-toc-number">1.11.2.</span> <span class="post-toc-text">flask_migrate</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#flask-logging"><span class="post-toc-number">1.11.3.</span> <span class="post-toc-text">flask_logging</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#flask-sqlalchemy"><span class="post-toc-number">1.11.4.</span> <span class="post-toc-text">flask_sqlalchemy</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Python/Flask" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Flask</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-22 00:00:00" datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished">2018-10-22</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/learn_programing/categories/python/">python</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>flask框架学习笔记</p>
+<a id="more"></a>
+<h1 id="Flask"><a href="#Flask" class="headerlink" title="Flask"></a>Flask</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/learn_programing/images/Python/Flask.png" alt="image" title="">
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+<h2 id="关于扩展"><a href="#关于扩展" class="headerlink" title="关于扩展"></a>关于扩展</h2><p>通过安装对应的扩展包，可以扩展框架的很多功能（这些扩展和框架会有结合，有点想开启框架的功能一样），Flask的扩展都暴露在flask.ext命名空间下，你可以在环境中通过pip安装好相应扩展，然后再在程序中导入相应的包即可使用扩展。</p>
+<p>在新的版本中，引入flask扩展不能再从flask.ext导入了，直接从安装模块导入，比如 <code>from flask_sqlalchemy import SQLAlchemy</code></p>
+<h2 id="自定义url转换器"><a href="#自定义url转换器" class="headerlink" title="自定义url转换器"></a>自定义url转换器</h2><p>在路由中，使用&lt;&gt;来获取动态参数，默认是字符串类型的，如果想要指定参数类型，需要标记成<code>&lt;converter:variable_name&gt;</code> 这样的格式，类似 <code>&lt;int:quantity&gt;</code>，使用any可以指定多种路径，类似<code>&lt;any(a, b:page_name)&gt;</code>。像any，int做为类型可以自定义，比如定义list类型，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"><span class="keyword">from</span> werkzeug.routing <span class="keyword">import</span> BaseConverter</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListConverter</span><span class="params">(BaseConverter)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, url_map, separator=<span class="string">'+'</span>)</span>:</span></span><br><span class="line">        super(ListConverter, self).__init__(url_map)</span><br><span class="line">        self.separator = parse.unquote(separator)  <span class="comment"># unquote 对url进行解码</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">to_python</span><span class="params">(self, value)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> value.split(self.separator)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">to_url</span><span class="params">(self, values)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.separator.join(BaseConverter.to_url(self, value)</span><br><span class="line">                                <span class="keyword">for</span> value <span class="keyword">in</span> values)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">app.url_map.converters[<span class="string">'list'</span>] = ListConverter</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/list1/&lt;list:page_names&gt;/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">list1</span><span class="params">(page_names)</span>:</span></span><br><span class="line">    print(page_names)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Separator: &#123;&#125; &#123;&#125;'</span>.format(<span class="string">'+'</span>, page_names)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/list2/&lt;list(separator=u"|"):page_names&gt;/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">list2</span><span class="params">(page_names)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Separator: &#123;&#125; &#123;&#125;'</span>.format(<span class="string">'|'</span>, page_names)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run(host=<span class="string">'0.0.0.0'</span>, port=<span class="number">9000</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="唯一url"><a href="#唯一url" class="headerlink" title="唯一url"></a>唯一url</h2><p>在路由的装饰器中，如果指定了结尾的反斜杠，类似这样的路径 <code>\page\</code>，那么浏览器访问地址以反斜杠结尾，或者没有反斜杠都可以访问(访问一个不以反斜杠结尾的url会被重定向到到反斜杠的url上)，如果路由是<code>\page</code>，那么浏览器访问以反斜杠结尾会报错。</p>
+<h2 id="扩展响应"><a href="#扩展响应" class="headerlink" title="扩展响应"></a>扩展响应</h2><p>这是一个很常见的需求，对返回对象进行包装，比如返回一个ORM的查询实例，这个是不能被json序列化的，通过扩展返回数据，可以对特定对象进行处理。另一种情况，是重写响应类，<code>app.response = JSONResponse</code></p>
+<h2 id="静态文件管理"><a href="#静态文件管理" class="headerlink" title="静态文件管理"></a>静态文件管理</h2><p>在创建flask实例的时候，通过static_folder修改默认静态文件路径，<code>Flask(__name__, static_folder=&#39;/tmp&#39;)</code></p>
+<h2 id="关于视图"><a href="#关于视图" class="headerlink" title="关于视图"></a>关于视图</h2><p>通常使用函数视图，但是这样就发挥不出类的作用了，比如继承一个基类，定义一些基础的东西，flask也可以使用基于类的视图</p>
+<h3 id="标准类视图"><a href="#标准类视图" class="headerlink" title="标准类视图"></a>标准类视图</h3><p>标准类视图是继承自 <code>flask.views.View</code>，并且在子类中必须实现 <code>dispatch_request</code> 方法，这个方法类似于视图函数，也要返回一个基于Response或者其子类的对象。通过 <code>app.add_url_rule(url_rule, view_func)</code> 来进行注册</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">from</span> flask.views <span class="keyword">import</span> View</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PersonalView</span><span class="params">(View)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dispatch_request</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"hello"</span></span><br><span class="line"></span><br><span class="line">app.add_url_rule(<span class="string">'/users/'</span>,view_func=PersonalView.as_view(<span class="string">'personalview'</span>))</span><br></pre></td></tr></table></figure>
+<h3 id="基于调度方法的视图"><a href="#基于调度方法的视图" class="headerlink" title="基于调度方法的视图"></a>基于调度方法的视图</h3><p>继承自 <code>flask.views.MethodView</code>，可以对不同的HTTP方法执行对应的函数，使用方法的小写名。在类视图中定义一个属性叫做decorators，然后存储装饰器。以后每次调用这个类视图的时候，就会执行这个装饰器</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, jsonify</span><br><span class="line"><span class="keyword">from</span> flask.views <span class="keyword">import</span> MethodView</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> session</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login_required</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> session.get(<span class="string">"user_id"</span>):</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'auth failure'</span></span><br><span class="line">        <span class="keyword">return</span> func(*args, **kwargs)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserAPI</span><span class="params">(MethodView)</span>:</span></span><br><span class="line">    decorators = [login_required]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> jsonify(&#123;</span><br><span class="line">            <span class="string">'username'</span>: <span class="string">'fake'</span>,</span><br><span class="line">            <span class="string">'avatar'</span>: <span class="string">'http://lorempixel.com/100/100/nature/'</span></span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">post</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'UNSUPPORTED!'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">app.add_url_rule(<span class="string">'/user'</span>, view_func=UserAPI.as_view(<span class="string">'userview'</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run(host=<span class="string">'0.0.0.0'</span>, port=<span class="number">9000</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="使用命令行接口"><a href="#使用命令行接口" class="headerlink" title="使用命令行接口"></a>使用命令行接口</h2><p>和Django一样，flask框架也提供了很多命令，flask命令需要添加都环境变量，这个一般在安装后就有了。然后需要设置flask应用的环境变量，可以使用 <code>export FLASK_APP=&#39;app.py path&#39;</code> 。</p>
+<p>也可以自定义命令，比如 <code>flask run_test</code> 执行一个测试脚本，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@app.cli.command()</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_test</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'this is a test script'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="Context"><a href="#Context" class="headerlink" title="Context"></a>Context</h2><p>理解请求上下文和应用上下文。</p>
+<h2 id="werkzeug"><a href="#werkzeug" class="headerlink" title="werkzeug"></a>werkzeug</h2><p>WSGI 协议工具集</p>
+<h2 id="配置参数讲解"><a href="#配置参数讲解" class="headerlink" title="配置参数讲解"></a>配置参数讲解</h2><p>创建app需要传递配置参数，以供各个模块使用</p>
+<p>SECRET_KEY：密码加盐的参数，推荐设置成系统变量</p>
+<h2 id="扩展模块"><a href="#扩展模块" class="headerlink" title="扩展模块"></a>扩展模块</h2><p>扩展模块很多是基于现有的模块做扩展，封装成flask的扩展，比如把实例加入请求上下文中；模块的更多用法可以参考原模块。</p>
+<p>需要分析用法的模块，列出项目地址。</p>
+<h3 id="flask-script"><a href="#flask-script" class="headerlink" title="flask_script"></a>flask_script</h3><p>用来自定义命令的，不过模块没有维护了，官方也推荐不要再使用它了，推荐使用 <a href="mailto:`@app.cli.command" target="_blank" rel="noopener">`@app.cli.command</a>` 的形式来添加命令。然后配置环境变量，通过flask command的形式来执行命令。</p>
+<p>可以使用装饰器，和类来添加命令。装饰器：<a href="mailto:`@manager.command" target="_blank" rel="noopener">`@manager.command</a>`；类：继承Command类，实现run方法。</p>
+<p>由于是弃用的模块，不再赘述。</p>
+<h3 id="flask-migrate"><a href="#flask-migrate" class="headerlink" title="flask_migrate"></a>flask_migrate</h3><p>Flask-Migrate是用于处理SQLAlchemy 数据库迁移的扩展工具。当Model出现变更的时候，通过migrate去管理数据库变更。依赖alembic模块。</p>
+<p>用法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"><span class="keyword">from</span> flask_sqlalchemy <span class="keyword">import</span> SQLAlchemy</span><br><span class="line"><span class="keyword">from</span> flask_migrate <span class="keyword">import</span> Migrate</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line">app.config[<span class="string">'SQLALCHEMY_DATABASE_URI'</span>] = <span class="string">'sqlite:///app.db'</span></span><br><span class="line"></span><br><span class="line">db = SQLAlchemy(app)</span><br><span class="line">migrate = Migrate(app, db)</span><br></pre></td></tr></table></figure>
+<p>命令：</p>
+<ol>
+<li><p>初始化<br>flask db init<br>这个命令会在当前目录下生成一个migrations文件夹。这个文件夹也需要和其他源文件一起，添加到版本控制。</p>
+</li>
+<li><p>生成最初的迁移<br>flask db migrate<br>此命令会在migrations下生成一个version文件夹，下面包含了对应版本的数据库操作py脚本。</p>
+</li>
+<li><p>数据库升级<br>flask db upgrade<br>最后一步。此命令相当于执行了version文件夹下的相应py版本，对数据库进行变更操作。此后，对model有变更，只要重复migrate和upgrade操作即可。</p>
+</li>
+</ol>
+<p>由于migrate并不一定全部发现你对model的所有改动，因此生成的py脚本需要review, 有错的话则需要edit。</p>
+<p>例如目前知道的，表名称表更，列名称变更，或给constraints命名等，migreate都不能发现的。更多限制细节见此：Alembic autogenerate documentation。</p>
+<p>在Alembic 中，数据库迁移用迁移脚本表示。脚本中有两个函数，分别是upgrade() 和downgrade()。upgrade() 函数把迁移中的改动应用到数据库中，downgrade() 函数则将改动删除。Alembic 具有添加和删除改动的能力，因此数据库可重设到修改历史的任意一点。</p>
+<p>我们可以使用revision 命令手动创建Alembic 迁移，也可使用migrate 命令自动创建。手动创建的迁移只是一个骨架，upgrade() 和downgrade() 函数都是空的，开发者要使用Alembic 提供的Operations 对象指令实现具体操作。自动创建的迁移会根据模型定义和数据库当前状态之间的差异生成upgrade() 和downgrade() 函数的内容。自动创建的迁移不一定总是正确的，有可能会漏掉一些细节。自动生成迁移脚本后一定要进行检查。</p>
+<p>查看帮助文档：flask db –help</p>
+<p>运行flask db init后，提示配置日志输出，默认输出到终端，应该配置日志到文件，方便以后排查问题（看看是谁动了数据库）</p>
+<h3 id="flask-logging"><a href="#flask-logging" class="headerlink" title="flask_logging"></a>flask_logging</h3><p><a href="https://github.com/dgilland/flask-logconfig" target="_blank" rel="noopener">GitHub地址</a></p>
+<p>用来快速实现登录验证。在User模型中，通过继承UserMixin实现以下属性：</p>
+<ol>
+<li><p>is_authenticated 属性，用来判断是否是已经授权了，如果通过授权就会返回true</p>
+</li>
+<li><p>is_active 属性，判断是否已经激活</p>
+</li>
+<li><p>is_anonymous 属性，判断是否是匿名用户</p>
+</li>
+<li><p>get_id() 方法，返回用户的唯一标识</p>
+</li>
+</ol>
+<p>模块提供了login_required, login_user, logout_user等方法，验证成功后，通过login_user设置session。</p>
+<h3 id="flask-sqlalchemy"><a href="#flask-sqlalchemy" class="headerlink" title="flask_sqlalchemy"></a>flask_sqlalchemy</h3><p>配置参数：</p>
+<ul>
+<li><code>SQLALCHEMY_DATABASE_URI</code>：配置数据库连接</li>
+</ul>
+<p><code>sqlite:////tmp/test.db 或 mysql://username:password@server/db</code></p>
+<ul>
+<li>SQLALCHEMY_BINDS：用来绑定多个数据库，例如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SQLALCHEMY_DATABASE_URI = &apos;postgres://localhost/main&apos;</span><br><span class="line">SQLALCHEMY_BINDS = &#123;</span><br><span class="line">    &apos;users&apos;:        &apos;mysqldb://localhost/users&apos;,</span><br><span class="line">    &apos;appmeta&apos;:      &apos;sqlite:////path/to/appmeta.db&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>多个数据库在创建数据库或在模型中声名使用哪个，比如在模型中 <code>__bind_key__ = &#39;users&#39;</code></p>
+<ul>
+<li><p><code>SQLALCHEMY_ECHO</code>：值为Boolean（默认为False），设置为True，会把查询语句输出到stderr</p>
+</li>
+<li><p><code>SQLALCHEMY_RECORD_QUERIES</code>：可以用于显式地禁用或者启用查询记录。查询记录 在调试或者测试模式下自动启用。<br>一般我们不设置。</p>
+</li>
+<li><p><code>QLALCHEMY_NATIVE_UNICODE</code>：可以用于显式地禁用支持原生的unicode。</p>
+</li>
+<li><p><code>SQLALCHEMY_POOL_SIZE</code>：数据库连接池的大小。默认是数据库引擎的默认值（通常是 5）。当用户需要访问数据库时，并非建立一个新的连接，而是从连接池中取出一个已建立的空闲连接对象。使用完毕后，用户也并非将连接关闭，而是将连接放回连接池中，以供下一个请求访问使用。而连接的建立、断开都由连接池自身来管理。</p>
+</li>
+<li><p><code>SQLALCHEMY_POOL_TIMEOUT</code>：指定数据库连接池的超时时间。默认是10。</p>
+</li>
+<li><p><code>SQLALCHEMY_POOL_RECYCLE</code>：自动回收连接的秒数（1200即为2小时）。这对MySQL是必须的，默认情况下MySQL会自动移除闲置8小时或者以上的连接，Flask-SQLAlchemy会自动地设置这个值为2小时。也就是说如果连接池中有连接2个小时被闲置，那么其会被断开和抛弃。</p>
+</li>
+<li><p><code>SQLALCHEMY_MAX_OVERFLOW</code>：控制在连接池达到最大值后可以创建的连接数。当这些额外的连接使用后回收到连接池后将会被断开和抛弃。保证连接池只有设置的大小。</p>
+</li>
+<li><p><code>SQLALCHEMY_TRACK_MODIFICATIONS</code>：如果设置成 True (默认情况)，Flask-SQLAlchemy 将会追踪对象的修改并且发送信号。这需要额外的内存，如果不必要的可以禁用它。</p>
+</li>
+</ul>
+<p>常用字段</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th style="text-align:left">Description </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Integer</td>
+<td style="text-align:left">int普通整数，一般是32位 </td>
+</tr>
+<tr>
+<td>SmallInteger</td>
+<td style="text-align:left">int取值范围小的整数，一般是16位 </td>
+</tr>
+<tr>
+<td>BigInteger</td>
+<td style="text-align:left">int或long不限制精度的整数 </td>
+</tr>
+<tr>
+<td>Float</td>
+<td style="text-align:left">float浮点数 </td>
+</tr>
+<tr>
+<td>Numeric</td>
+<td style="text-align:left">decimal.Decimal普通整数，一般是32位 </td>
+</tr>
+<tr>
+<td>String</td>
+<td style="text-align:left">str变长字符串 </td>
+</tr>
+<tr>
+<td>Text</td>
+<td style="text-align:left">str变长字符串，对较长或不限长度的字符串做了优化 </td>
+</tr>
+<tr>
+<td>Unicode</td>
+<td style="text-align:left">unicode变长Unicode字符串 </td>
+</tr>
+<tr>
+<td>UnicodeText</td>
+<td style="text-align:left">unicode变长Unicode字符串，对较长或不限长度的字符串做了优化 </td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td style="text-align:left">bool布尔值 </td>
+</tr>
+<tr>
+<td>Date</td>
+<td style="text-align:left">datetime.date时间 </td>
+</tr>
+<tr>
+<td>Time</td>
+<td style="text-align:left">datetime.datetime日期和时间 </td>
+</tr>
+<tr>
+<td>LargeBinary</td>
+<td style="text-align:left">str二进制文件 </td>
+</tr>
+<tr>
+<td>Enum</td>
+<td style="text-align:left">enum枚举类型 </td>
+</tr>
+</tbody>
+</table>
+<p>字段选项</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th style="text-align:left">Description </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>primary_key</td>
+<td style="text-align:left">如果为True，代表表的主键 </td>
+</tr>
+<tr>
+<td>unique</td>
+<td style="text-align:left">如果为True，代表这列不允许出现重复的值 </td>
+</tr>
+<tr>
+<td>index</td>
+<td style="text-align:left">如果为True，为这列创建索引，提高查询效率 </td>
+</tr>
+<tr>
+<td>nullable</td>
+<td style="text-align:left">如果为True，允许有空值，如果为False，不允许有空值 </td>
+</tr>
+<tr>
+<td>default</td>
+<td style="text-align:left">为这列定义默认值，如default=1 </td>
+</tr>
+</tbody>
+</table>
+<p>flask_sqlalchemy的db实例提供了创建数据库的方法，不过这个是把当前上下文的模型创建数据库，如果是大型项目，那么就是把所有模型创建数据库，它的使用也有局限性，一般做为外部使用（一个测试工具，在这个上下文中创建db实例，对指定的模型来创建表）。所以应该使用迁移工具来管理数据库。</p>
+<p>常用的过滤器</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th style="text-align:left">Description </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>filter()</td>
+<td style="text-align:left">把过滤器添加到原查询上，返回一个新查询 </td>
+</tr>
+<tr>
+<td>filter_by()</td>
+<td style="text-align:left">把等值过滤器添加到原查询上，返回一个新查询 </td>
+</tr>
+<tr>
+<td>limit()</td>
+<td style="text-align:left">使用指定的值限定原查询返回的结果 </td>
+</tr>
+<tr>
+<td>offset()</td>
+<td style="text-align:left">偏移原查询返回的结果，返回一个新查询 </td>
+</tr>
+<tr>
+<td>order_by()</td>
+<td style="text-align:left">根据指定条件对原查询结果进行排序，返回一个新查询 </td>
+</tr>
+<tr>
+<td>group_by()</td>
+<td style="text-align:left">根据指定条件对原查询结果进行分组，返回一个新查询 </td>
+</tr>
+</tbody>
+</table>
+<p>执行器</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th style="text-align:left">Description </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>all()</td>
+<td style="text-align:left">以列表形式返回查询的所有结果 </td>
+</tr>
+<tr>
+<td>first()</td>
+<td style="text-align:left">返回查询的第一个结果，如果未查到，返回None </td>
+</tr>
+<tr>
+<td>first_or_404()</td>
+<td style="text-align:left">返回查询的第一个结果，如果未查到，返回404 </td>
+</tr>
+<tr>
+<td>get()</td>
+<td style="text-align:left">返回指定主键对应的行，如不存在，返回None </td>
+</tr>
+<tr>
+<td>get_or_404()</td>
+<td style="text-align:left">返回指定主键对应的行，如不存在，返回404 </td>
+</tr>
+<tr>
+<td>count()</td>
+<td style="text-align:left">返回查询结果的数量 </td>
+</tr>
+<tr>
+<td>paginate()</td>
+<td style="text-align:left">返回一个Paginate对象，它包含指定范围内的结果 </td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-01-09T16:20:08.706Z" itemprop="dateUpdated">2019-01-10 00:20:08</time>
+</span><br>
+
+
+        
+        今天也是充满希望的一天！
+        
+    </div>
+    
+    <footer>
+        <a href="http://www.liuzhidream.com">
+            <img src="/learn_programing/img/me.jpg" alt="Liu Zhi">
+            Liu Zhi
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/farmework/">farmework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/note/">note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/learn_programing/tags/python/">python</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/Python/Flask/&title=《Flask》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/Python/Flask/&title=《Flask》 — VanLiuZhi&source=flask框架学习笔记" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/Python/Flask/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flask》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/Python/Flask/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/Python/Flask/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/learn_programing/2018/10/22/MySql/base/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Mysql</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/learn_programing/2018/10/22/Python-multiprocessing/README/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Python-multiprocessing</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: '',
+            repo: '',
+            oauth: {
+                client_id: '',
+                client_secret: '',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/learn_programing/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Liu Zhi &copy; 2018 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.liuzhidream.com/2018/10/22/Python/Flask/&title=《Flask》 — VanLiuZhi&pic=http://www.liuzhidream.com/img/me.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.liuzhidream.com/2018/10/22/Python/Flask/&title=《Flask》 — VanLiuZhi&source=flask框架学习笔记" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.liuzhidream.com/2018/10/22/Python/Flask/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Flask》 — VanLiuZhi&url=http://www.liuzhidream.com/2018/10/22/Python/Flask/&via=http://www.liuzhidream.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.liuzhidream.com/2018/10/22/Python/Flask/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMUlEQVR42u3aQY7DIAwF0N7/0p3tSFWTbzszEvCyqipCeCwsg/16xc/713M95nP8t7c+/0++MnowMDCWZbwvn+tlfRtz/U/OTtaGgYFxDiMJoEm4rG5QwkuCNQYGBkaSxvX+qX4XAwMDIw+C12lffgzOgy8GBgZGcohNxldnq27ZA2dxDAyMBRn5rfv///6T+gYGBsZSjF64zEsC1cJkM4hjYGBszcgDXPUI2jvQjtaDgYGxNeOxIuK4weuBRjEMDIztGHkYnYTFPH3MCw9fM1wMDIytGfOSwPUikpBaLQBgYGCcwOglgr0ksrfEwjZhYGAcwOiFwjz5u54zH988ymJgYCzLyKeb71YSOnubgoGBcQIj/1iSLPbKmTcLTa7bMDAwtmbkS69S8yLBKLhjYGAcwEherobIJGWcpKSvyaIxMDCWYvQmrQbQSaIZpYYYGBhbM5JAVm3emjeE5enjqEMNAwNjEcZTCWKObLZ8JVuPgYGxNaMacCcNFvPuiHIgxsDA2IKRJ4hJA1l+WK2OvLnsw8DAOIxRbd6qFkR75cxRlQMDA2M7Rn5wrWLmx9FCywUGBsYWjHfxqX6g+la+ETfdbRgYGBsxemGuN1EvED9W4MTAwFickQTZ+TXZs8klBgbGmYz8Cr7XkFrdpvLVGwYGBkZrTDX4jq7nMDAwMIrNYXmgnFzkPZAaYmBgLMVIUrdqCWFyJM7TTQwMjBMY+dGxOmneXhYdU+eFTAwMjPUYP4/gdHLzlYs+AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/learn_programing/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/learn_programing/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/learn_programing/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
